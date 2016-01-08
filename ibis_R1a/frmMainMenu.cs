@@ -4,7 +4,6 @@ using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Windows.Forms;
 using HoldenClasses;
-using IbisUtils;
 
 namespace ibis_R1a
 {

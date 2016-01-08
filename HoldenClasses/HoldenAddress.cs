@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace HoldenClasses
+﻿namespace HoldenClasses
 {
     public class HoldenAddress : HoldenObjectClass
     {

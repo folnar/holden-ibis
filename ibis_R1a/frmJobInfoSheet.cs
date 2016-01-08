@@ -5,7 +5,6 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using HoldenClasses;
-using IbisUtils;
 
 namespace ibis_R1a
 {
@@ -22,7 +21,7 @@ namespace ibis_R1a
             Stream stream = new FileStream(Resource1.SESSION_FN, FileMode.Open, FileAccess.Read, FileShare.Read);
             HoldenUser hu = (HoldenUser)formatter.Deserialize(stream);
             stream.Close();
-            
+
             using (MySqlConnection dbh = new MySqlConnection(Resource1.DB_CONNSTR_HES))
             {
                 // initialize job numbers combobox.
@@ -85,6 +84,7 @@ namespace ibis_R1a
         {
             int cid;
             bool parseOK = Int32.TryParse(ibiscbxClientName.SelectedValue.ToString(), out cid);
+
             HoldenClient hc = new HoldenClient(cid);
             txtClientContactPerson.Text = (string)hc.props["client_contact"].Value;
             txtClientAddress.Text = (string)hc.ha.props["address_street1"].Value;

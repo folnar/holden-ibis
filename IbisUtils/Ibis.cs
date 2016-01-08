@@ -94,6 +94,8 @@ namespace IbisUtils
             DataTable dt = new DataTable();
             sth.Fill(dt);
 
+            
+
             if (dt.Rows.Count > 0)
             {
                 this.profileID = dt.Rows[0].Field<int>(1);
