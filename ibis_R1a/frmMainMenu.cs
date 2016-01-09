@@ -58,5 +58,11 @@ namespace ibis_R1a
             frmContact frmCtct = new frmContact();
             frmCtct.Show();
         }
+
+        private void btnTestForms_Click(object sender, EventArgs e)
+        {
+            frmJob frmJ = new frmJob();
+            frmJ.Show();
+        }
     }
 }

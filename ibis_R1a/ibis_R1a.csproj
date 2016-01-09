@@ -137,6 +137,9 @@
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="holdenengrDataSet.cs">
+      <DependentUpon>holdenengrDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="holdenengrDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

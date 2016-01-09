@@ -34,6 +34,7 @@
             this.cmdJobInfoSheet = new System.Windows.Forms.Button();
             this.btnAddressForm = new System.Windows.Forms.Button();
             this.btnContactForm = new System.Windows.Forms.Button();
+            this.btnTestForms = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // cmdAdmin_UpdatePerms
@@ -71,10 +72,18 @@
             this.btnContactForm.UseVisualStyleBackColor = true;
             this.btnContactForm.Click += new System.EventHandler(this.btnContactForm_Click);
             // 
+            // btnTestForms
+            // 
+            resources.ApplyResources(this.btnTestForms, "btnTestForms");
+            this.btnTestForms.Name = "btnTestForms";
+            this.btnTestForms.UseVisualStyleBackColor = true;
+            this.btnTestForms.Click += new System.EventHandler(this.btnTestForms_Click);
+            // 
             // frmMainMenu
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnTestForms);
             this.Controls.Add(this.btnContactForm);
             this.Controls.Add(this.btnAddressForm);
             this.Controls.Add(this.cmdJobInfoSheet);
@@ -92,5 +101,6 @@
         private System.Windows.Forms.Button cmdJobInfoSheet;
         private System.Windows.Forms.Button btnAddressForm;
         private System.Windows.Forms.Button btnContactForm;
+        private System.Windows.Forms.Button btnTestForms;
     }
 }
