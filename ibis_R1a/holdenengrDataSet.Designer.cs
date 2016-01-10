@@ -21137,11 +21137,22 @@ namespace ibis_R1a.holdenengrDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
+            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[2];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT `job_job_key`, `job_j_yr`, `job_jcode`, `job_new_jcode`, `job_iterate_job`, `job_ccode`, `job_j_projmgr2`, `job_addendum`, `job_j_projmgr`, `job_start_date`, `job_page_flag`, `job_proj_code`, `job_c_type`, `job_inv_typ`, `job_descr`, `job_addr1`, `job_addr3`, `job_city`, `job_state`, `job_zip`, `job_due_date`, `job_auth`, `job_status`, `job_s_cntrc`, `job_r_cntrc`, `job_pname`, `job_paddr`, `job_pcity`, `job_pstate`, `job_pzip`, `job_pphone`, `job_pwphone`, `job_pfax`, `job_br_table`, `job_pcontact`, `job_dotpp`, `job_ic_jobnum`, `job_descr2`, `job_need_contract`, `job_ot_billing`, `job_client_bud`, `job_proposed_bud`, `job_budget_type`, `job_financial_status`, `job_insurance_status`, `job_abandoned_date`, `job_id`, `job_jobtypes`, `job_company` FROM `job`";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"SELECT `job_job_key`, `job_j_yr`, `job_jcode`, `job_new_jcode`, `job_iterate_job`, `job_ccode`, `job_j_projmgr2`, `job_addendum`, `job_j_projmgr`, `job_start_date`, `job_page_flag`, `job_proj_code`, `job_c_type`, `job_inv_typ`, `job_descr`, `job_addr1`, `job_addr3`, `job_city`, `job_state`, `job_zip`, `job_due_date`, `job_auth`, `job_status`, `job_s_cntrc`, `job_r_cntrc`, `job_pname`, `job_paddr`, `job_pcity`, `job_pstate`, `job_pzip`, `job_pphone`, `job_pwphone`, `job_pfax`, `job_br_table`, `job_pcontact`, `job_dotpp`, `job_ic_jobnum`, `job_descr2`, `job_need_contract`, `job_ot_billing`, `job_client_bud`, `job_proposed_bud`, `job_budget_type`, `job_financial_status`, `job_insurance_status`, `job_abandoned_date`, `job_id`, `job_jobtypes`, `job_company` FROM `job` WHERE job_id = @jobid";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@jobid";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "job_id";
+            this._commandCollection[1].Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -21163,6 +21174,32 @@ namespace ibis_R1a.holdenengrDataSetTableAdapters {
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual holdenengrDataSet.jobDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            holdenengrDataSet.jobDataTable dataTable = new holdenengrDataSet.jobDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByID(holdenengrDataSet.jobDataTable dataTable, int jobid) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(jobid));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual holdenengrDataSet.jobDataTable GetDataByID(int jobid) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(jobid));
             holdenengrDataSet.jobDataTable dataTable = new holdenengrDataSet.jobDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

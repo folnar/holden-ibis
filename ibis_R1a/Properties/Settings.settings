@@ -10,5 +10,8 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">server=192.168.2.205;user id=holden;password=Dumloquorhorafugit;database=holdenengr;convertzerodatetime=True;persistsecurityinfo=True</Value>
     </Setting>
+    <Setting Name="dbndg" Type="System.String" Scope="Application">
+      <Value Profile="(Default)" />
+    </Setting>
   </Settings>
 </SettingsFile>

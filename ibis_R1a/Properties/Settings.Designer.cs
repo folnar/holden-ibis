@@ -33,5 +33,14 @@ namespace ibis_R1a.Properties {
                 return ((string)(this["holdenengrConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string dbndg {
+            get {
+                return ((string)(this["dbndg"]));
+            }
+        }
     }
 }

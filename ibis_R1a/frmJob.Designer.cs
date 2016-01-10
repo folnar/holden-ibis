@@ -31,8 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmJob));
             this.cbxJobNums = new System.Windows.Forms.ComboBox();
             this.cmdExit = new System.Windows.Forms.Button();
+            this.txtPName = new System.Windows.Forms.TextBox();
             this.jobTableAdapter1 = new ibis_R1a.holdenengrDataSetTableAdapters.jobTableAdapter();
-            this.txtJobName = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // cbxJobNums
@@ -42,11 +42,12 @@
             this.cbxJobNums.Name = "cbxJobNums";
             this.cbxJobNums.Size = new System.Drawing.Size(192, 21);
             this.cbxJobNums.TabIndex = 0;
+            this.cbxJobNums.SelectedIndexChanged += new System.EventHandler(this.cbxJobNums_SelectedIndexChanged);
             // 
             // cmdExit
             // 
             this.cmdExit.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.cmdExit.Location = new System.Drawing.Point(407, 383);
+            this.cmdExit.Location = new System.Drawing.Point(331, 300);
             this.cmdExit.Name = "cmdExit";
             this.cmdExit.Size = new System.Drawing.Size(170, 43);
             this.cmdExit.TabIndex = 4;
@@ -54,23 +55,23 @@
             this.cmdExit.UseVisualStyleBackColor = true;
             this.cmdExit.Click += new System.EventHandler(this.cmdExit_Click);
             // 
+            // txtPName
+            // 
+            this.txtPName.Location = new System.Drawing.Point(331, 172);
+            this.txtPName.Name = "txtPName";
+            this.txtPName.Size = new System.Drawing.Size(192, 20);
+            this.txtPName.TabIndex = 5;
+            // 
             // jobTableAdapter1
             // 
             this.jobTableAdapter1.ClearBeforeFill = true;
-            // 
-            // txtJobName
-            // 
-            this.txtJobName.Location = new System.Drawing.Point(331, 256);
-            this.txtJobName.Name = "txtJobName";
-            this.txtJobName.Size = new System.Drawing.Size(246, 20);
-            this.txtJobName.TabIndex = 5;
             // 
             // frmJob
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(971, 607);
-            this.Controls.Add(this.txtJobName);
+            this.ClientSize = new System.Drawing.Size(1079, 607);
+            this.Controls.Add(this.txtPName);
             this.Controls.Add(this.cmdExit);
             this.Controls.Add(this.cbxJobNums);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -87,6 +88,6 @@
         private System.Windows.Forms.ComboBox cbxJobNums;
         private holdenengrDataSetTableAdapters.jobTableAdapter jobTableAdapter1;
         private System.Windows.Forms.Button cmdExit;
-        private System.Windows.Forms.TextBox txtJobName;
+        private System.Windows.Forms.TextBox txtPName;
     }
 }

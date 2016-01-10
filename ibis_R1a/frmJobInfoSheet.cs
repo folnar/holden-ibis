@@ -86,7 +86,7 @@ namespace ibis_R1a
             bool parseOK = Int32.TryParse(ibiscbxClientName.SelectedValue.ToString(), out cid);
 
             HoldenClient hc = new HoldenClient(cid);
-            txtClientContactPerson.Text = (string)hc.props["client_contact"].Value;
+            //txtClientContactPerson.Text = (string)hc.props["client_contact"].Value;
             txtClientAddress.Text = (string)hc.ha.props["address_street1"].Value;
             txtClientCode.Text = (string)hc.props["client_code"].Value;
             txtClientCity.Text = (string)hc.ha.props["address_city"].Value;
