@@ -1,9 +1,9 @@
 ﻿using System;
+using System.Data;
 using System.IO;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 using HoldenClasses;
 
 namespace ibis_R1a
@@ -22,62 +22,109 @@ namespace ibis_R1a
             HoldenUser hu = (HoldenUser)formatter.Deserialize(stream);
             stream.Close();
 
-            using (MySqlConnection dbh = new MySqlConnection(Resource1.DB_CONNSTR_HES))
+            // initialize job numbers combobox.
+            using (holdenengrDataSet.jobDataTable jobtbl = jobTableAdapter1.GetData())
             {
-                // initialize job numbers combobox.
-                string sql = "SELECT job_job_key, job_id FROM job ORDER BY job_job_key ASC";
-                ibiscbxExistingJobNum.Initialize(dbh, sql, "job_job_key", "job_id");
+                cbxExistingJobNum.DataSource = jobtbl.DefaultView;
+                cbxExistingJobNum.DisplayMember = "job_job_key";
+                cbxExistingJobNum.ValueMember = "job_id";
 
-                // initialize company radio button group to pre-select HES.
-                radioCompany_HES.Checked = true;
+                DataView dvCR1 = new DataView(jobtbl);
+                cbxCrossRef1.DataSource = dvCR1;
+                cbxCrossRef1.DisplayMember = "job_job_key";
+                cbxCrossRef1.ValueMember = "job_id";
 
-                // initialize is amendment radio button group to pre-select No.
-                radioIsAmendment_No.Checked = true;
+                DataView dvCR2 = new DataView(jobtbl);
+                cbxCrossRef2.DataSource = dvCR2;
+                cbxCrossRef2.DisplayMember = "job_job_key";
+                cbxCrossRef2.ValueMember = "job_id";
 
-                // initialize overtime allowed radio button group to pre-select No.
-                radioOTAllowed_No.Checked = true;
+                DataView dvCR3 = new DataView(jobtbl);
+                cbxCrossRef3.DataSource = dvCR3;
+                cbxCrossRef3.DisplayMember = "job_job_key";
+                cbxCrossRef3.ValueMember = "job_id";
 
-                // initialize form submitted by combobox.
-                sql = "SELECT CONCAT(employee_e_num, ' -- ', employee_e_uname) AS employee_un, employee_id FROM employee WHERE employee_active = 1 ORDER BY employee_e_num ASC";
-                ibiscbxFilledOutBy.Initialize(dbh, sql, "employee_un", "employee_id");
-                string defsel = hu.empnum + " -- " + hu.un;
-                ibiscbxFilledOutBy.SelectedIndex = ibiscbxFilledOutBy.FindString(defsel);
-                if (!hu.isSU) ibiscbxFilledOutBy.Enabled = false;
+                DataView dvCR4 = new DataView(jobtbl);
+                cbxCrossRef4.DataSource = dvCR4;
+                cbxCrossRef4.DisplayMember = "job_job_key";
+                cbxCrossRef4.ValueMember = "job_id";
+            }
 
-                // initialize today's date textbox.
-                txtTodaysDate.Text = DateTime.Today.ToString("d MMM yyyy");
-                if (!hu.isSU) txtTodaysDate.Enabled = false;
+            // initialize form submitted by combobox.
+            using (holdenengrDataSet.employeeDataTable emptbl = employeeTableAdapter1.GetDataForComboBox())
+            {
+                cbxFilledOutBy.DataSource = emptbl.DefaultView;
+                cbxFilledOutBy.DisplayMember = "employee_un";
+                cbxFilledOutBy.ValueMember = "employee_id";
 
-                // initialize ibis combox box - invoice type.
-                sql = "SELECT CONCAT(ibis_invoicetype_code, ' -- ', ibis_invoicetype_label) AS ibis_invoicetype_entry, ibis_invoicetype_id FROM ibis_invoicetype";
-                ibiscbxInvoiceType.Initialize(dbh, sql, "ibis_invoicetype_entry", "ibis_invoicetype_id");
+                DataView dvPM1 = new DataView(emptbl);
+                ddProjMgr1.DataSource = dvPM1;
+                ddProjMgr1.DisplayMember = "employee_un";
+                ddProjMgr1.ValueMember = "employee_id";
 
-                // initialize project type drop-down.
-                sql = "SELECT CONCAT(ibis_projecttype_code, ' -- ', ibis_projecttype_label) AS ibis_projecttype_entry, ibis_projecttype_id FROM ibis_projecttype";
-                ibiscbxProjectType.Initialize(dbh, sql, "ibis_projecttype_entry", "ibis_projecttype_id");
+                DataView dvPM2 = new DataView(emptbl);
+                ddProjMgr2.DataSource = dvPM2;
+                ddProjMgr2.DisplayMember = "employee_un";
+                ddProjMgr2.ValueMember = "employee_id";
+            }
+            string defsel = hu.empnum + " -- " + hu.un;
+            cbxFilledOutBy.SelectedIndex = cbxFilledOutBy.FindString(defsel);
+            if (!hu.isSU) cbxFilledOutBy.Enabled = false;
 
-                // initialize client type drop-down.
-                sql = "SELECT CONCAT(ibis_clienttype_code, ' -- ', ibis_clienttype_label) AS ibis_clienttype_entry, ibis_clienttype_id FROM ibis_clienttype";
-                ibiscbxClientType.Initialize(dbh, sql, "ibis_clienttype_entry", "ibis_clienttype_id");
+            // initialize company radio button group to pre-select HES.
+            radioCompany_HES.Checked = true;
 
-                // initialize client state drop-down.
-                sql = "SELECT state_id, state_abbr FROM ibis_state";
-                ibiscbxClientState.Initialize(dbh, sql, "state_abbr", "state_id");
+            // initialize is amendment radio button group to pre-select No.
+            radioIsAmendment_No.Checked = true;
 
-                // initialize client name drop-down.
-                sql = "SELECT client_name, client_id FROM client";
-                ibiscbxClientName.Initialize(dbh, sql, "client_name", "client_id");
+            // initialize overtime allowed radio button group to pre-select No.
+            radioOTAllowed_No.Checked = true;
+
+            // initialize today's date textbox.
+            txtTodaysDate.Text = DateTime.Today.ToString("d MMM yyyy");
+            if (!hu.isSU) txtTodaysDate.Enabled = false;
+
+            // initialize ibis combox box - invoice type.
+            using (holdenengrDataSet.ibis_invoicetypeDataTable invtyptbl = ibis_invoicetypeTableAdapter1.GetDataForDropDown())
+            {
+                cbxInvoiceType.DataSource = invtyptbl.DefaultView;
+                cbxInvoiceType.DisplayMember = "ibis_invoicetype_entry";
+                cbxInvoiceType.ValueMember = "ibis_invoicetype_id";
+            }
+
+            // initialize project type drop-down.
+            using (holdenengrDataSet.ibis_projecttypeDataTable prjtyptbl = ibis_projecttypeTableAdapter1.GetDataForDropDown())
+            {
+                cbxProjectType.DataSource = prjtyptbl.DefaultView;
+                cbxProjectType.DisplayMember = "ibis_projecttype_entry";
+                cbxProjectType.ValueMember = "ibis_projecttype_id";
+            }
+
+            // initialize client type drop-down.
+            using (holdenengrDataSet.ibis_clienttypeDataTable clttyptbl = ibis_clienttypeTableAdapter1.GetDataForDropDown())
+            {
+                cbxClientType.DataSource = clttyptbl.DefaultView;
+                cbxClientType.DisplayMember = "ibis_clienttype_entry";
+                cbxClientType.ValueMember = "ibis_clienttype_id";
+            }
+
+            // initialize client state drop-down.
+            using (holdenengrDataSet.ibis_stateDataTable statetbl = ibis_stateTableAdapter1.GetData())
+            {
+                cbxClientState.DataSource = statetbl.DefaultView;
+                cbxClientState.DisplayMember = "state_abbr";
+                cbxClientState.ValueMember = "state_id";
             }
         }
 
         private void radioIsAmendment_Yes_CheckedChanged(object sender, EventArgs e)
         {
-            if (radioIsAmendment_Yes.Checked) ibiscbxExistingJobNum.Enabled = true;
+            if (radioIsAmendment_Yes.Checked) cbxExistingJobNum.Enabled = true;
         }
 
         private void radioIsAmendment_No_CheckedChanged(object sender, EventArgs e)
         {
-            if (radioIsAmendment_No.Checked) ibiscbxExistingJobNum.Enabled = false;
+            if (radioIsAmendment_No.Checked) cbxExistingJobNum.Enabled = false;
         }
         
         private void ibiscbxClientName_SelectionChangeCommitted(object sender, EventArgs e)
@@ -90,7 +137,7 @@ namespace ibis_R1a
             txtClientAddress.Text = (string)hc.ha.props["address_street1"].Value;
             txtClientCode.Text = (string)hc.props["client_code"].Value;
             txtClientCity.Text = (string)hc.ha.props["address_city"].Value;
-            ibiscbxClientState.SelectedValue = Convert.ToInt32(hc.ha.props["address_state"].Value);
+            cbxClientState.SelectedValue = Convert.ToInt32(hc.ha.props["address_state"].Value);
             txtClientZip.Text = (string)hc.ha.props["address_zip"].Value;
         }
     }

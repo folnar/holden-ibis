@@ -18034,11 +18034,16 @@ namespace ibis_R1a.holdenengrDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
+            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[2];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT `employee_id`, `employee_e_uname`, `employee_e_num`, `employee_lr_date`, `employee_m_status`, `employee_bank_acc`, `employee_ot_rate`, `employee_wh_allow`, `employee_dept`, `employee_e_type`, `employee_area`, `employee_change_date`, `employee_bank_name`, `employee_def_stime`, `employee_wek_hrrt`, `employee_wek_hrot`, `employee_e_prem`, `employee_vacation`, `employee_pay_rate`, `employee_time_style`, `employee_billing_rate`, `employee_comp_bank_size`, `employee_f_or_p`, `employee_rej_entry`, `employee_status`, `employee_class`, `employee_pay_rate2`, `employee_ot_rate2`, `employee_permprofile`, `employee_password`, `employee_active` FROM `employee`";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT CONCAT(employee_e_num, \' -- \', employee_e_uname) AS employee_un, employee_" +
+                "id FROM employee WHERE employee_active = 1 ORDER BY employee_e_num ASC";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -18060,6 +18065,30 @@ namespace ibis_R1a.holdenengrDataSetTableAdapters {
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual holdenengrDataSet.employeeDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            holdenengrDataSet.employeeDataTable dataTable = new holdenengrDataSet.employeeDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillForComboBox(holdenengrDataSet.employeeDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual holdenengrDataSet.employeeDataTable GetDataForComboBox() {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
             holdenengrDataSet.employeeDataTable dataTable = new holdenengrDataSet.employeeDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -18523,12 +18552,17 @@ namespace ibis_R1a.holdenengrDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
+            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[2];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT `ibis_clienttype_id`, `ibis_clienttype_label`, `ibis_clienttype_code` FROM" +
                 " `ibis_clienttype`";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT CONCAT(ibis_clienttype_code, \' -- \', ibis_clienttype_label) AS ibis_client" +
+                "type_entry, ibis_clienttype_id FROM ibis_clienttype";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -18550,6 +18584,30 @@ namespace ibis_R1a.holdenengrDataSetTableAdapters {
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual holdenengrDataSet.ibis_clienttypeDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            holdenengrDataSet.ibis_clienttypeDataTable dataTable = new holdenengrDataSet.ibis_clienttypeDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillForDropDown(holdenengrDataSet.ibis_clienttypeDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual holdenengrDataSet.ibis_clienttypeDataTable GetDataForDropDown() {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
             holdenengrDataSet.ibis_clienttypeDataTable dataTable = new holdenengrDataSet.ibis_clienttypeDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -18848,12 +18906,17 @@ namespace ibis_R1a.holdenengrDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
+            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[2];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT `ibis_invoicetype_id`, `ibis_invoicetype_label`, `ibis_invoicetype_code` F" +
                 "ROM `ibis_invoicetype`";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT CONCAT(ibis_invoicetype_code, \' -- \', ibis_invoicetype_label) AS ibis_invo" +
+                "icetype_entry, ibis_invoicetype_id FROM ibis_invoicetype";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -18875,6 +18938,30 @@ namespace ibis_R1a.holdenengrDataSetTableAdapters {
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual holdenengrDataSet.ibis_invoicetypeDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            holdenengrDataSet.ibis_invoicetypeDataTable dataTable = new holdenengrDataSet.ibis_invoicetypeDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillForDropDown(holdenengrDataSet.ibis_invoicetypeDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual holdenengrDataSet.ibis_invoicetypeDataTable GetDataForDropDown() {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
             holdenengrDataSet.ibis_invoicetypeDataTable dataTable = new holdenengrDataSet.ibis_invoicetypeDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -19509,12 +19596,17 @@ namespace ibis_R1a.holdenengrDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
+            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[2];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT `ibis_projecttype_id`, `ibis_projecttype_label`, `ibis_projecttype_code` F" +
                 "ROM `ibis_projecttype`";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT CONCAT(ibis_projecttype_code, \' -- \', ibis_projecttype_label) AS ibis_proj" +
+                "ecttype_entry, ibis_projecttype_id FROM ibis_projecttype";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -19536,6 +19628,30 @@ namespace ibis_R1a.holdenengrDataSetTableAdapters {
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual holdenengrDataSet.ibis_projecttypeDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            holdenengrDataSet.ibis_projecttypeDataTable dataTable = new holdenengrDataSet.ibis_projecttypeDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillForDropDown(holdenengrDataSet.ibis_projecttypeDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual holdenengrDataSet.ibis_projecttypeDataTable GetDataForDropDown() {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
             holdenengrDataSet.ibis_projecttypeDataTable dataTable = new holdenengrDataSet.ibis_projecttypeDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

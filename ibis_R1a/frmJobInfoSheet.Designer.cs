@@ -89,12 +89,6 @@
             this.txtClientZip = new System.Windows.Forms.TextBox();
             this.lblClientZip = new System.Windows.Forms.Label();
             this.ibiscbxClientName = new IbisUtils.IbisComboBox();
-            this.ibiscbxExistingJobNum = new IbisUtils.IbisComboBox();
-            this.ibiscbxFilledOutBy = new IbisUtils.IbisComboBox();
-            this.ibiscbxClientType = new IbisUtils.IbisComboBox();
-            this.ibiscbxProjectType = new IbisUtils.IbisComboBox();
-            this.ibiscbxInvoiceType = new IbisUtils.IbisComboBox();
-            this.ibiscbxClientState = new IbisUtils.IbisComboBox();
             this.lblClientState = new System.Windows.Forms.Label();
             this.lblClientCode = new System.Windows.Forms.Label();
             this.txtClientCode = new System.Windows.Forms.TextBox();
@@ -128,16 +122,12 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.lblCrossRefCompany1 = new System.Windows.Forms.Label();
             this.lblCrossRefNum1 = new System.Windows.Forms.Label();
-            this.ibiscbxCrossRef1 = new IbisUtils.IbisComboBox();
-            this.ibiscbxCrossRef3 = new IbisUtils.IbisComboBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.lblCrossRefNum3 = new System.Windows.Forms.Label();
-            this.ibiscbxCrossRef4 = new IbisUtils.IbisComboBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.lblCrossRefNum4 = new System.Windows.Forms.Label();
-            this.ibiscbxCrossRef2 = new IbisUtils.IbisComboBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.lblCrossRefNum2 = new System.Windows.Forms.Label();
@@ -221,6 +211,22 @@
             this.ibiscbxClientContactLabel = new IbisUtils.IbisComboBox();
             this.ibiscbxSubcontractor = new IbisUtils.IbisComboBox();
             this.lblSubcontractor = new System.Windows.Forms.Label();
+            this.cbxExistingJobNum = new System.Windows.Forms.ComboBox();
+            this.cbxInvoiceType = new System.Windows.Forms.ComboBox();
+            this.cbxClientType = new System.Windows.Forms.ComboBox();
+            this.cbxFilledOutBy = new System.Windows.Forms.ComboBox();
+            this.cbxProjectType = new System.Windows.Forms.ComboBox();
+            this.jobTableAdapter1 = new ibis_R1a.holdenengrDataSetTableAdapters.jobTableAdapter();
+            this.employeeTableAdapter1 = new ibis_R1a.holdenengrDataSetTableAdapters.employeeTableAdapter();
+            this.ibis_projecttypeTableAdapter1 = new ibis_R1a.holdenengrDataSetTableAdapters.ibis_projecttypeTableAdapter();
+            this.ibis_invoicetypeTableAdapter1 = new ibis_R1a.holdenengrDataSetTableAdapters.ibis_invoicetypeTableAdapter();
+            this.ibis_clienttypeTableAdapter1 = new ibis_R1a.holdenengrDataSetTableAdapters.ibis_clienttypeTableAdapter();
+            this.cbxClientState = new System.Windows.Forms.ComboBox();
+            this.ibis_stateTableAdapter1 = new ibis_R1a.holdenengrDataSetTableAdapters.ibis_stateTableAdapter();
+            this.cbxCrossRef1 = new System.Windows.Forms.ComboBox();
+            this.cbxCrossRef3 = new System.Windows.Forms.ComboBox();
+            this.cbxCrossRef2 = new System.Windows.Forms.ComboBox();
+            this.cbxCrossRef4 = new System.Windows.Forms.ComboBox();
             this.panelCompany.SuspendLayout();
             this.panelIsAmendment.SuspendLayout();
             this.panelNextSuffix.SuspendLayout();
@@ -303,7 +309,7 @@
             // 
             this.lblIfYesExistingJobNo.AutoSize = true;
             this.lblIfYesExistingJobNo.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIfYesExistingJobNo.Location = new System.Drawing.Point(477, 92);
+            this.lblIfYesExistingJobNo.Location = new System.Drawing.Point(494, 92);
             this.lblIfYesExistingJobNo.Name = "lblIfYesExistingJobNo";
             this.lblIfYesExistingJobNo.Size = new System.Drawing.Size(137, 18);
             this.lblIfYesExistingJobNo.TabIndex = 13;
@@ -444,7 +450,7 @@
             // txtTodaysDate
             // 
             this.txtTodaysDate.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTodaysDate.Location = new System.Drawing.Point(123, 208);
+            this.txtTodaysDate.Location = new System.Drawing.Point(115, 208);
             this.txtTodaysDate.Name = "txtTodaysDate";
             this.txtTodaysDate.Size = new System.Drawing.Size(110, 25);
             this.txtTodaysDate.TabIndex = 17;
@@ -493,7 +499,7 @@
             // 
             this.lblClientType.AutoSize = true;
             this.lblClientType.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClientType.Location = new System.Drawing.Point(548, 238);
+            this.lblClientType.Location = new System.Drawing.Point(504, 238);
             this.lblClientType.Name = "lblClientType";
             this.lblClientType.Size = new System.Drawing.Size(86, 18);
             this.lblClientType.TabIndex = 41;
@@ -540,6 +546,7 @@
             // 
             // ddProjMgr1
             // 
+            this.ddProjMgr1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddProjMgr1.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ddProjMgr1.FormattingEnabled = true;
             this.ddProjMgr1.Location = new System.Drawing.Point(123, 293);
@@ -549,6 +556,7 @@
             // 
             // ddProjMgr2
             // 
+            this.ddProjMgr2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddProjMgr2.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ddProjMgr2.FormattingEnabled = true;
             this.ddProjMgr2.Location = new System.Drawing.Point(480, 293);
@@ -825,9 +833,9 @@
             // txtClientZip
             // 
             this.txtClientZip.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtClientZip.Location = new System.Drawing.Point(482, 399);
+            this.txtClientZip.Location = new System.Drawing.Point(477, 399);
             this.txtClientZip.Name = "txtClientZip";
-            this.txtClientZip.Size = new System.Drawing.Size(65, 25);
+            this.txtClientZip.Size = new System.Drawing.Size(104, 25);
             this.txtClientZip.TabIndex = 76;
             this.txtClientZip.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -835,7 +843,7 @@
             // 
             this.lblClientZip.AutoSize = true;
             this.lblClientZip.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClientZip.Location = new System.Drawing.Point(442, 402);
+            this.lblClientZip.Location = new System.Drawing.Point(436, 402);
             this.lblClientZip.Name = "lblClientZip";
             this.lblClientZip.Size = new System.Drawing.Size(35, 18);
             this.lblClientZip.TabIndex = 77;
@@ -854,84 +862,6 @@
             this.ibiscbxClientName.srchdtxt = null;
             this.ibiscbxClientName.TabIndex = 27;
             this.ibiscbxClientName.SelectionChangeCommitted += new System.EventHandler(this.ibiscbxClientName_SelectionChangeCommitted);
-            // 
-            // ibiscbxExistingJobNum
-            // 
-            this.ibiscbxExistingJobNum.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ibiscbxExistingJobNum.FormattingEnabled = true;
-            this.ibiscbxExistingJobNum.IsInExistingEditMode = false;
-            this.ibiscbxExistingJobNum.IsInNewStringMode = false;
-            this.ibiscbxExistingJobNum.IsInSearchMode = false;
-            this.ibiscbxExistingJobNum.Location = new System.Drawing.Point(620, 84);
-            this.ibiscbxExistingJobNum.Name = "ibiscbxExistingJobNum";
-            this.ibiscbxExistingJobNum.Size = new System.Drawing.Size(140, 26);
-            this.ibiscbxExistingJobNum.srchdtxt = null;
-            this.ibiscbxExistingJobNum.TabIndex = 69;
-            // 
-            // ibiscbxFilledOutBy
-            // 
-            this.ibiscbxFilledOutBy.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ibiscbxFilledOutBy.FormattingEnabled = true;
-            this.ibiscbxFilledOutBy.IsInExistingEditMode = false;
-            this.ibiscbxFilledOutBy.IsInNewStringMode = false;
-            this.ibiscbxFilledOutBy.IsInSearchMode = false;
-            this.ibiscbxFilledOutBy.Location = new System.Drawing.Point(195, 62);
-            this.ibiscbxFilledOutBy.Name = "ibiscbxFilledOutBy";
-            this.ibiscbxFilledOutBy.Size = new System.Drawing.Size(302, 26);
-            this.ibiscbxFilledOutBy.srchdtxt = null;
-            this.ibiscbxFilledOutBy.TabIndex = 68;
-            // 
-            // ibiscbxClientType
-            // 
-            this.ibiscbxClientType.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ibiscbxClientType.FormattingEnabled = true;
-            this.ibiscbxClientType.IsInExistingEditMode = false;
-            this.ibiscbxClientType.IsInNewStringMode = false;
-            this.ibiscbxClientType.IsInSearchMode = false;
-            this.ibiscbxClientType.Location = new System.Drawing.Point(645, 235);
-            this.ibiscbxClientType.Name = "ibiscbxClientType";
-            this.ibiscbxClientType.Size = new System.Drawing.Size(302, 26);
-            this.ibiscbxClientType.srchdtxt = null;
-            this.ibiscbxClientType.TabIndex = 21;
-            // 
-            // ibiscbxProjectType
-            // 
-            this.ibiscbxProjectType.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ibiscbxProjectType.FormattingEnabled = true;
-            this.ibiscbxProjectType.IsInExistingEditMode = false;
-            this.ibiscbxProjectType.IsInNewStringMode = false;
-            this.ibiscbxProjectType.IsInSearchMode = false;
-            this.ibiscbxProjectType.Location = new System.Drawing.Point(123, 235);
-            this.ibiscbxProjectType.Name = "ibiscbxProjectType";
-            this.ibiscbxProjectType.Size = new System.Drawing.Size(408, 26);
-            this.ibiscbxProjectType.srchdtxt = null;
-            this.ibiscbxProjectType.TabIndex = 20;
-            // 
-            // ibiscbxInvoiceType
-            // 
-            this.ibiscbxInvoiceType.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ibiscbxInvoiceType.FormattingEnabled = true;
-            this.ibiscbxInvoiceType.IsInExistingEditMode = false;
-            this.ibiscbxInvoiceType.IsInNewStringMode = false;
-            this.ibiscbxInvoiceType.IsInSearchMode = false;
-            this.ibiscbxInvoiceType.Location = new System.Drawing.Point(612, 208);
-            this.ibiscbxInvoiceType.Name = "ibiscbxInvoiceType";
-            this.ibiscbxInvoiceType.Size = new System.Drawing.Size(335, 26);
-            this.ibiscbxInvoiceType.srchdtxt = null;
-            this.ibiscbxInvoiceType.TabIndex = 19;
-            // 
-            // ibiscbxClientState
-            // 
-            this.ibiscbxClientState.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ibiscbxClientState.FormattingEnabled = true;
-            this.ibiscbxClientState.IsInExistingEditMode = false;
-            this.ibiscbxClientState.IsInNewStringMode = false;
-            this.ibiscbxClientState.IsInSearchMode = false;
-            this.ibiscbxClientState.Location = new System.Drawing.Point(348, 399);
-            this.ibiscbxClientState.Name = "ibiscbxClientState";
-            this.ibiscbxClientState.Size = new System.Drawing.Size(69, 26);
-            this.ibiscbxClientState.srchdtxt = null;
-            this.ibiscbxClientState.TabIndex = 78;
             // 
             // lblClientState
             // 
@@ -1250,32 +1180,6 @@
             this.lblCrossRefNum1.TabIndex = 112;
             this.lblCrossRefNum1.Text = "#1:";
             // 
-            // ibiscbxCrossRef1
-            // 
-            this.ibiscbxCrossRef1.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ibiscbxCrossRef1.FormattingEnabled = true;
-            this.ibiscbxCrossRef1.IsInExistingEditMode = false;
-            this.ibiscbxCrossRef1.IsInNewStringMode = false;
-            this.ibiscbxCrossRef1.IsInSearchMode = false;
-            this.ibiscbxCrossRef1.Location = new System.Drawing.Point(348, 542);
-            this.ibiscbxCrossRef1.Name = "ibiscbxCrossRef1";
-            this.ibiscbxCrossRef1.Size = new System.Drawing.Size(106, 26);
-            this.ibiscbxCrossRef1.srchdtxt = null;
-            this.ibiscbxCrossRef1.TabIndex = 115;
-            // 
-            // ibiscbxCrossRef3
-            // 
-            this.ibiscbxCrossRef3.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ibiscbxCrossRef3.FormattingEnabled = true;
-            this.ibiscbxCrossRef3.IsInExistingEditMode = false;
-            this.ibiscbxCrossRef3.IsInNewStringMode = false;
-            this.ibiscbxCrossRef3.IsInSearchMode = false;
-            this.ibiscbxCrossRef3.Location = new System.Drawing.Point(348, 574);
-            this.ibiscbxCrossRef3.Name = "ibiscbxCrossRef3";
-            this.ibiscbxCrossRef3.Size = new System.Drawing.Size(106, 26);
-            this.ibiscbxCrossRef3.srchdtxt = null;
-            this.ibiscbxCrossRef3.TabIndex = 119;
-            // 
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1305,19 +1209,6 @@
             this.lblCrossRefNum3.TabIndex = 116;
             this.lblCrossRefNum3.Text = "#3:";
             // 
-            // ibiscbxCrossRef4
-            // 
-            this.ibiscbxCrossRef4.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ibiscbxCrossRef4.FormattingEnabled = true;
-            this.ibiscbxCrossRef4.IsInExistingEditMode = false;
-            this.ibiscbxCrossRef4.IsInNewStringMode = false;
-            this.ibiscbxCrossRef4.IsInSearchMode = false;
-            this.ibiscbxCrossRef4.Location = new System.Drawing.Point(670, 574);
-            this.ibiscbxCrossRef4.Name = "ibiscbxCrossRef4";
-            this.ibiscbxCrossRef4.Size = new System.Drawing.Size(106, 26);
-            this.ibiscbxCrossRef4.srchdtxt = null;
-            this.ibiscbxCrossRef4.TabIndex = 127;
-            // 
             // textBox3
             // 
             this.textBox3.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1346,19 +1237,6 @@
             this.lblCrossRefNum4.Size = new System.Drawing.Size(31, 18);
             this.lblCrossRefNum4.TabIndex = 124;
             this.lblCrossRefNum4.Text = "#4:";
-            // 
-            // ibiscbxCrossRef2
-            // 
-            this.ibiscbxCrossRef2.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ibiscbxCrossRef2.FormattingEnabled = true;
-            this.ibiscbxCrossRef2.IsInExistingEditMode = false;
-            this.ibiscbxCrossRef2.IsInNewStringMode = false;
-            this.ibiscbxCrossRef2.IsInSearchMode = false;
-            this.ibiscbxCrossRef2.Location = new System.Drawing.Point(670, 542);
-            this.ibiscbxCrossRef2.Name = "ibiscbxCrossRef2";
-            this.ibiscbxCrossRef2.Size = new System.Drawing.Size(106, 26);
-            this.ibiscbxCrossRef2.srchdtxt = null;
-            this.ibiscbxCrossRef2.TabIndex = 123;
             // 
             // textBox4
             // 
@@ -2223,11 +2101,146 @@
             this.lblSubcontractor.TabIndex = 190;
             this.lblSubcontractor.Text = "Subcontractor:";
             // 
+            // cbxExistingJobNum
+            // 
+            this.cbxExistingJobNum.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxExistingJobNum.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxExistingJobNum.FormattingEnabled = true;
+            this.cbxExistingJobNum.Location = new System.Drawing.Point(637, 84);
+            this.cbxExistingJobNum.Name = "cbxExistingJobNum";
+            this.cbxExistingJobNum.Size = new System.Drawing.Size(142, 26);
+            this.cbxExistingJobNum.TabIndex = 192;
+            // 
+            // cbxInvoiceType
+            // 
+            this.cbxInvoiceType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxInvoiceType.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxInvoiceType.FormattingEnabled = true;
+            this.cbxInvoiceType.Location = new System.Drawing.Point(605, 207);
+            this.cbxInvoiceType.Name = "cbxInvoiceType";
+            this.cbxInvoiceType.Size = new System.Drawing.Size(342, 26);
+            this.cbxInvoiceType.TabIndex = 193;
+            // 
+            // cbxClientType
+            // 
+            this.cbxClientType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxClientType.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxClientType.FormattingEnabled = true;
+            this.cbxClientType.Location = new System.Drawing.Point(605, 235);
+            this.cbxClientType.Name = "cbxClientType";
+            this.cbxClientType.Size = new System.Drawing.Size(342, 26);
+            this.cbxClientType.TabIndex = 194;
+            // 
+            // cbxFilledOutBy
+            // 
+            this.cbxFilledOutBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxFilledOutBy.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxFilledOutBy.FormattingEnabled = true;
+            this.cbxFilledOutBy.Location = new System.Drawing.Point(191, 62);
+            this.cbxFilledOutBy.Name = "cbxFilledOutBy";
+            this.cbxFilledOutBy.Size = new System.Drawing.Size(230, 26);
+            this.cbxFilledOutBy.TabIndex = 195;
+            // 
+            // cbxProjectType
+            // 
+            this.cbxProjectType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxProjectType.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxProjectType.FormattingEnabled = true;
+            this.cbxProjectType.Location = new System.Drawing.Point(115, 235);
+            this.cbxProjectType.Name = "cbxProjectType";
+            this.cbxProjectType.Size = new System.Drawing.Size(371, 26);
+            this.cbxProjectType.TabIndex = 196;
+            // 
+            // jobTableAdapter1
+            // 
+            this.jobTableAdapter1.ClearBeforeFill = true;
+            // 
+            // employeeTableAdapter1
+            // 
+            this.employeeTableAdapter1.ClearBeforeFill = true;
+            // 
+            // ibis_projecttypeTableAdapter1
+            // 
+            this.ibis_projecttypeTableAdapter1.ClearBeforeFill = true;
+            // 
+            // ibis_invoicetypeTableAdapter1
+            // 
+            this.ibis_invoicetypeTableAdapter1.ClearBeforeFill = true;
+            // 
+            // ibis_clienttypeTableAdapter1
+            // 
+            this.ibis_clienttypeTableAdapter1.ClearBeforeFill = true;
+            // 
+            // cbxClientState
+            // 
+            this.cbxClientState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxClientState.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxClientState.FormattingEnabled = true;
+            this.cbxClientState.Location = new System.Drawing.Point(344, 399);
+            this.cbxClientState.Name = "cbxClientState";
+            this.cbxClientState.Size = new System.Drawing.Size(73, 26);
+            this.cbxClientState.TabIndex = 197;
+            // 
+            // ibis_stateTableAdapter1
+            // 
+            this.ibis_stateTableAdapter1.ClearBeforeFill = true;
+            // 
+            // cbxCrossRef1
+            // 
+            this.cbxCrossRef1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxCrossRef1.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxCrossRef1.FormattingEnabled = true;
+            this.cbxCrossRef1.Location = new System.Drawing.Point(348, 542);
+            this.cbxCrossRef1.Name = "cbxCrossRef1";
+            this.cbxCrossRef1.Size = new System.Drawing.Size(106, 26);
+            this.cbxCrossRef1.TabIndex = 198;
+            // 
+            // cbxCrossRef3
+            // 
+            this.cbxCrossRef3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxCrossRef3.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxCrossRef3.FormattingEnabled = true;
+            this.cbxCrossRef3.Location = new System.Drawing.Point(348, 574);
+            this.cbxCrossRef3.Name = "cbxCrossRef3";
+            this.cbxCrossRef3.Size = new System.Drawing.Size(106, 26);
+            this.cbxCrossRef3.TabIndex = 199;
+            // 
+            // cbxCrossRef2
+            // 
+            this.cbxCrossRef2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxCrossRef2.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxCrossRef2.FormattingEnabled = true;
+            this.cbxCrossRef2.Location = new System.Drawing.Point(669, 542);
+            this.cbxCrossRef2.Name = "cbxCrossRef2";
+            this.cbxCrossRef2.Size = new System.Drawing.Size(106, 26);
+            this.cbxCrossRef2.TabIndex = 200;
+            // 
+            // cbxCrossRef4
+            // 
+            this.cbxCrossRef4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxCrossRef4.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxCrossRef4.FormattingEnabled = true;
+            this.cbxCrossRef4.Location = new System.Drawing.Point(669, 574);
+            this.cbxCrossRef4.Name = "cbxCrossRef4";
+            this.cbxCrossRef4.Size = new System.Drawing.Size(106, 26);
+            this.cbxCrossRef4.TabIndex = 201;
+            // 
             // frmJobInfoSheet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(969, 1053);
+            this.Controls.Add(this.cbxCrossRef4);
+            this.Controls.Add(this.cbxCrossRef2);
+            this.Controls.Add(this.cbxCrossRef3);
+            this.Controls.Add(this.cbxCrossRef1);
+            this.Controls.Add(this.cbxClientState);
+            this.Controls.Add(this.cbxProjectType);
+            this.Controls.Add(this.cbxFilledOutBy);
+            this.Controls.Add(this.cbxClientType);
+            this.Controls.Add(this.cbxInvoiceType);
+            this.Controls.Add(this.cbxExistingJobNum);
             this.Controls.Add(this.ibiscbxSubcontractor);
             this.Controls.Add(this.lblSubcontractor);
             this.Controls.Add(this.ibiscbxClientContactLabel);
@@ -2290,19 +2303,15 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.lblIntercompanyJobNum);
-            this.Controls.Add(this.ibiscbxCrossRef4);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.lblCrossRefNum4);
-            this.Controls.Add(this.ibiscbxCrossRef2);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.lblCrossRefNum2);
-            this.Controls.Add(this.ibiscbxCrossRef3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lblCrossRefNum3);
-            this.Controls.Add(this.ibiscbxCrossRef1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.lblCrossRefCompany1);
             this.Controls.Add(this.lblCrossRefNum1);
@@ -2335,7 +2344,6 @@
             this.Controls.Add(this.lblClientEmail);
             this.Controls.Add(this.txtClientCode);
             this.Controls.Add(this.lblClientCode);
-            this.Controls.Add(this.ibiscbxClientState);
             this.Controls.Add(this.lblClientState);
             this.Controls.Add(this.txtClientZip);
             this.Controls.Add(this.lblClientZip);
@@ -2345,11 +2353,6 @@
             this.Controls.Add(this.lblClientAddress);
             this.Controls.Add(this.lblClientContactPerson);
             this.Controls.Add(this.ibiscbxClientName);
-            this.Controls.Add(this.ibiscbxExistingJobNum);
-            this.Controls.Add(this.ibiscbxFilledOutBy);
-            this.Controls.Add(this.ibiscbxClientType);
-            this.Controls.Add(this.ibiscbxProjectType);
-            this.Controls.Add(this.ibiscbxInvoiceType);
             this.Controls.Add(this.panelIsAmendment);
             this.Controls.Add(this.panelCompany);
             this.Controls.Add(this.lblClientName);
@@ -2481,11 +2484,6 @@
         private System.Windows.Forms.Panel panelOTAllowed;
         private System.Windows.Forms.RadioButton radioOTAllowed_No;
         private System.Windows.Forms.RadioButton radioOTAllowed_Yes;
-        private IbisUtils.IbisComboBox ibiscbxInvoiceType;
-        private IbisUtils.IbisComboBox ibiscbxProjectType;
-        private IbisUtils.IbisComboBox ibiscbxClientType;
-        private IbisUtils.IbisComboBox ibiscbxFilledOutBy;
-        private IbisUtils.IbisComboBox ibiscbxExistingJobNum;
         private IbisUtils.IbisComboBox ibiscbxClientName;
         private System.Windows.Forms.Label lblClientContactPerson;
         private System.Windows.Forms.TextBox txtClientAddress;
@@ -2494,7 +2492,6 @@
         private System.Windows.Forms.Label lblClientCity;
         private System.Windows.Forms.TextBox txtClientZip;
         private System.Windows.Forms.Label lblClientZip;
-        private IbisUtils.IbisComboBox ibiscbxClientState;
         private System.Windows.Forms.Label lblClientState;
         private System.Windows.Forms.Label lblClientCode;
         private System.Windows.Forms.TextBox txtClientCode;
@@ -2528,16 +2525,12 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label lblCrossRefCompany1;
         private System.Windows.Forms.Label lblCrossRefNum1;
-        private IbisUtils.IbisComboBox ibiscbxCrossRef1;
-        private IbisUtils.IbisComboBox ibiscbxCrossRef3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblCrossRefNum3;
-        private IbisUtils.IbisComboBox ibiscbxCrossRef4;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblCrossRefNum4;
-        private IbisUtils.IbisComboBox ibiscbxCrossRef2;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lblCrossRefNum2;
@@ -2621,5 +2614,21 @@
         private IbisUtils.IbisComboBox ibiscbxClientContactLabel;
         private IbisUtils.IbisComboBox ibiscbxSubcontractor;
         private System.Windows.Forms.Label lblSubcontractor;
+        private holdenengrDataSetTableAdapters.jobTableAdapter jobTableAdapter1;
+        private holdenengrDataSetTableAdapters.employeeTableAdapter employeeTableAdapter1;
+        private System.Windows.Forms.ComboBox cbxExistingJobNum;
+        private System.Windows.Forms.ComboBox cbxInvoiceType;
+        private System.Windows.Forms.ComboBox cbxClientType;
+        private System.Windows.Forms.ComboBox cbxFilledOutBy;
+        private System.Windows.Forms.ComboBox cbxProjectType;
+        private holdenengrDataSetTableAdapters.ibis_projecttypeTableAdapter ibis_projecttypeTableAdapter1;
+        private holdenengrDataSetTableAdapters.ibis_invoicetypeTableAdapter ibis_invoicetypeTableAdapter1;
+        private holdenengrDataSetTableAdapters.ibis_clienttypeTableAdapter ibis_clienttypeTableAdapter1;
+        private System.Windows.Forms.ComboBox cbxClientState;
+        private holdenengrDataSetTableAdapters.ibis_stateTableAdapter ibis_stateTableAdapter1;
+        private System.Windows.Forms.ComboBox cbxCrossRef1;
+        private System.Windows.Forms.ComboBox cbxCrossRef3;
+        private System.Windows.Forms.ComboBox cbxCrossRef2;
+        private System.Windows.Forms.ComboBox cbxCrossRef4;
     }
 }
