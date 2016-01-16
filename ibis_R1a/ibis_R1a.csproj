@@ -107,11 +107,11 @@
     <Compile Include="frmContact.Designer.cs">
       <DependentUpon>frmContact.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmJob.cs">
+    <Compile Include="frmBudget.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmJob.Designer.cs">
-      <DependentUpon>frmJob.cs</DependentUpon>
+    <Compile Include="frmBudget.Designer.cs">
+      <DependentUpon>frmBudget.cs</DependentUpon>
     </Compile>
     <Compile Include="frmJobInfoSheet.cs">
       <SubType>Form</SubType>
@@ -158,8 +158,8 @@
     <EmbeddedResource Include="frmContact.resx">
       <DependentUpon>frmContact.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmJob.resx">
-      <DependentUpon>frmJob.cs</DependentUpon>
+    <EmbeddedResource Include="frmBudget.resx">
+      <DependentUpon>frmBudget.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmJobInfoSheet.resx">
       <DependentUpon>frmJobInfoSheet.cs</DependentUpon>

@@ -252,31 +252,31 @@
   <data name="&gt;&gt;btnContactForm.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="btnTestForms.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="btnBudgetForm.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="btnTestForms.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="btnBudgetForm.Location" type="System.Drawing.Point, System.Drawing">
     <value>228, 384</value>
   </data>
-  <data name="btnTestForms.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="btnBudgetForm.Size" type="System.Drawing.Size, System.Drawing">
     <value>170, 43</value>
   </data>
-  <data name="btnTestForms.TabIndex" type="System.Int32, mscorlib">
+  <data name="btnBudgetForm.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <data name="btnTestForms.Text" xml:space="preserve">
-    <value>&amp;Test Forms</value>
+  <data name="btnBudgetForm.Text" xml:space="preserve">
+    <value>Manage &amp;Budgets</value>
   </data>
-  <data name="&gt;&gt;btnTestForms.Name" xml:space="preserve">
-    <value>btnTestForms</value>
+  <data name="&gt;&gt;btnBudgetForm.Name" xml:space="preserve">
+    <value>btnBudgetForm</value>
   </data>
-  <data name="&gt;&gt;btnTestForms.Type" xml:space="preserve">
+  <data name="&gt;&gt;btnBudgetForm.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;btnTestForms.Parent" xml:space="preserve">
+  <data name="&gt;&gt;btnBudgetForm.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;btnTestForms.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;btnBudgetForm.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

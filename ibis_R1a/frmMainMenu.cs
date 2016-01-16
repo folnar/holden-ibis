@@ -61,7 +61,7 @@ namespace ibis_R1a
 
         private void btnTestForms_Click(object sender, EventArgs e)
         {
-            frmJob frmJ = new frmJob();
+            frmBudget frmJ = new frmBudget();
             frmJ.Show();
         }
     }

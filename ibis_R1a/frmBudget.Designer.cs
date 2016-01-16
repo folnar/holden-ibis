@@ -1,6 +1,6 @@
 ﻿namespace ibis_R1a
 {
-    partial class frmJob
+    partial class frmBudget
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmJob));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBudget));
             this.cbxJobNums = new System.Windows.Forms.ComboBox();
             this.cmdExit = new System.Windows.Forms.Button();
             this.txtPName = new System.Windows.Forms.TextBox();
@@ -37,6 +37,7 @@
             // 
             // cbxJobNums
             // 
+            this.cbxJobNums.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxJobNums.FormattingEnabled = true;
             this.cbxJobNums.Location = new System.Drawing.Point(331, 98);
             this.cbxJobNums.Name = "cbxJobNums";
@@ -66,7 +67,7 @@
             // 
             this.jobTableAdapter1.ClearBeforeFill = true;
             // 
-            // frmJob
+            // frmBudget
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -75,9 +76,9 @@
             this.Controls.Add(this.cmdExit);
             this.Controls.Add(this.cbxJobNums);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "frmJob";
+            this.Name = "frmBudget";
             this.Text = "Job Entry Form";
-            this.Load += new System.EventHandler(this.frmJob_Load);
+            this.Load += new System.EventHandler(this.frmBudget_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
