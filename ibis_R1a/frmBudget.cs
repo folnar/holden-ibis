@@ -18,6 +18,8 @@ namespace ibis_R1a
                 cbxJobNums.DataSource = jobtbl.DefaultView;
                 cbxJobNums.DisplayMember = "job_job_key";
                 cbxJobNums.ValueMember = "job_id";
+                cbxJobNums.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                cbxJobNums.AutoCompleteSource = AutoCompleteSource.ListItems;
             }
         }
 
