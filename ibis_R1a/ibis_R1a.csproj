@@ -188,6 +188,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
     <None Include="holdenengrDataSet.xsc">
       <DependentUpon>holdenengrDataSet.xsd</DependentUpon>
     </None>
