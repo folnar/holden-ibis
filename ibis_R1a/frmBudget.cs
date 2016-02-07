@@ -21,6 +21,15 @@ namespace ibis_R1a
                 cbxJobNums.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
                 cbxJobNums.AutoCompleteSource = AutoCompleteSource.ListItems;
             }
+
+            using (holdenengrDataSet.ibis_activitycodeDataTable acttbl = ibis_activitycodeTableAdapter1.GetData())
+            {
+                cbxActivityCode.DataSource = acttbl.DefaultView;
+                cbxActivityCode.DisplayMember = "ibis_activitycode_code";
+                cbxActivityCode.ValueMember = "ibis_activitycode_id";
+                cbxActivityCode.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                cbxActivityCode.AutoCompleteSource = AutoCompleteSource.ListItems;
+            }
         }
 
         private void cmdExit_Click(object sender, EventArgs e)

@@ -32,16 +32,19 @@
             this.cbxJobNums = new System.Windows.Forms.ComboBox();
             this.cmdExit = new System.Windows.Forms.Button();
             this.txtPName = new System.Windows.Forms.TextBox();
-            this.jobTableAdapter1 = new ibis_R1a.holdenengrDataSetTableAdapters.jobTableAdapter();
             this.lblJobNumber = new System.Windows.Forms.Label();
             this.lblJobName = new System.Windows.Forms.Label();
-            this.holdenengrDataSet = new ibis_R1a.holdenengrDataSet();
             this.lblWorkCode = new System.Windows.Forms.Label();
             this.cbxWorkCode = new System.Windows.Forms.ComboBox();
             this.lblActivityCode = new System.Windows.Forms.Label();
             this.cbxActivityCode = new System.Windows.Forms.ComboBox();
             this.lblTaskCode = new System.Windows.Forms.Label();
             this.cbxTaskCode = new System.Windows.Forms.ComboBox();
+            this.jobTableAdapter1 = new ibis_R1a.holdenengrDataSetTableAdapters.jobTableAdapter();
+            this.holdenengrDataSet = new ibis_R1a.holdenengrDataSet();
+            this.ibis_workcodeTableAdapter1 = new ibis_R1a.holdenengrDataSetTableAdapters.ibis_workcodeTableAdapter();
+            this.ibis_activitycodeTableAdapter1 = new ibis_R1a.holdenengrDataSetTableAdapters.ibis_activitycodeTableAdapter();
+            this.ibis_taskcodeTableAdapter1 = new ibis_R1a.holdenengrDataSetTableAdapters.ibis_taskcodeTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.holdenengrDataSet)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,10 +78,6 @@
             this.txtPName.Size = new System.Drawing.Size(286, 25);
             this.txtPName.TabIndex = 5;
             // 
-            // jobTableAdapter1
-            // 
-            this.jobTableAdapter1.ClearBeforeFill = true;
-            // 
             // lblJobNumber
             // 
             this.lblJobNumber.AutoSize = true;
@@ -96,11 +95,6 @@
             this.lblJobName.Size = new System.Drawing.Size(75, 18);
             this.lblJobName.TabIndex = 7;
             this.lblJobName.Text = "Job Name:";
-            // 
-            // holdenengrDataSet
-            // 
-            this.holdenengrDataSet.DataSetName = "holdenengrDataSet";
-            this.holdenengrDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // lblWorkCode
             // 
@@ -156,6 +150,27 @@
             this.cbxTaskCode.Size = new System.Drawing.Size(286, 26);
             this.cbxTaskCode.TabIndex = 12;
             // 
+            // jobTableAdapter1
+            // 
+            this.jobTableAdapter1.ClearBeforeFill = true;
+            // 
+            // holdenengrDataSet
+            // 
+            this.holdenengrDataSet.DataSetName = "holdenengrDataSet";
+            this.holdenengrDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // ibis_workcodeTableAdapter1
+            // 
+            this.ibis_workcodeTableAdapter1.ClearBeforeFill = true;
+            // 
+            // ibis_activitycodeTableAdapter1
+            // 
+            this.ibis_activitycodeTableAdapter1.ClearBeforeFill = true;
+            // 
+            // ibis_taskcodeTableAdapter1
+            // 
+            this.ibis_taskcodeTableAdapter1.ClearBeforeFill = true;
+            // 
             // frmBudget
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -199,5 +214,8 @@
         private System.Windows.Forms.ComboBox cbxActivityCode;
         private System.Windows.Forms.Label lblTaskCode;
         private System.Windows.Forms.ComboBox cbxTaskCode;
+        private holdenengrDataSetTableAdapters.ibis_workcodeTableAdapter ibis_workcodeTableAdapter1;
+        private holdenengrDataSetTableAdapters.ibis_activitycodeTableAdapter ibis_activitycodeTableAdapter1;
+        private holdenengrDataSetTableAdapters.ibis_taskcodeTableAdapter ibis_taskcodeTableAdapter1;
     }
 }

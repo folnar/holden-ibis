@@ -6,3 +6,10 @@
     {
     }
 }
+
+namespace ibis_R1a.holdenengrDataSetTableAdapters {
+    
+    
+    public partial class jobTableAdapter {
+    }
+}
