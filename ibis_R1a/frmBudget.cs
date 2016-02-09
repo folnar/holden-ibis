@@ -30,6 +30,24 @@ namespace ibis_R1a
                 cbxActivityCode.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
                 cbxActivityCode.AutoCompleteSource = AutoCompleteSource.ListItems;
             }
+
+            using (holdenengrDataSet.ibis_taskcodeDataTable tsktbl = ibis_taskcodeTableAdapter1.GetData())
+            {
+                cbxTaskCode.DataSource = tsktbl.DefaultView;
+                cbxTaskCode.DisplayMember = "ibis_taskcode_code";
+                cbxTaskCode.ValueMember = "ibis_taskcode_id";
+                cbxTaskCode.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                cbxTaskCode.AutoCompleteSource = AutoCompleteSource.ListItems;
+            }
+
+            using (holdenengrDataSet.ibis_workcodeDataTable wrktbl = ibis_workcodeTableAdapter1.GetData())
+            {
+                cbxWorkCode.DataSource = wrktbl.DefaultView;
+                cbxWorkCode.DisplayMember = "ibis_workcode_code";
+                cbxWorkCode.ValueMember = "ibis_workcode_id";
+                cbxWorkCode.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                cbxWorkCode.AutoCompleteSource = AutoCompleteSource.ListItems;
+            }
         }
 
         private void cmdExit_Click(object sender, EventArgs e)
