@@ -9,11 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IbisUtils", "IbisUtils\Ibis
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HoldenClasses", "HoldenClasses\HoldenClasses.csproj", "{CB8B5533-BF62-4479-94D9-23F969DE7DEB}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "BuildIbis", "BuildIbis\BuildIbis.vdproj", "{FA59D2F6-8B36-4096-A895-420F6C13EC3B}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobBroswer", "JobBroswer\JobBroswer.csproj", "{4E746036-BD78-4956-948B-D5D61EA76C91}"
-EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupJobBrowser", "SetupJobBrowser\SetupJobBrowser.vdproj", "{61832CA8-CEBF-4FA3-8F10-8EAD03F21E68}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,10 +43,6 @@ Global
 		{CB8B5533-BF62-4479-94D9-23F969DE7DEB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CB8B5533-BF62-4479-94D9-23F969DE7DEB}.Release|x86.ActiveCfg = Release|x86
 		{CB8B5533-BF62-4479-94D9-23F969DE7DEB}.Release|x86.Build.0 = Release|x86
-		{FA59D2F6-8B36-4096-A895-420F6C13EC3B}.Debug|Any CPU.ActiveCfg = Debug
-		{FA59D2F6-8B36-4096-A895-420F6C13EC3B}.Debug|x86.ActiveCfg = Debug
-		{FA59D2F6-8B36-4096-A895-420F6C13EC3B}.Release|Any CPU.ActiveCfg = Release
-		{FA59D2F6-8B36-4096-A895-420F6C13EC3B}.Release|x86.ActiveCfg = Release
 		{4E746036-BD78-4956-948B-D5D61EA76C91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4E746036-BD78-4956-948B-D5D61EA76C91}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E746036-BD78-4956-948B-D5D61EA76C91}.Debug|x86.ActiveCfg = Debug|x86
@@ -59,10 +51,6 @@ Global
 		{4E746036-BD78-4956-948B-D5D61EA76C91}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4E746036-BD78-4956-948B-D5D61EA76C91}.Release|x86.ActiveCfg = Release|Any CPU
 		{4E746036-BD78-4956-948B-D5D61EA76C91}.Release|x86.Build.0 = Release|Any CPU
-		{61832CA8-CEBF-4FA3-8F10-8EAD03F21E68}.Debug|Any CPU.ActiveCfg = Debug
-		{61832CA8-CEBF-4FA3-8F10-8EAD03F21E68}.Debug|x86.ActiveCfg = Debug
-		{61832CA8-CEBF-4FA3-8F10-8EAD03F21E68}.Release|Any CPU.ActiveCfg = Release
-		{61832CA8-CEBF-4FA3-8F10-8EAD03F21E68}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

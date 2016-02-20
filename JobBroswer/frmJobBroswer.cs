@@ -31,47 +31,55 @@ namespace JobBroswer
             lblCurrFilterByTown.Text = "";
             lblCurrFilterByState.Text = "";
             lblCurrFilterByContact.Text = "";
+
+            lblResultsCount.Text = jobBindingSource.Count.ToString();
+        }
+
+        private void updateFilter()
+        {
+            jobBindingSource.Filter = string.Join(" AND ", filters.Values.Where(s => !String.IsNullOrEmpty(s)));
+            lblResultsCount.Text = jobBindingSource.Count.ToString();
         }
 
         private void cmdFilterByProjectAddress_Click(object sender, EventArgs e)
         {
             filters["byaddr"] = string.Format("(job_addr1 LIKE '%{0}%' OR job_addr3 LIKE '%{0}%')", txtByProjectAddress.Text.Trim());
-            jobBindingSource.Filter = string.Join(" AND ", filters.Values.Where(s => !String.IsNullOrEmpty(s)));
+            updateFilter();
             lblCurrFilterByAddress.Text = txtByProjectAddress.Text.Trim();
         }
 
         private void cmdFilterByClientName_Click(object sender, EventArgs e)
         {
             filters["byclnt"] = string.Format("client_name LIKE '%{0}%'", txtByClientName.Text.Trim());
-            jobBindingSource.Filter = string.Join(" AND ", filters.Values.Where(s => !String.IsNullOrEmpty(s)));
+            updateFilter();
             lblCurrFilterByClientName.Text = txtByClientName.Text.Trim();
         }
 
         private void cmdFilterByProjectTown_Click(object sender, EventArgs e)
         {
             filters["bytown"] = string.Format("job_city LIKE '%{0}%'", txtByProjectTown.Text.Trim());
-            jobBindingSource.Filter = string.Join(" AND ", filters.Values.Where(s => !String.IsNullOrEmpty(s)));
+            updateFilter();
             lblCurrFilterByTown.Text = txtByProjectTown.Text.Trim();
         }
 
         private void cmdFilterByProjectState_Click(object sender, EventArgs e)
         {
             filters["bystat"] = string.Format("job_state LIKE '%{0}%'", txtByProjectState.Text.Trim());
-            jobBindingSource.Filter = string.Join(" AND ", filters.Values.Where(s => !String.IsNullOrEmpty(s)));
+            updateFilter();
             lblCurrFilterByState.Text = txtByProjectState.Text.Trim();
         }
 
         private void cmdFilterByProjectContact_Click(object sender, EventArgs e)
         {
             filters["bycont"] = string.Format("job_pcontact LIKE '%{0}%'", txtByProjectContact.Text.Trim());
-            jobBindingSource.Filter = string.Join(" AND ", filters.Values.Where(s => !String.IsNullOrEmpty(s)));
+            updateFilter();
             lblCurrFilterByContact.Text = txtByProjectContact.Text.Trim();
         }
 
         private void cmdRemFilterByProjectAddress_Click(object sender, EventArgs e)
         {
             filters["byaddr"] = "";
-            jobBindingSource.Filter = string.Join(" AND ", filters.Values.Where(s => !String.IsNullOrEmpty(s)));
+            updateFilter();
             txtByProjectAddress.Text = "";
             lblCurrFilterByAddress.Text = "";
         }
@@ -79,7 +87,7 @@ namespace JobBroswer
         private void cmdRemFilterByClientName_Click(object sender, EventArgs e)
         {
             filters["byclnt"] = "";
-            jobBindingSource.Filter = string.Join(" AND ", filters.Values.Where(s => !String.IsNullOrEmpty(s)));
+            updateFilter();
             txtByClientName.Text = "";
             lblCurrFilterByClientName.Text = "";
         }
@@ -87,7 +95,7 @@ namespace JobBroswer
         private void cmdRemFilterByProjectTown_Click(object sender, EventArgs e)
         {
             filters["bytown"] = "";
-            jobBindingSource.Filter = string.Join(" AND ", filters.Values.Where(s => !String.IsNullOrEmpty(s)));
+            updateFilter();
             txtByProjectTown.Text = "";
             lblCurrFilterByTown.Text = "";
         }
@@ -95,7 +103,7 @@ namespace JobBroswer
         private void cmdRemFilterByProjectState_Click(object sender, EventArgs e)
         {
             filters["bystat"] = "";
-            jobBindingSource.Filter = string.Join(" AND ", filters.Values.Where(s => !String.IsNullOrEmpty(s)));
+            updateFilter();
             txtByProjectState.Text = "";
             lblCurrFilterByState.Text = "";
         }
@@ -103,7 +111,7 @@ namespace JobBroswer
         private void cmdRemFilterByProjectContact_Click(object sender, EventArgs e)
         {
             filters["bycont"] = "";
-            jobBindingSource.Filter = string.Join(" AND ", filters.Values.Where(s => !String.IsNullOrEmpty(s)));
+            updateFilter();
             txtByProjectContact.Text = "";
             lblCurrFilterByContact.Text = "";
         }
