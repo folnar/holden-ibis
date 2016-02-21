@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
-using ibis_R1a;
 
 namespace JobBroswer
 {
@@ -18,7 +17,11 @@ namespace JobBroswer
         private void frmJobBroswer_Load(object sender, EventArgs e)
         {
             this.jobTableAdapter.Fill(this.holdenengrDataSet.job);
+            initForm();
+        }
 
+        private void initForm()
+        {
             filters = new Dictionary<string, string>();
             filters.Add("byaddr", "");
             filters.Add("byclnt", "");
@@ -170,6 +173,12 @@ namespace JobBroswer
         {
             frmJobsReportViewer frmRV = new frmJobsReportViewer(jobBindingSource.Filter);
             frmRV.Show();
+        }
+
+        private void btnSwitchTables_Click(object sender, EventArgs e)
+        {
+            // NEED WORK HERE.
+            initForm();
         }
     }
 }

@@ -19,15 +19,18 @@ namespace JobBroswer
             filter = f;
         }
 
-        // NOW WE NEED TO ADD OLD JOBS INTO THIS
-        // SEPARATE FORM W SEP DGV W SEP REPORT??
-        // MAYBE
-
-
         private void frmJobsReportViewer_Load(object sender, EventArgs e)
         {
             jobBindingSource.Filter = filter;
             jobTableAdapter.Fill(holdenengrDataSet.job);
+
+            System.Drawing.Printing.PageSettings ps = new System.Drawing.Printing.PageSettings();
+            ps.Landscape = true;
+            ps.Margins.Bottom = 50;
+            ps.Margins.Top = 50;
+            ps.Margins.Left = 50;
+            ps.Margins.Right = 50;
+            reportViewer1.SetPageSettings(ps);
             reportViewer1.RefreshReport();
         }
     }

@@ -128,7 +128,7 @@
               <TablixMembers>
                 <TablixMember>
                   <TablixHeader>
-                    <Size>1.34375in</Size>
+                    <Size>1.51042in</Size>
                     <CellContents>
                       <Textbox Name="Textbox17">
                         <CanGrow>true</CanGrow>
@@ -161,7 +161,7 @@
                   <TablixMembers>
                     <TablixMember>
                       <TablixHeader>
-                        <Size>1.64583in</Size>
+                        <Size>2.36458in</Size>
                         <CellContents>
                           <Textbox Name="Textbox15">
                             <CanGrow>true</CanGrow>
@@ -194,7 +194,7 @@
                       <TablixMembers>
                         <TablixMember>
                           <TablixHeader>
-                            <Size>1.47917in</Size>
+                            <Size>2.44792in</Size>
                             <CellContents>
                               <Textbox Name="Textbox13">
                                 <CanGrow>true</CanGrow>
@@ -227,7 +227,7 @@
                           <TablixMembers>
                             <TablixMember>
                               <TablixHeader>
-                                <Size>1.1875in</Size>
+                                <Size>2.36458in</Size>
                                 <CellContents>
                                   <Textbox Name="Textbox11">
                                     <CanGrow>true</CanGrow>
@@ -326,7 +326,7 @@
                                       <TablixMembers>
                                         <TablixMember>
                                           <TablixHeader>
-                                            <Size>1in</Size>
+                                            <Size>1.32292in</Size>
                                             <CellContents>
                                               <Textbox Name="Textbox5">
                                                 <CanGrow>true</CanGrow>
@@ -359,7 +359,7 @@
                                           <TablixMembers>
                                             <TablixMember>
                                               <TablixHeader>
-                                                <Size>1.66667in</Size>
+                                                <Size>2.30208in</Size>
                                                 <CellContents>
                                                   <Textbox Name="Textbox3">
                                                     <CanGrow>true</CanGrow>
@@ -464,7 +464,7 @@
                     </SortExpression>
                   </SortExpressions>
                   <TablixHeader>
-                    <Size>1.34375in</Size>
+                    <Size>1.51042in</Size>
                     <CellContents>
                       <Textbox Name="client_name">
                         <CanGrow>true</CanGrow>
@@ -496,18 +496,8 @@
                   </TablixHeader>
                   <TablixMembers>
                     <TablixMember>
-                      <Group Name="job_descr">
-                        <GroupExpressions>
-                          <GroupExpression>=Fields!job_descr.Value</GroupExpression>
-                        </GroupExpressions>
-                      </Group>
-                      <SortExpressions>
-                        <SortExpression>
-                          <Value>=Fields!job_descr.Value</Value>
-                        </SortExpression>
-                      </SortExpressions>
                       <TablixHeader>
-                        <Size>1.64583in</Size>
+                        <Size>2.36458in</Size>
                         <CellContents>
                           <Textbox Name="job_descr">
                             <CanGrow>true</CanGrow>
@@ -539,18 +529,8 @@
                       </TablixHeader>
                       <TablixMembers>
                         <TablixMember>
-                          <Group Name="job_addr1">
-                            <GroupExpressions>
-                              <GroupExpression>=Fields!job_addr1.Value</GroupExpression>
-                            </GroupExpressions>
-                          </Group>
-                          <SortExpressions>
-                            <SortExpression>
-                              <Value>=Fields!job_addr1.Value</Value>
-                            </SortExpression>
-                          </SortExpressions>
                           <TablixHeader>
-                            <Size>1.47917in</Size>
+                            <Size>2.44792in</Size>
                             <CellContents>
                               <Textbox Name="job_addr1">
                                 <CanGrow>true</CanGrow>
@@ -582,18 +562,8 @@
                           </TablixHeader>
                           <TablixMembers>
                             <TablixMember>
-                              <Group Name="job_addr3">
-                                <GroupExpressions>
-                                  <GroupExpression>=Fields!job_addr3.Value</GroupExpression>
-                                </GroupExpressions>
-                              </Group>
-                              <SortExpressions>
-                                <SortExpression>
-                                  <Value>=Fields!job_addr3.Value</Value>
-                                </SortExpression>
-                              </SortExpressions>
                               <TablixHeader>
-                                <Size>1.1875in</Size>
+                                <Size>2.36458in</Size>
                                 <CellContents>
                                   <Textbox Name="job_addr3">
                                     <CanGrow>true</CanGrow>
@@ -711,18 +681,8 @@
                                       </TablixHeader>
                                       <TablixMembers>
                                         <TablixMember>
-                                          <Group Name="job_pcontact">
-                                            <GroupExpressions>
-                                              <GroupExpression>=Fields!job_pcontact.Value</GroupExpression>
-                                            </GroupExpressions>
-                                          </Group>
-                                          <SortExpressions>
-                                            <SortExpression>
-                                              <Value>=Fields!job_pcontact.Value</Value>
-                                            </SortExpression>
-                                          </SortExpressions>
                                           <TablixHeader>
-                                            <Size>1in</Size>
+                                            <Size>1.32292in</Size>
                                             <CellContents>
                                               <Textbox Name="job_pcontact">
                                                 <CanGrow>true</CanGrow>
@@ -754,18 +714,8 @@
                                           </TablixHeader>
                                           <TablixMembers>
                                             <TablixMember>
-                                              <Group Name="job_descr2">
-                                                <GroupExpressions>
-                                                  <GroupExpression>=Fields!job_descr2.Value</GroupExpression>
-                                                </GroupExpressions>
-                                              </Group>
-                                              <SortExpressions>
-                                                <SortExpression>
-                                                  <Value>=Fields!job_descr2.Value</Value>
-                                                </SortExpression>
-                                              </SortExpressions>
                                               <TablixHeader>
-                                                <Size>1.66667in</Size>
+                                                <Size>2.30208in</Size>
                                                 <CellContents>
                                                   <Textbox Name="job_descr2">
                                                     <CanGrow>true</CanGrow>
@@ -821,7 +771,7 @@
         <FixedColumnHeaders>true</FixedColumnHeaders>
         <DataSetName>FilteredJobsDS</DataSetName>
         <Height>0.5in</Height>
-        <Width>12in</Width>
+        <Width>15.98959in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -832,12 +782,16 @@
     <Height>2in</Height>
     <Style />
   </Body>
-  <Width>12in</Width>
+  <Width>16in</Width>
   <Page>
-    <LeftMargin>1in</LeftMargin>
-    <RightMargin>1in</RightMargin>
-    <TopMargin>1in</TopMargin>
-    <BottomMargin>1in</BottomMargin>
+    <PageHeight>17in</PageHeight>
+    <PageWidth>11in</PageWidth>
+    <InteractiveHeight>17in</InteractiveHeight>
+    <InteractiveWidth>11in</InteractiveWidth>
+    <LeftMargin>0.5in</LeftMargin>
+    <RightMargin>0.5in</RightMargin>
+    <TopMargin>0.5in</TopMargin>
+    <BottomMargin>0.5in</BottomMargin>
     <Style />
   </Page>
   <AutoRefresh>0</AutoRefresh>

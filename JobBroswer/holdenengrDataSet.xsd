@@ -5174,10 +5174,12 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="jobTableAdapter" GeneratorDataComponentClassName="jobTableAdapter" Name="job" UserDataComponentName="jobTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="holdenengrConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="holdenengrConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT `job_job_key`, `job_j_yr`, `job_jcode`, `job_new_jcode`, `job_iterate_job`, `job_ccode`, `job_j_projmgr2`, `job_addendum`, `job_j_projmgr`, `job_start_date`, `job_page_flag`, `job_proj_code`, `job_c_type`, `job_inv_typ`, `job_descr`, `job_addr1`, `job_addr3`, `job_city`, `job_state`, `job_zip`, `job_due_date`, `job_auth`, `job_status`, `job_s_cntrc`, `job_r_cntrc`, `job_pname`, `job_paddr`, `job_pcity`, `job_pstate`, `job_pzip`, `job_pphone`, `job_pwphone`, `job_pfax`, `job_br_table`, `job_pcontact`, `job_dotpp`, `job_ic_jobnum`, `job_descr2`, `job_need_contract`, `job_ot_billing`, `job_client_bud`, `job_proposed_bud`, `job_budget_type`, `job_financial_status`, `job_insurance_status`, `job_abandoned_date`, `job_id`, `job_jobtypes`, `job_company`, client_name FROM `job`, client WHERE client_code = job_ccode</CommandText>
+                    <CommandText>
+SELECT job_job_key, job_ccode, job_descr, job_addr1, job_addr3, job_city, job_state, job_pcontact, job_descr2, job_id AS job_id, client_name 
+FROM job LEFT JOIN client ON client_code = job_ccode</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -5185,54 +5187,15 @@
             </MainSource>
             <Mappings>
               <Mapping SourceColumn="job_job_key" DataSetColumn="job_job_key" />
-              <Mapping SourceColumn="job_j_yr" DataSetColumn="job_j_yr" />
-              <Mapping SourceColumn="job_jcode" DataSetColumn="job_jcode" />
-              <Mapping SourceColumn="job_new_jcode" DataSetColumn="job_new_jcode" />
-              <Mapping SourceColumn="job_iterate_job" DataSetColumn="job_iterate_job" />
               <Mapping SourceColumn="job_ccode" DataSetColumn="job_ccode" />
-              <Mapping SourceColumn="job_j_projmgr2" DataSetColumn="job_j_projmgr2" />
-              <Mapping SourceColumn="job_addendum" DataSetColumn="job_addendum" />
-              <Mapping SourceColumn="job_j_projmgr" DataSetColumn="job_j_projmgr" />
-              <Mapping SourceColumn="job_start_date" DataSetColumn="job_start_date" />
-              <Mapping SourceColumn="job_page_flag" DataSetColumn="job_page_flag" />
-              <Mapping SourceColumn="job_proj_code" DataSetColumn="job_proj_code" />
-              <Mapping SourceColumn="job_c_type" DataSetColumn="job_c_type" />
-              <Mapping SourceColumn="job_inv_typ" DataSetColumn="job_inv_typ" />
               <Mapping SourceColumn="job_descr" DataSetColumn="job_descr" />
               <Mapping SourceColumn="job_addr1" DataSetColumn="job_addr1" />
               <Mapping SourceColumn="job_addr3" DataSetColumn="job_addr3" />
               <Mapping SourceColumn="job_city" DataSetColumn="job_city" />
               <Mapping SourceColumn="job_state" DataSetColumn="job_state" />
-              <Mapping SourceColumn="job_zip" DataSetColumn="job_zip" />
-              <Mapping SourceColumn="job_due_date" DataSetColumn="job_due_date" />
-              <Mapping SourceColumn="job_auth" DataSetColumn="job_auth" />
-              <Mapping SourceColumn="job_status" DataSetColumn="job_status" />
-              <Mapping SourceColumn="job_s_cntrc" DataSetColumn="job_s_cntrc" />
-              <Mapping SourceColumn="job_r_cntrc" DataSetColumn="job_r_cntrc" />
-              <Mapping SourceColumn="job_pname" DataSetColumn="job_pname" />
-              <Mapping SourceColumn="job_paddr" DataSetColumn="job_paddr" />
-              <Mapping SourceColumn="job_pcity" DataSetColumn="job_pcity" />
-              <Mapping SourceColumn="job_pstate" DataSetColumn="job_pstate" />
-              <Mapping SourceColumn="job_pzip" DataSetColumn="job_pzip" />
-              <Mapping SourceColumn="job_pphone" DataSetColumn="job_pphone" />
-              <Mapping SourceColumn="job_pwphone" DataSetColumn="job_pwphone" />
-              <Mapping SourceColumn="job_pfax" DataSetColumn="job_pfax" />
-              <Mapping SourceColumn="job_br_table" DataSetColumn="job_br_table" />
               <Mapping SourceColumn="job_pcontact" DataSetColumn="job_pcontact" />
-              <Mapping SourceColumn="job_dotpp" DataSetColumn="job_dotpp" />
-              <Mapping SourceColumn="job_ic_jobnum" DataSetColumn="job_ic_jobnum" />
               <Mapping SourceColumn="job_descr2" DataSetColumn="job_descr2" />
-              <Mapping SourceColumn="job_need_contract" DataSetColumn="job_need_contract" />
-              <Mapping SourceColumn="job_ot_billing" DataSetColumn="job_ot_billing" />
-              <Mapping SourceColumn="job_client_bud" DataSetColumn="job_client_bud" />
-              <Mapping SourceColumn="job_proposed_bud" DataSetColumn="job_proposed_bud" />
-              <Mapping SourceColumn="job_budget_type" DataSetColumn="job_budget_type" />
-              <Mapping SourceColumn="job_financial_status" DataSetColumn="job_financial_status" />
-              <Mapping SourceColumn="job_insurance_status" DataSetColumn="job_insurance_status" />
-              <Mapping SourceColumn="job_abandoned_date" DataSetColumn="job_abandoned_date" />
               <Mapping SourceColumn="job_id" DataSetColumn="job_id" />
-              <Mapping SourceColumn="job_jobtypes" DataSetColumn="job_jobtypes" />
-              <Mapping SourceColumn="job_company" DataSetColumn="job_company" />
               <Mapping SourceColumn="client_name" DataSetColumn="client_name" />
             </Mappings>
             <Sources />
@@ -5290,398 +5253,11 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="oldjobTableAdapter" GeneratorDataComponentClassName="oldjobTableAdapter" Name="oldjob" UserDataComponentName="oldjobTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="holdenengrConnectionString (Settings)" DbObjectName="holdenengr.oldjob" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
-                <DeleteCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>DELETE FROM `oldjob` WHERE (((@p1 = 1 AND `job_job_key` IS NULL) OR (`job_job_key` = @p2)) AND ((@p3 = 1 AND `job_j_yr` IS NULL) OR (`job_j_yr` = @p4)) AND ((@p5 = 1 AND `job_jcode` IS NULL) OR (`job_jcode` = @p6)) AND ((@p7 = 1 AND `job_new_jcode` IS NULL) OR (`job_new_jcode` = @p8)) AND ((@p9 = 1 AND `job_iterate_job` IS NULL) OR (`job_iterate_job` = @p10)) AND ((@p11 = 1 AND `job_ccode` IS NULL) OR (`job_ccode` = @p12)) AND ((@p13 = 1 AND `job_j_projmgr2` IS NULL) OR (`job_j_projmgr2` = @p14)) AND ((@p15 = 1 AND `job_addendum` IS NULL) OR (`job_addendum` = @p16)) AND ((@p17 = 1 AND `job_j_projmgr` IS NULL) OR (`job_j_projmgr` = @p18)) AND ((@p19 = 1 AND `job_start_date` IS NULL) OR (`job_start_date` = @p20)) AND ((@p21 = 1 AND `job_page_flag` IS NULL) OR (`job_page_flag` = @p22)) AND ((@p23 = 1 AND `job_proj_code` IS NULL) OR (`job_proj_code` = @p24)) AND ((@p25 = 1 AND `job_c_type` IS NULL) OR (`job_c_type` = @p26)) AND ((@p27 = 1 AND `job_inv_typ` IS NULL) OR (`job_inv_typ` = @p28)) AND ((@p29 = 1 AND `job_descr` IS NULL) OR (`job_descr` = @p30)) AND ((@p31 = 1 AND `job_addr1` IS NULL) OR (`job_addr1` = @p32)) AND ((@p33 = 1 AND `job_addr3` IS NULL) OR (`job_addr3` = @p34)) AND ((@p35 = 1 AND `job_city` IS NULL) OR (`job_city` = @p36)) AND ((@p37 = 1 AND `job_state` IS NULL) OR (`job_state` = @p38)) AND ((@p39 = 1 AND `job_zip` IS NULL) OR (`job_zip` = @p40)) AND ((@p41 = 1 AND `job_due_date` IS NULL) OR (`job_due_date` = @p42)) AND ((@p43 = 1 AND `job_auth` IS NULL) OR (`job_auth` = @p44)) AND ((@p45 = 1 AND `job_status` IS NULL) OR (`job_status` = @p46)) AND ((@p47 = 1 AND `job_s_cntrc` IS NULL) OR (`job_s_cntrc` = @p48)) AND ((@p49 = 1 AND `job_r_cntrc` IS NULL) OR (`job_r_cntrc` = @p50)) AND ((@p51 = 1 AND `job_pname` IS NULL) OR (`job_pname` = @p52)) AND ((@p53 = 1 AND `job_paddr` IS NULL) OR (`job_paddr` = @p54)) AND ((@p55 = 1 AND `job_pcity` IS NULL) OR (`job_pcity` = @p56)) AND ((@p57 = 1 AND `job_pstate` IS NULL) OR (`job_pstate` = @p58)) AND ((@p59 = 1 AND `job_pzip` IS NULL) OR (`job_pzip` = @p60)) AND ((@p61 = 1 AND `job_pphone` IS NULL) OR (`job_pphone` = @p62)) AND ((@p63 = 1 AND `job_pwphone` IS NULL) OR (`job_pwphone` = @p64)) AND ((@p65 = 1 AND `job_pfax` IS NULL) OR (`job_pfax` = @p66)) AND ((@p67 = 1 AND `job_br_table` IS NULL) OR (`job_br_table` = @p68)) AND ((@p69 = 1 AND `job_pcontact` IS NULL) OR (`job_pcontact` = @p70)) AND ((@p71 = 1 AND `job_dotpp` IS NULL) OR (`job_dotpp` = @p72)) AND ((@p73 = 1 AND `job_ic_jobnum` IS NULL) OR (`job_ic_jobnum` = @p74)) AND ((@p75 = 1 AND `job_descr2` IS NULL) OR (`job_descr2` = @p76)) AND ((@p77 = 1 AND `job_need_contract` IS NULL) OR (`job_need_contract` = @p78)) AND ((@p79 = 1 AND `job_ot_billing` IS NULL) OR (`job_ot_billing` = @p80)) AND ((@p81 = 1 AND `job_client_bud` IS NULL) OR (`job_client_bud` = @p82)) AND ((@p83 = 1 AND `job_proposed_bud` IS NULL) OR (`job_proposed_bud` = @p84)) AND ((@p85 = 1 AND `job_budget_type` IS NULL) OR (`job_budget_type` = @p86)) AND ((@p87 = 1 AND `job_financial_status` IS NULL) OR (`job_financial_status` = @p88)) AND ((@p89 = 1 AND `job_insurance_status` IS NULL) OR (`job_insurance_status` = @p90)) AND ((@p91 = 1 AND `job_abandoned_date` IS NULL) OR (`job_abandoned_date` = @p92)) AND (`oldjob_id` = @p93) AND ((@p94 = 1 AND `job_jobtypes` IS NULL) OR (`job_jobtypes` = @p95)) AND ((@p96 = 1 AND `job_company` IS NULL) OR (`job_company` = @p97)) AND ((@p98 = 1 AND `job_paddr2` IS NULL) OR (`job_paddr2` = @p99)))</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_job_key" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_job_key" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_j_yr" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p4" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_j_yr" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p5" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_jcode" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p6" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_jcode" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p7" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_new_jcode" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p8" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_new_jcode" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p9" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_iterate_job" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p10" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_iterate_job" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p11" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_ccode" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p12" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_ccode" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p13" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_j_projmgr2" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p14" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_j_projmgr2" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p15" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_addendum" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p16" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_addendum" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p17" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_j_projmgr" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p18" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_j_projmgr" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p19" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_start_date" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@p20" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="job_start_date" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p21" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_page_flag" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p22" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_page_flag" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p23" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_proj_code" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p24" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_proj_code" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p25" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_c_type" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p26" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_c_type" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p27" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_inv_typ" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p28" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_inv_typ" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p29" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_descr" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p30" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_descr" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p31" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_addr1" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p32" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_addr1" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p33" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_addr3" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p34" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_addr3" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p35" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_city" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p36" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_city" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p37" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_state" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p38" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_state" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p39" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_zip" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p40" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_zip" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p41" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_due_date" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@p42" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="job_due_date" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p43" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_auth" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p44" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_auth" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p45" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_status" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p46" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_status" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p47" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_s_cntrc" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@p48" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="job_s_cntrc" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p49" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_r_cntrc" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@p50" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="job_r_cntrc" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p51" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_pname" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p52" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_pname" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p53" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_paddr" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p54" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_paddr" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p55" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_pcity" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p56" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_pcity" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p57" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_pstate" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p58" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_pstate" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p59" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_pzip" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p60" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_pzip" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p61" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_pphone" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p62" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_pphone" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p63" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_pwphone" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p64" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_pwphone" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p65" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_pfax" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p66" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_pfax" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p67" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_br_table" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p68" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_br_table" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p69" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_pcontact" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p70" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_pcontact" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p71" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_dotpp" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p72" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_dotpp" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p73" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_ic_jobnum" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p74" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_ic_jobnum" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p75" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_descr2" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p76" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_descr2" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p77" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_need_contract" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p78" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_need_contract" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p79" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_ot_billing" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p80" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_ot_billing" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p81" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_client_bud" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p82" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_client_bud" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p83" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_proposed_bud" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p84" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_proposed_bud" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p85" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_budget_type" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p86" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_budget_type" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p87" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_financial_status" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p88" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_financial_status" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p89" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_insurance_status" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p90" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_insurance_status" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p91" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_abandoned_date" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@p92" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="job_abandoned_date" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p93" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="oldjob_id" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p94" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_jobtypes" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p95" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_jobtypes" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p96" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_company" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p97" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_company" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p98" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_paddr2" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p99" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_paddr2" SourceColumnNullMapping="false" SourceVersion="Original" />
-                    </Parameters>
-                  </DbCommand>
-                </DeleteCommand>
-                <InsertCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO `oldjob` (`job_job_key`, `job_j_yr`, `job_jcode`, `job_new_jcode`, `job_iterate_job`, `job_ccode`, `job_j_projmgr2`, `job_addendum`, `job_j_projmgr`, `job_start_date`, `job_page_flag`, `job_proj_code`, `job_c_type`, `job_inv_typ`, `job_descr`, `job_addr1`, `job_addr3`, `job_city`, `job_state`, `job_zip`, `job_due_date`, `job_auth`, `job_status`, `job_s_cntrc`, `job_r_cntrc`, `job_pname`, `job_paddr`, `job_pcity`, `job_pstate`, `job_pzip`, `job_pphone`, `job_pwphone`, `job_pfax`, `job_br_table`, `job_pcontact`, `job_dotpp`, `job_ic_jobnum`, `job_descr2`, `job_need_contract`, `job_ot_billing`, `job_client_bud`, `job_proposed_bud`, `job_budget_type`, `job_financial_status`, `job_insurance_status`, `job_abandoned_date`, `job_jobtypes`, `job_company`, `job_paddr2`) VALUES (@p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23, @p24, @p25, @p26, @p27, @p28, @p29, @p30, @p31, @p32, @p33, @p34, @p35, @p36, @p37, @p38, @p39, @p40, @p41, @p42, @p43, @p44, @p45, @p46, @p47, @p48, @p49)</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_job_key" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_j_yr" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_jcode" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p4" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_new_jcode" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p5" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_iterate_job" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p6" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_ccode" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p7" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_j_projmgr2" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p8" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_addendum" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p9" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_j_projmgr" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@p10" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="job_start_date" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p11" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_page_flag" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p12" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_proj_code" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p13" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_c_type" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p14" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_inv_typ" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p15" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_descr" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p16" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_addr1" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p17" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_addr3" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p18" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_city" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p19" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_state" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p20" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_zip" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@p21" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="job_due_date" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p22" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_auth" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p23" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_status" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@p24" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="job_s_cntrc" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@p25" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="job_r_cntrc" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p26" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_pname" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p27" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_paddr" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p28" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_pcity" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p29" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_pstate" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p30" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_pzip" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p31" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_pphone" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p32" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_pwphone" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p33" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_pfax" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p34" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_br_table" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p35" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_pcontact" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p36" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_dotpp" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p37" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_ic_jobnum" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p38" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_descr2" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p39" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_need_contract" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p40" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_ot_billing" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p41" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_client_bud" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p42" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_proposed_bud" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p43" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_budget_type" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p44" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_financial_status" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p45" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_insurance_status" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@p46" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="job_abandoned_date" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p47" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_jobtypes" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p48" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_company" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p49" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_paddr2" SourceColumnNullMapping="false" SourceVersion="Current" />
-                    </Parameters>
-                  </DbCommand>
-                </InsertCommand>
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT `job_job_key`, `job_j_yr`, `job_jcode`, `job_new_jcode`, `job_iterate_job`, `job_ccode`, `job_j_projmgr2`, `job_addendum`, `job_j_projmgr`, `job_start_date`, `job_page_flag`, `job_proj_code`, `job_c_type`, `job_inv_typ`, `job_descr`, `job_addr1`, `job_addr3`, `job_city`, `job_state`, `job_zip`, `job_due_date`, `job_auth`, `job_status`, `job_s_cntrc`, `job_r_cntrc`, `job_pname`, `job_paddr`, `job_pcity`, `job_pstate`, `job_pzip`, `job_pphone`, `job_pwphone`, `job_pfax`, `job_br_table`, `job_pcontact`, `job_dotpp`, `job_ic_jobnum`, `job_descr2`, `job_need_contract`, `job_ot_billing`, `job_client_bud`, `job_proposed_bud`, `job_budget_type`, `job_financial_status`, `job_insurance_status`, `job_abandoned_date`, `oldjob_id`, `job_jobtypes`, `job_company`, `job_paddr2` FROM `oldjob`</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-                <UpdateCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>UPDATE `oldjob` SET `job_job_key` = @p1, `job_j_yr` = @p2, `job_jcode` = @p3, `job_new_jcode` = @p4, `job_iterate_job` = @p5, `job_ccode` = @p6, `job_j_projmgr2` = @p7, `job_addendum` = @p8, `job_j_projmgr` = @p9, `job_start_date` = @p10, `job_page_flag` = @p11, `job_proj_code` = @p12, `job_c_type` = @p13, `job_inv_typ` = @p14, `job_descr` = @p15, `job_addr1` = @p16, `job_addr3` = @p17, `job_city` = @p18, `job_state` = @p19, `job_zip` = @p20, `job_due_date` = @p21, `job_auth` = @p22, `job_status` = @p23, `job_s_cntrc` = @p24, `job_r_cntrc` = @p25, `job_pname` = @p26, `job_paddr` = @p27, `job_pcity` = @p28, `job_pstate` = @p29, `job_pzip` = @p30, `job_pphone` = @p31, `job_pwphone` = @p32, `job_pfax` = @p33, `job_br_table` = @p34, `job_pcontact` = @p35, `job_dotpp` = @p36, `job_ic_jobnum` = @p37, `job_descr2` = @p38, `job_need_contract` = @p39, `job_ot_billing` = @p40, `job_client_bud` = @p41, `job_proposed_bud` = @p42, `job_budget_type` = @p43, `job_financial_status` = @p44, `job_insurance_status` = @p45, `job_abandoned_date` = @p46, `job_jobtypes` = @p47, `job_company` = @p48, `job_paddr2` = @p49 WHERE (((@p50 = 1 AND `job_job_key` IS NULL) OR (`job_job_key` = @p51)) AND ((@p52 = 1 AND `job_j_yr` IS NULL) OR (`job_j_yr` = @p53)) AND ((@p54 = 1 AND `job_jcode` IS NULL) OR (`job_jcode` = @p55)) AND ((@p56 = 1 AND `job_new_jcode` IS NULL) OR (`job_new_jcode` = @p57)) AND ((@p58 = 1 AND `job_iterate_job` IS NULL) OR (`job_iterate_job` = @p59)) AND ((@p60 = 1 AND `job_ccode` IS NULL) OR (`job_ccode` = @p61)) AND ((@p62 = 1 AND `job_j_projmgr2` IS NULL) OR (`job_j_projmgr2` = @p63)) AND ((@p64 = 1 AND `job_addendum` IS NULL) OR (`job_addendum` = @p65)) AND ((@p66 = 1 AND `job_j_projmgr` IS NULL) OR (`job_j_projmgr` = @p67)) AND ((@p68 = 1 AND `job_start_date` IS NULL) OR (`job_start_date` = @p69)) AND ((@p70 = 1 AND `job_page_flag` IS NULL) OR (`job_page_flag` = @p71)) AND ((@p72 = 1 AND `job_proj_code` IS NULL) OR (`job_proj_code` = @p73)) AND ((@p74 = 1 AND `job_c_type` IS NULL) OR (`job_c_type` = @p75)) AND ((@p76 = 1 AND `job_inv_typ` IS NULL) OR (`job_inv_typ` = @p77)) AND ((@p78 = 1 AND `job_descr` IS NULL) OR (`job_descr` = @p79)) AND ((@p80 = 1 AND `job_addr1` IS NULL) OR (`job_addr1` = @p81)) AND ((@p82 = 1 AND `job_addr3` IS NULL) OR (`job_addr3` = @p83)) AND ((@p84 = 1 AND `job_city` IS NULL) OR (`job_city` = @p85)) AND ((@p86 = 1 AND `job_state` IS NULL) OR (`job_state` = @p87)) AND ((@p88 = 1 AND `job_zip` IS NULL) OR (`job_zip` = @p89)) AND ((@p90 = 1 AND `job_due_date` IS NULL) OR (`job_due_date` = @p91)) AND ((@p92 = 1 AND `job_auth` IS NULL) OR (`job_auth` = @p93)) AND ((@p94 = 1 AND `job_status` IS NULL) OR (`job_status` = @p95)) AND ((@p96 = 1 AND `job_s_cntrc` IS NULL) OR (`job_s_cntrc` = @p97)) AND ((@p98 = 1 AND `job_r_cntrc` IS NULL) OR (`job_r_cntrc` = @p99)) AND ((@p100 = 1 AND `job_pname` IS NULL) OR (`job_pname` = @p101)) AND ((@p102 = 1 AND `job_paddr` IS NULL) OR (`job_paddr` = @p103)) AND ((@p104 = 1 AND `job_pcity` IS NULL) OR (`job_pcity` = @p105)) AND ((@p106 = 1 AND `job_pstate` IS NULL) OR (`job_pstate` = @p107)) AND ((@p108 = 1 AND `job_pzip` IS NULL) OR (`job_pzip` = @p109)) AND ((@p110 = 1 AND `job_pphone` IS NULL) OR (`job_pphone` = @p111)) AND ((@p112 = 1 AND `job_pwphone` IS NULL) OR (`job_pwphone` = @p113)) AND ((@p114 = 1 AND `job_pfax` IS NULL) OR (`job_pfax` = @p115)) AND ((@p116 = 1 AND `job_br_table` IS NULL) OR (`job_br_table` = @p117)) AND ((@p118 = 1 AND `job_pcontact` IS NULL) OR (`job_pcontact` = @p119)) AND ((@p120 = 1 AND `job_dotpp` IS NULL) OR (`job_dotpp` = @p121)) AND ((@p122 = 1 AND `job_ic_jobnum` IS NULL) OR (`job_ic_jobnum` = @p123)) AND ((@p124 = 1 AND `job_descr2` IS NULL) OR (`job_descr2` = @p125)) AND ((@p126 = 1 AND `job_need_contract` IS NULL) OR (`job_need_contract` = @p127)) AND ((@p128 = 1 AND `job_ot_billing` IS NULL) OR (`job_ot_billing` = @p129)) AND ((@p130 = 1 AND `job_client_bud` IS NULL) OR (`job_client_bud` = @p131)) AND ((@p132 = 1 AND `job_proposed_bud` IS NULL) OR (`job_proposed_bud` = @p133)) AND ((@p134 = 1 AND `job_budget_type` IS NULL) OR (`job_budget_type` = @p135)) AND ((@p136 = 1 AND `job_financial_status` IS NULL) OR (`job_financial_status` = @p137)) AND ((@p138 = 1 AND `job_insurance_status` IS NULL) OR (`job_insurance_status` = @p139)) AND ((@p140 = 1 AND `job_abandoned_date` IS NULL) OR (`job_abandoned_date` = @p141)) AND (`oldjob_id` = @p142) AND ((@p143 = 1 AND `job_jobtypes` IS NULL) OR (`job_jobtypes` = @p144)) AND ((@p145 = 1 AND `job_company` IS NULL) OR (`job_company` = @p146)) AND ((@p147 = 1 AND `job_paddr2` IS NULL) OR (`job_paddr2` = @p148)))</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_job_key" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_j_yr" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_jcode" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p4" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_new_jcode" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p5" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_iterate_job" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p6" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_ccode" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p7" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_j_projmgr2" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p8" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_addendum" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p9" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_j_projmgr" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@p10" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="job_start_date" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p11" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_page_flag" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p12" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_proj_code" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p13" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_c_type" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p14" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_inv_typ" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p15" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_descr" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p16" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_addr1" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p17" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_addr3" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p18" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_city" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p19" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_state" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p20" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_zip" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@p21" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="job_due_date" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p22" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_auth" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p23" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_status" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@p24" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="job_s_cntrc" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@p25" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="job_r_cntrc" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p26" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_pname" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p27" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_paddr" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p28" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_pcity" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p29" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_pstate" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p30" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_pzip" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p31" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_pphone" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p32" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_pwphone" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p33" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_pfax" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p34" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_br_table" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p35" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_pcontact" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p36" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_dotpp" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p37" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_ic_jobnum" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p38" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_descr2" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p39" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_need_contract" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p40" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_ot_billing" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p41" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_client_bud" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p42" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_proposed_bud" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p43" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_budget_type" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p44" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_financial_status" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p45" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_insurance_status" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@p46" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="job_abandoned_date" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p47" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_jobtypes" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p48" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_company" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p49" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_paddr2" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p50" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_job_key" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p51" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_job_key" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p52" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_j_yr" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p53" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_j_yr" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p54" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_jcode" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p55" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_jcode" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p56" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_new_jcode" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p57" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_new_jcode" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p58" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_iterate_job" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p59" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_iterate_job" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p60" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_ccode" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p61" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_ccode" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p62" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_j_projmgr2" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p63" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_j_projmgr2" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p64" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_addendum" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p65" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_addendum" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p66" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_j_projmgr" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p67" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_j_projmgr" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p68" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_start_date" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@p69" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="job_start_date" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p70" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_page_flag" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p71" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_page_flag" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p72" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_proj_code" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p73" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_proj_code" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p74" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_c_type" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p75" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_c_type" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p76" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_inv_typ" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p77" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_inv_typ" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p78" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_descr" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p79" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_descr" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p80" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_addr1" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p81" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_addr1" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p82" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_addr3" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p83" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_addr3" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p84" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_city" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p85" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_city" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p86" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_state" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p87" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_state" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p88" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_zip" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p89" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_zip" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p90" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_due_date" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@p91" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="job_due_date" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p92" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_auth" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p93" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_auth" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p94" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_status" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p95" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_status" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p96" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_s_cntrc" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@p97" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="job_s_cntrc" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p98" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_r_cntrc" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@p99" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="job_r_cntrc" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p100" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_pname" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p101" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_pname" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p102" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_paddr" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p103" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_paddr" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p104" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_pcity" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p105" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_pcity" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p106" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_pstate" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p107" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_pstate" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p108" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_pzip" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p109" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_pzip" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p110" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_pphone" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p111" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_pphone" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p112" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_pwphone" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p113" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_pwphone" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p114" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_pfax" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p115" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_pfax" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p116" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_br_table" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p117" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_br_table" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p118" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_pcontact" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p119" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_pcontact" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p120" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_dotpp" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p121" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_dotpp" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p122" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_ic_jobnum" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p123" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_ic_jobnum" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p124" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_descr2" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p125" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_descr2" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p126" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_need_contract" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p127" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_need_contract" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p128" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_ot_billing" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p129" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_ot_billing" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p130" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_client_bud" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p131" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_client_bud" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p132" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_proposed_bud" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p133" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_proposed_bud" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p134" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_budget_type" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p135" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_budget_type" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p136" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_financial_status" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p137" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_financial_status" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p138" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_insurance_status" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p139" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_insurance_status" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p140" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_abandoned_date" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@p141" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="job_abandoned_date" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p142" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="oldjob_id" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p143" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_jobtypes" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p144" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_jobtypes" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p145" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_company" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p146" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_company" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p147" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="job_paddr2" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p148" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="job_paddr2" SourceColumnNullMapping="false" SourceVersion="Original" />
-                    </Parameters>
-                  </DbCommand>
-                </UpdateCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="job_job_key" DataSetColumn="job_job_key" />
-              <Mapping SourceColumn="job_j_yr" DataSetColumn="job_j_yr" />
-              <Mapping SourceColumn="job_jcode" DataSetColumn="job_jcode" />
-              <Mapping SourceColumn="job_new_jcode" DataSetColumn="job_new_jcode" />
-              <Mapping SourceColumn="job_iterate_job" DataSetColumn="job_iterate_job" />
-              <Mapping SourceColumn="job_ccode" DataSetColumn="job_ccode" />
-              <Mapping SourceColumn="job_j_projmgr2" DataSetColumn="job_j_projmgr2" />
-              <Mapping SourceColumn="job_addendum" DataSetColumn="job_addendum" />
-              <Mapping SourceColumn="job_j_projmgr" DataSetColumn="job_j_projmgr" />
-              <Mapping SourceColumn="job_start_date" DataSetColumn="job_start_date" />
-              <Mapping SourceColumn="job_page_flag" DataSetColumn="job_page_flag" />
-              <Mapping SourceColumn="job_proj_code" DataSetColumn="job_proj_code" />
-              <Mapping SourceColumn="job_c_type" DataSetColumn="job_c_type" />
-              <Mapping SourceColumn="job_inv_typ" DataSetColumn="job_inv_typ" />
-              <Mapping SourceColumn="job_descr" DataSetColumn="job_descr" />
-              <Mapping SourceColumn="job_addr1" DataSetColumn="job_addr1" />
-              <Mapping SourceColumn="job_addr3" DataSetColumn="job_addr3" />
-              <Mapping SourceColumn="job_city" DataSetColumn="job_city" />
-              <Mapping SourceColumn="job_state" DataSetColumn="job_state" />
-              <Mapping SourceColumn="job_zip" DataSetColumn="job_zip" />
-              <Mapping SourceColumn="job_due_date" DataSetColumn="job_due_date" />
-              <Mapping SourceColumn="job_auth" DataSetColumn="job_auth" />
-              <Mapping SourceColumn="job_status" DataSetColumn="job_status" />
-              <Mapping SourceColumn="job_s_cntrc" DataSetColumn="job_s_cntrc" />
-              <Mapping SourceColumn="job_r_cntrc" DataSetColumn="job_r_cntrc" />
-              <Mapping SourceColumn="job_pname" DataSetColumn="job_pname" />
-              <Mapping SourceColumn="job_paddr" DataSetColumn="job_paddr" />
-              <Mapping SourceColumn="job_pcity" DataSetColumn="job_pcity" />
-              <Mapping SourceColumn="job_pstate" DataSetColumn="job_pstate" />
-              <Mapping SourceColumn="job_pzip" DataSetColumn="job_pzip" />
-              <Mapping SourceColumn="job_pphone" DataSetColumn="job_pphone" />
-              <Mapping SourceColumn="job_pwphone" DataSetColumn="job_pwphone" />
-              <Mapping SourceColumn="job_pfax" DataSetColumn="job_pfax" />
-              <Mapping SourceColumn="job_br_table" DataSetColumn="job_br_table" />
-              <Mapping SourceColumn="job_pcontact" DataSetColumn="job_pcontact" />
-              <Mapping SourceColumn="job_dotpp" DataSetColumn="job_dotpp" />
-              <Mapping SourceColumn="job_ic_jobnum" DataSetColumn="job_ic_jobnum" />
-              <Mapping SourceColumn="job_descr2" DataSetColumn="job_descr2" />
-              <Mapping SourceColumn="job_need_contract" DataSetColumn="job_need_contract" />
-              <Mapping SourceColumn="job_ot_billing" DataSetColumn="job_ot_billing" />
-              <Mapping SourceColumn="job_client_bud" DataSetColumn="job_client_bud" />
-              <Mapping SourceColumn="job_proposed_bud" DataSetColumn="job_proposed_bud" />
-              <Mapping SourceColumn="job_budget_type" DataSetColumn="job_budget_type" />
-              <Mapping SourceColumn="job_financial_status" DataSetColumn="job_financial_status" />
-              <Mapping SourceColumn="job_insurance_status" DataSetColumn="job_insurance_status" />
-              <Mapping SourceColumn="job_abandoned_date" DataSetColumn="job_abandoned_date" />
-              <Mapping SourceColumn="oldjob_id" DataSetColumn="oldjob_id" />
-              <Mapping SourceColumn="job_jobtypes" DataSetColumn="job_jobtypes" />
-              <Mapping SourceColumn="job_company" DataSetColumn="job_company" />
-              <Mapping SourceColumn="job_paddr2" DataSetColumn="job_paddr2" />
-            </Mappings>
-            <Sources />
-          </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="jobOldJobTableAdapter" GeneratorDataComponentClassName="jobOldJobTableAdapter" Name="job_oldjob_union" UserDataComponentName="jobOldJobTableAdapter">
-            <MainSource>
               <DbSource ConnectionRef="holdenengrConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>(SELECT job_job_key, job_ccode, job_descr, job_addr1, job_addr3, job_city, job_state, job_pcontact, job_descr2, job_id, client_name 
-FROM job 
-LEFT JOIN client ON client_code = job_ccode) 
-UNION 
-(SELECT job_job_key, job_ccode, job_descr, job_addr1, job_addr3, job_city, job_state, job_pcontact, job_descr2, oldjob_id AS job_id, client_name 
-FROM oldjob 
-LEFT JOIN client ON client_code = job_ccode)</CommandText>
+                    <CommandText>SELECT job_job_key, job_ccode, job_descr, job_addr1, job_addr3, job_city, job_state, job_pcontact, job_descr2, oldjob_id AS job_id, client_name 
+FROM oldjob LEFT JOIN client ON client_code = job_ccode</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -5710,7 +5286,7 @@ LEFT JOIN client ON client_code = job_ccode)</CommandText>
   <xs:element name="holdenengrDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="holdenengrDataSet" msprop:Generator_UserDSName="holdenengrDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="account" msprop:Generator_TableClassName="accountDataTable" msprop:Generator_TableVarName="tableaccount" msprop:Generator_TablePropName="account" msprop:Generator_RowDeletingName="accountRowDeleting" msprop:Generator_RowChangingName="accountRowChanging" msprop:Generator_RowEvHandlerName="accountRowChangeEventHandler" msprop:Generator_RowDeletedName="accountRowDeleted" msprop:Generator_UserTableName="account" msprop:Generator_RowChangedName="accountRowChanged" msprop:Generator_RowEvArgName="accountRowChangeEvent" msprop:Generator_RowClassName="accountRow">
+        <xs:element name="account" msprop:Generator_TableClassName="accountDataTable" msprop:Generator_TableVarName="tableaccount" msprop:Generator_RowChangedName="accountRowChanged" msprop:Generator_TablePropName="account" msprop:Generator_RowDeletingName="accountRowDeleting" msprop:Generator_RowChangingName="accountRowChanging" msprop:Generator_RowEvHandlerName="accountRowChangeEventHandler" msprop:Generator_RowDeletedName="accountRowDeleted" msprop:Generator_RowClassName="accountRow" msprop:Generator_UserTableName="account" msprop:Generator_RowEvArgName="accountRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="account_id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnaccount_id" msprop:Generator_ColumnPropNameInRow="account_id" msprop:Generator_ColumnPropNameInTable="account_idColumn" msprop:Generator_UserColumnName="account_id" type="xs:int" />
@@ -5759,7 +5335,7 @@ LEFT JOIN client ON client_code = job_ccode)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="address" msprop:Generator_TableClassName="addressDataTable" msprop:Generator_TableVarName="tableaddress" msprop:Generator_TablePropName="address" msprop:Generator_RowDeletingName="addressRowDeleting" msprop:Generator_RowChangingName="addressRowChanging" msprop:Generator_RowEvHandlerName="addressRowChangeEventHandler" msprop:Generator_RowDeletedName="addressRowDeleted" msprop:Generator_UserTableName="address" msprop:Generator_RowChangedName="addressRowChanged" msprop:Generator_RowEvArgName="addressRowChangeEvent" msprop:Generator_RowClassName="addressRow">
+        <xs:element name="address" msprop:Generator_TableClassName="addressDataTable" msprop:Generator_TableVarName="tableaddress" msprop:Generator_RowChangedName="addressRowChanged" msprop:Generator_TablePropName="address" msprop:Generator_RowDeletingName="addressRowDeleting" msprop:Generator_RowChangingName="addressRowChanging" msprop:Generator_RowEvHandlerName="addressRowChangeEventHandler" msprop:Generator_RowDeletedName="addressRowDeleted" msprop:Generator_RowClassName="addressRow" msprop:Generator_UserTableName="address" msprop:Generator_RowEvArgName="addressRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="address_id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnaddress_id" msprop:Generator_ColumnPropNameInRow="address_id" msprop:Generator_ColumnPropNameInTable="address_idColumn" msprop:Generator_UserColumnName="address_id" type="xs:int" />
@@ -5811,7 +5387,7 @@ LEFT JOIN client ON client_code = job_ccode)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="client" msprop:Generator_TableClassName="clientDataTable" msprop:Generator_TableVarName="tableclient" msprop:Generator_TablePropName="client" msprop:Generator_RowDeletingName="clientRowDeleting" msprop:Generator_RowChangingName="clientRowChanging" msprop:Generator_RowEvHandlerName="clientRowChangeEventHandler" msprop:Generator_RowDeletedName="clientRowDeleted" msprop:Generator_UserTableName="client" msprop:Generator_RowChangedName="clientRowChanged" msprop:Generator_RowEvArgName="clientRowChangeEvent" msprop:Generator_RowClassName="clientRow">
+        <xs:element name="client" msprop:Generator_TableClassName="clientDataTable" msprop:Generator_TableVarName="tableclient" msprop:Generator_RowChangedName="clientRowChanged" msprop:Generator_TablePropName="client" msprop:Generator_RowDeletingName="clientRowDeleting" msprop:Generator_RowChangingName="clientRowChanging" msprop:Generator_RowEvHandlerName="clientRowChangeEventHandler" msprop:Generator_RowDeletedName="clientRowDeleted" msprop:Generator_RowClassName="clientRow" msprop:Generator_UserTableName="client" msprop:Generator_RowEvArgName="clientRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="client_id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnclient_id" msprop:Generator_ColumnPropNameInRow="client_id" msprop:Generator_ColumnPropNameInTable="client_idColumn" msprop:Generator_UserColumnName="client_id" type="xs:int" />
@@ -5910,7 +5486,7 @@ LEFT JOIN client ON client_code = job_ccode)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="client_code" msprop:Generator_TableClassName="client_codeDataTable" msprop:Generator_TableVarName="tableclient_code" msprop:Generator_TablePropName="client_code" msprop:Generator_RowDeletingName="client_codeRowDeleting" msprop:Generator_RowChangingName="client_codeRowChanging" msprop:Generator_RowEvHandlerName="client_codeRowChangeEventHandler" msprop:Generator_RowDeletedName="client_codeRowDeleted" msprop:Generator_UserTableName="client_code" msprop:Generator_RowChangedName="client_codeRowChanged" msprop:Generator_RowEvArgName="client_codeRowChangeEvent" msprop:Generator_RowClassName="client_codeRow">
+        <xs:element name="client_code" msprop:Generator_TableClassName="client_codeDataTable" msprop:Generator_TableVarName="tableclient_code" msprop:Generator_RowChangedName="client_codeRowChanged" msprop:Generator_TablePropName="client_code" msprop:Generator_RowDeletingName="client_codeRowDeleting" msprop:Generator_RowChangingName="client_codeRowChanging" msprop:Generator_RowEvHandlerName="client_codeRowChangeEventHandler" msprop:Generator_RowDeletedName="client_codeRowDeleted" msprop:Generator_RowClassName="client_codeRow" msprop:Generator_UserTableName="client_code" msprop:Generator_RowEvArgName="client_codeRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="client_code_id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnclient_code_id" msprop:Generator_ColumnPropNameInRow="client_code_id" msprop:Generator_ColumnPropNameInTable="client_code_idColumn" msprop:Generator_UserColumnName="client_code_id" type="xs:int" />
@@ -5931,7 +5507,7 @@ LEFT JOIN client ON client_code = job_ccode)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="company" msprop:Generator_TableClassName="companyDataTable" msprop:Generator_TableVarName="tablecompany" msprop:Generator_TablePropName="company" msprop:Generator_RowDeletingName="companyRowDeleting" msprop:Generator_RowChangingName="companyRowChanging" msprop:Generator_RowEvHandlerName="companyRowChangeEventHandler" msprop:Generator_RowDeletedName="companyRowDeleted" msprop:Generator_UserTableName="company" msprop:Generator_RowChangedName="companyRowChanged" msprop:Generator_RowEvArgName="companyRowChangeEvent" msprop:Generator_RowClassName="companyRow">
+        <xs:element name="company" msprop:Generator_TableClassName="companyDataTable" msprop:Generator_TableVarName="tablecompany" msprop:Generator_RowChangedName="companyRowChanged" msprop:Generator_TablePropName="company" msprop:Generator_RowDeletingName="companyRowDeleting" msprop:Generator_RowChangingName="companyRowChanging" msprop:Generator_RowEvHandlerName="companyRowChangeEventHandler" msprop:Generator_RowDeletedName="companyRowDeleted" msprop:Generator_RowClassName="companyRow" msprop:Generator_UserTableName="company" msprop:Generator_RowEvArgName="companyRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="company_id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columncompany_id" msprop:Generator_ColumnPropNameInRow="company_id" msprop:Generator_ColumnPropNameInTable="company_idColumn" msprop:Generator_UserColumnName="company_id" type="xs:int" />
@@ -6008,7 +5584,7 @@ LEFT JOIN client ON client_code = job_ccode)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="contact" msprop:Generator_TableClassName="contactDataTable" msprop:Generator_TableVarName="tablecontact" msprop:Generator_TablePropName="contact" msprop:Generator_RowDeletingName="contactRowDeleting" msprop:Generator_RowChangingName="contactRowChanging" msprop:Generator_RowEvHandlerName="contactRowChangeEventHandler" msprop:Generator_RowDeletedName="contactRowDeleted" msprop:Generator_UserTableName="contact" msprop:Generator_RowChangedName="contactRowChanged" msprop:Generator_RowEvArgName="contactRowChangeEvent" msprop:Generator_RowClassName="contactRow">
+        <xs:element name="contact" msprop:Generator_TableClassName="contactDataTable" msprop:Generator_TableVarName="tablecontact" msprop:Generator_RowChangedName="contactRowChanged" msprop:Generator_TablePropName="contact" msprop:Generator_RowDeletingName="contactRowDeleting" msprop:Generator_RowChangingName="contactRowChanging" msprop:Generator_RowEvHandlerName="contactRowChangeEventHandler" msprop:Generator_RowDeletedName="contactRowDeleted" msprop:Generator_RowClassName="contactRow" msprop:Generator_UserTableName="contact" msprop:Generator_RowEvArgName="contactRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="contact_id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columncontact_id" msprop:Generator_ColumnPropNameInRow="contact_id" msprop:Generator_ColumnPropNameInTable="contact_idColumn" msprop:Generator_UserColumnName="contact_id" type="xs:int" />
@@ -6074,7 +5650,7 @@ LEFT JOIN client ON client_code = job_ccode)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="employee" msprop:Generator_TableClassName="employeeDataTable" msprop:Generator_TableVarName="tableemployee" msprop:Generator_TablePropName="employee" msprop:Generator_RowDeletingName="employeeRowDeleting" msprop:Generator_RowChangingName="employeeRowChanging" msprop:Generator_RowEvHandlerName="employeeRowChangeEventHandler" msprop:Generator_RowDeletedName="employeeRowDeleted" msprop:Generator_UserTableName="employee" msprop:Generator_RowChangedName="employeeRowChanged" msprop:Generator_RowEvArgName="employeeRowChangeEvent" msprop:Generator_RowClassName="employeeRow">
+        <xs:element name="employee" msprop:Generator_TableClassName="employeeDataTable" msprop:Generator_TableVarName="tableemployee" msprop:Generator_RowChangedName="employeeRowChanged" msprop:Generator_TablePropName="employee" msprop:Generator_RowDeletingName="employeeRowDeleting" msprop:Generator_RowChangingName="employeeRowChanging" msprop:Generator_RowEvHandlerName="employeeRowChangeEventHandler" msprop:Generator_RowDeletedName="employeeRowDeleted" msprop:Generator_RowClassName="employeeRow" msprop:Generator_UserTableName="employee" msprop:Generator_RowEvArgName="employeeRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="employee_id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnemployee_id" msprop:Generator_ColumnPropNameInRow="employee_id" msprop:Generator_ColumnPropNameInTable="employee_idColumn" msprop:Generator_UserColumnName="employee_id" type="xs:int" />
@@ -6255,7 +5831,7 @@ LEFT JOIN client ON client_code = job_ccode)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="ibis_clienttype" msprop:Generator_TableClassName="ibis_clienttypeDataTable" msprop:Generator_TableVarName="tableibis_clienttype" msprop:Generator_TablePropName="ibis_clienttype" msprop:Generator_RowDeletingName="ibis_clienttypeRowDeleting" msprop:Generator_RowChangingName="ibis_clienttypeRowChanging" msprop:Generator_RowEvHandlerName="ibis_clienttypeRowChangeEventHandler" msprop:Generator_RowDeletedName="ibis_clienttypeRowDeleted" msprop:Generator_UserTableName="ibis_clienttype" msprop:Generator_RowChangedName="ibis_clienttypeRowChanged" msprop:Generator_RowEvArgName="ibis_clienttypeRowChangeEvent" msprop:Generator_RowClassName="ibis_clienttypeRow">
+        <xs:element name="ibis_clienttype" msprop:Generator_TableClassName="ibis_clienttypeDataTable" msprop:Generator_TableVarName="tableibis_clienttype" msprop:Generator_RowChangedName="ibis_clienttypeRowChanged" msprop:Generator_TablePropName="ibis_clienttype" msprop:Generator_RowDeletingName="ibis_clienttypeRowDeleting" msprop:Generator_RowChangingName="ibis_clienttypeRowChanging" msprop:Generator_RowEvHandlerName="ibis_clienttypeRowChangeEventHandler" msprop:Generator_RowDeletedName="ibis_clienttypeRowDeleted" msprop:Generator_RowClassName="ibis_clienttypeRow" msprop:Generator_UserTableName="ibis_clienttype" msprop:Generator_RowEvArgName="ibis_clienttypeRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ibis_clienttype_id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnibis_clienttype_id" msprop:Generator_ColumnPropNameInRow="ibis_clienttype_id" msprop:Generator_ColumnPropNameInTable="ibis_clienttype_idColumn" msprop:Generator_UserColumnName="ibis_clienttype_id" type="xs:int" />
@@ -6276,7 +5852,7 @@ LEFT JOIN client ON client_code = job_ccode)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="ibis_country" msprop:Generator_TableClassName="ibis_countryDataTable" msprop:Generator_TableVarName="tableibis_country" msprop:Generator_TablePropName="ibis_country" msprop:Generator_RowDeletingName="ibis_countryRowDeleting" msprop:Generator_RowChangingName="ibis_countryRowChanging" msprop:Generator_RowEvHandlerName="ibis_countryRowChangeEventHandler" msprop:Generator_RowDeletedName="ibis_countryRowDeleted" msprop:Generator_UserTableName="ibis_country" msprop:Generator_RowChangedName="ibis_countryRowChanged" msprop:Generator_RowEvArgName="ibis_countryRowChangeEvent" msprop:Generator_RowClassName="ibis_countryRow">
+        <xs:element name="ibis_country" msprop:Generator_TableClassName="ibis_countryDataTable" msprop:Generator_TableVarName="tableibis_country" msprop:Generator_RowChangedName="ibis_countryRowChanged" msprop:Generator_TablePropName="ibis_country" msprop:Generator_RowDeletingName="ibis_countryRowDeleting" msprop:Generator_RowChangingName="ibis_countryRowChanging" msprop:Generator_RowEvHandlerName="ibis_countryRowChangeEventHandler" msprop:Generator_RowDeletedName="ibis_countryRowDeleted" msprop:Generator_RowClassName="ibis_countryRow" msprop:Generator_UserTableName="ibis_country" msprop:Generator_RowEvArgName="ibis_countryRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="country_id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columncountry_id" msprop:Generator_ColumnPropNameInRow="country_id" msprop:Generator_ColumnPropNameInTable="country_idColumn" msprop:Generator_UserColumnName="country_id" type="xs:int" />
@@ -6297,7 +5873,7 @@ LEFT JOIN client ON client_code = job_ccode)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="ibis_invoicetype" msprop:Generator_TableClassName="ibis_invoicetypeDataTable" msprop:Generator_TableVarName="tableibis_invoicetype" msprop:Generator_TablePropName="ibis_invoicetype" msprop:Generator_RowDeletingName="ibis_invoicetypeRowDeleting" msprop:Generator_RowChangingName="ibis_invoicetypeRowChanging" msprop:Generator_RowEvHandlerName="ibis_invoicetypeRowChangeEventHandler" msprop:Generator_RowDeletedName="ibis_invoicetypeRowDeleted" msprop:Generator_UserTableName="ibis_invoicetype" msprop:Generator_RowChangedName="ibis_invoicetypeRowChanged" msprop:Generator_RowEvArgName="ibis_invoicetypeRowChangeEvent" msprop:Generator_RowClassName="ibis_invoicetypeRow">
+        <xs:element name="ibis_invoicetype" msprop:Generator_TableClassName="ibis_invoicetypeDataTable" msprop:Generator_TableVarName="tableibis_invoicetype" msprop:Generator_RowChangedName="ibis_invoicetypeRowChanged" msprop:Generator_TablePropName="ibis_invoicetype" msprop:Generator_RowDeletingName="ibis_invoicetypeRowDeleting" msprop:Generator_RowChangingName="ibis_invoicetypeRowChanging" msprop:Generator_RowEvHandlerName="ibis_invoicetypeRowChangeEventHandler" msprop:Generator_RowDeletedName="ibis_invoicetypeRowDeleted" msprop:Generator_RowClassName="ibis_invoicetypeRow" msprop:Generator_UserTableName="ibis_invoicetype" msprop:Generator_RowEvArgName="ibis_invoicetypeRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ibis_invoicetype_id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnibis_invoicetype_id" msprop:Generator_ColumnPropNameInRow="ibis_invoicetype_id" msprop:Generator_ColumnPropNameInTable="ibis_invoicetype_idColumn" msprop:Generator_UserColumnName="ibis_invoicetype_id" type="xs:int" />
@@ -6318,7 +5894,7 @@ LEFT JOIN client ON client_code = job_ccode)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="ibis_permclass" msprop:Generator_TableClassName="ibis_permclassDataTable" msprop:Generator_TableVarName="tableibis_permclass" msprop:Generator_TablePropName="ibis_permclass" msprop:Generator_RowDeletingName="ibis_permclassRowDeleting" msprop:Generator_RowChangingName="ibis_permclassRowChanging" msprop:Generator_RowEvHandlerName="ibis_permclassRowChangeEventHandler" msprop:Generator_RowDeletedName="ibis_permclassRowDeleted" msprop:Generator_UserTableName="ibis_permclass" msprop:Generator_RowChangedName="ibis_permclassRowChanged" msprop:Generator_RowEvArgName="ibis_permclassRowChangeEvent" msprop:Generator_RowClassName="ibis_permclassRow">
+        <xs:element name="ibis_permclass" msprop:Generator_TableClassName="ibis_permclassDataTable" msprop:Generator_TableVarName="tableibis_permclass" msprop:Generator_RowChangedName="ibis_permclassRowChanged" msprop:Generator_TablePropName="ibis_permclass" msprop:Generator_RowDeletingName="ibis_permclassRowDeleting" msprop:Generator_RowChangingName="ibis_permclassRowChanging" msprop:Generator_RowEvHandlerName="ibis_permclassRowChangeEventHandler" msprop:Generator_RowDeletedName="ibis_permclassRowDeleted" msprop:Generator_RowClassName="ibis_permclassRow" msprop:Generator_UserTableName="ibis_permclass" msprop:Generator_RowEvArgName="ibis_permclassRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ibis_permclass_id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnibis_permclass_id" msprop:Generator_ColumnPropNameInRow="ibis_permclass_id" msprop:Generator_ColumnPropNameInTable="ibis_permclass_idColumn" msprop:Generator_UserColumnName="ibis_permclass_id" type="xs:int" />
@@ -6333,7 +5909,7 @@ LEFT JOIN client ON client_code = job_ccode)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="ibis_perms" msprop:Generator_TableClassName="ibis_permsDataTable" msprop:Generator_TableVarName="tableibis_perms" msprop:Generator_TablePropName="ibis_perms" msprop:Generator_RowDeletingName="ibis_permsRowDeleting" msprop:Generator_RowChangingName="ibis_permsRowChanging" msprop:Generator_RowEvHandlerName="ibis_permsRowChangeEventHandler" msprop:Generator_RowDeletedName="ibis_permsRowDeleted" msprop:Generator_UserTableName="ibis_perms" msprop:Generator_RowChangedName="ibis_permsRowChanged" msprop:Generator_RowEvArgName="ibis_permsRowChangeEvent" msprop:Generator_RowClassName="ibis_permsRow">
+        <xs:element name="ibis_perms" msprop:Generator_TableClassName="ibis_permsDataTable" msprop:Generator_TableVarName="tableibis_perms" msprop:Generator_RowChangedName="ibis_permsRowChanged" msprop:Generator_TablePropName="ibis_perms" msprop:Generator_RowDeletingName="ibis_permsRowDeleting" msprop:Generator_RowChangingName="ibis_permsRowChanging" msprop:Generator_RowEvHandlerName="ibis_permsRowChangeEventHandler" msprop:Generator_RowDeletedName="ibis_permsRowDeleted" msprop:Generator_RowClassName="ibis_permsRow" msprop:Generator_UserTableName="ibis_perms" msprop:Generator_RowEvArgName="ibis_permsRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ibis_perms_id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnibis_perms_id" msprop:Generator_ColumnPropNameInRow="ibis_perms_id" msprop:Generator_ColumnPropNameInTable="ibis_perms_idColumn" msprop:Generator_UserColumnName="ibis_perms_id" type="xs:int" />
@@ -10120,7 +9696,7 @@ LEFT JOIN client ON client_code = job_ccode)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="ibis_projecttype" msprop:Generator_TableClassName="ibis_projecttypeDataTable" msprop:Generator_TableVarName="tableibis_projecttype" msprop:Generator_TablePropName="ibis_projecttype" msprop:Generator_RowDeletingName="ibis_projecttypeRowDeleting" msprop:Generator_RowChangingName="ibis_projecttypeRowChanging" msprop:Generator_RowEvHandlerName="ibis_projecttypeRowChangeEventHandler" msprop:Generator_RowDeletedName="ibis_projecttypeRowDeleted" msprop:Generator_UserTableName="ibis_projecttype" msprop:Generator_RowChangedName="ibis_projecttypeRowChanged" msprop:Generator_RowEvArgName="ibis_projecttypeRowChangeEvent" msprop:Generator_RowClassName="ibis_projecttypeRow">
+        <xs:element name="ibis_projecttype" msprop:Generator_TableClassName="ibis_projecttypeDataTable" msprop:Generator_TableVarName="tableibis_projecttype" msprop:Generator_RowChangedName="ibis_projecttypeRowChanged" msprop:Generator_TablePropName="ibis_projecttype" msprop:Generator_RowDeletingName="ibis_projecttypeRowDeleting" msprop:Generator_RowChangingName="ibis_projecttypeRowChanging" msprop:Generator_RowEvHandlerName="ibis_projecttypeRowChangeEventHandler" msprop:Generator_RowDeletedName="ibis_projecttypeRowDeleted" msprop:Generator_RowClassName="ibis_projecttypeRow" msprop:Generator_UserTableName="ibis_projecttype" msprop:Generator_RowEvArgName="ibis_projecttypeRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ibis_projecttype_id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnibis_projecttype_id" msprop:Generator_ColumnPropNameInRow="ibis_projecttype_id" msprop:Generator_ColumnPropNameInTable="ibis_projecttype_idColumn" msprop:Generator_UserColumnName="ibis_projecttype_id" type="xs:int" />
@@ -10141,7 +9717,7 @@ LEFT JOIN client ON client_code = job_ccode)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="ibis_state" msprop:Generator_TableClassName="ibis_stateDataTable" msprop:Generator_TableVarName="tableibis_state" msprop:Generator_TablePropName="ibis_state" msprop:Generator_RowDeletingName="ibis_stateRowDeleting" msprop:Generator_RowChangingName="ibis_stateRowChanging" msprop:Generator_RowEvHandlerName="ibis_stateRowChangeEventHandler" msprop:Generator_RowDeletedName="ibis_stateRowDeleted" msprop:Generator_UserTableName="ibis_state" msprop:Generator_RowChangedName="ibis_stateRowChanged" msprop:Generator_RowEvArgName="ibis_stateRowChangeEvent" msprop:Generator_RowClassName="ibis_stateRow">
+        <xs:element name="ibis_state" msprop:Generator_TableClassName="ibis_stateDataTable" msprop:Generator_TableVarName="tableibis_state" msprop:Generator_RowChangedName="ibis_stateRowChanged" msprop:Generator_TablePropName="ibis_state" msprop:Generator_RowDeletingName="ibis_stateRowDeleting" msprop:Generator_RowChangingName="ibis_stateRowChanging" msprop:Generator_RowEvHandlerName="ibis_stateRowChangeEventHandler" msprop:Generator_RowDeletedName="ibis_stateRowDeleted" msprop:Generator_RowClassName="ibis_stateRow" msprop:Generator_UserTableName="ibis_state" msprop:Generator_RowEvArgName="ibis_stateRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="state_id" msprop:Generator_ColumnVarNameInTable="columnstate_id" msprop:Generator_ColumnPropNameInRow="state_id" msprop:Generator_ColumnPropNameInTable="state_idColumn" msprop:Generator_UserColumnName="state_id" type="xs:unsignedShort" />
@@ -10162,7 +9738,7 @@ LEFT JOIN client ON client_code = job_ccode)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="ibis_statuscode" msprop:Generator_TableClassName="ibis_statuscodeDataTable" msprop:Generator_TableVarName="tableibis_statuscode" msprop:Generator_TablePropName="ibis_statuscode" msprop:Generator_RowDeletingName="ibis_statuscodeRowDeleting" msprop:Generator_RowChangingName="ibis_statuscodeRowChanging" msprop:Generator_RowEvHandlerName="ibis_statuscodeRowChangeEventHandler" msprop:Generator_RowDeletedName="ibis_statuscodeRowDeleted" msprop:Generator_UserTableName="ibis_statuscode" msprop:Generator_RowChangedName="ibis_statuscodeRowChanged" msprop:Generator_RowEvArgName="ibis_statuscodeRowChangeEvent" msprop:Generator_RowClassName="ibis_statuscodeRow">
+        <xs:element name="ibis_statuscode" msprop:Generator_TableClassName="ibis_statuscodeDataTable" msprop:Generator_TableVarName="tableibis_statuscode" msprop:Generator_RowChangedName="ibis_statuscodeRowChanged" msprop:Generator_TablePropName="ibis_statuscode" msprop:Generator_RowDeletingName="ibis_statuscodeRowDeleting" msprop:Generator_RowChangingName="ibis_statuscodeRowChanging" msprop:Generator_RowEvHandlerName="ibis_statuscodeRowChangeEventHandler" msprop:Generator_RowDeletedName="ibis_statuscodeRowDeleted" msprop:Generator_RowClassName="ibis_statuscodeRow" msprop:Generator_UserTableName="ibis_statuscode" msprop:Generator_RowEvArgName="ibis_statuscodeRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ibis_statuscode_id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnibis_statuscode_id" msprop:Generator_ColumnPropNameInRow="ibis_statuscode_id" msprop:Generator_ColumnPropNameInTable="ibis_statuscode_idColumn" msprop:Generator_UserColumnName="ibis_statuscode_id" type="xs:int" />
@@ -10183,7 +9759,7 @@ LEFT JOIN client ON client_code = job_ccode)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="ibis_taskstatus" msprop:Generator_TableClassName="ibis_taskstatusDataTable" msprop:Generator_TableVarName="tableibis_taskstatus" msprop:Generator_TablePropName="ibis_taskstatus" msprop:Generator_RowDeletingName="ibis_taskstatusRowDeleting" msprop:Generator_RowChangingName="ibis_taskstatusRowChanging" msprop:Generator_RowEvHandlerName="ibis_taskstatusRowChangeEventHandler" msprop:Generator_RowDeletedName="ibis_taskstatusRowDeleted" msprop:Generator_UserTableName="ibis_taskstatus" msprop:Generator_RowChangedName="ibis_taskstatusRowChanged" msprop:Generator_RowEvArgName="ibis_taskstatusRowChangeEvent" msprop:Generator_RowClassName="ibis_taskstatusRow">
+        <xs:element name="ibis_taskstatus" msprop:Generator_TableClassName="ibis_taskstatusDataTable" msprop:Generator_TableVarName="tableibis_taskstatus" msprop:Generator_RowChangedName="ibis_taskstatusRowChanged" msprop:Generator_TablePropName="ibis_taskstatus" msprop:Generator_RowDeletingName="ibis_taskstatusRowDeleting" msprop:Generator_RowChangingName="ibis_taskstatusRowChanging" msprop:Generator_RowEvHandlerName="ibis_taskstatusRowChangeEventHandler" msprop:Generator_RowDeletedName="ibis_taskstatusRowDeleted" msprop:Generator_RowClassName="ibis_taskstatusRow" msprop:Generator_UserTableName="ibis_taskstatus" msprop:Generator_RowEvArgName="ibis_taskstatusRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ibis_taskstatus_id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnibis_taskstatus_id" msprop:Generator_ColumnPropNameInRow="ibis_taskstatus_id" msprop:Generator_ColumnPropNameInTable="ibis_taskstatus_idColumn" msprop:Generator_UserColumnName="ibis_taskstatus_id" type="xs:int" />
@@ -10204,7 +9780,7 @@ LEFT JOIN client ON client_code = job_ccode)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="ibis_tasktype" msprop:Generator_TableClassName="ibis_tasktypeDataTable" msprop:Generator_TableVarName="tableibis_tasktype" msprop:Generator_TablePropName="ibis_tasktype" msprop:Generator_RowDeletingName="ibis_tasktypeRowDeleting" msprop:Generator_RowChangingName="ibis_tasktypeRowChanging" msprop:Generator_RowEvHandlerName="ibis_tasktypeRowChangeEventHandler" msprop:Generator_RowDeletedName="ibis_tasktypeRowDeleted" msprop:Generator_UserTableName="ibis_tasktype" msprop:Generator_RowChangedName="ibis_tasktypeRowChanged" msprop:Generator_RowEvArgName="ibis_tasktypeRowChangeEvent" msprop:Generator_RowClassName="ibis_tasktypeRow">
+        <xs:element name="ibis_tasktype" msprop:Generator_TableClassName="ibis_tasktypeDataTable" msprop:Generator_TableVarName="tableibis_tasktype" msprop:Generator_RowChangedName="ibis_tasktypeRowChanged" msprop:Generator_TablePropName="ibis_tasktype" msprop:Generator_RowDeletingName="ibis_tasktypeRowDeleting" msprop:Generator_RowChangingName="ibis_tasktypeRowChanging" msprop:Generator_RowEvHandlerName="ibis_tasktypeRowChangeEventHandler" msprop:Generator_RowDeletedName="ibis_tasktypeRowDeleted" msprop:Generator_RowClassName="ibis_tasktypeRow" msprop:Generator_UserTableName="ibis_tasktype" msprop:Generator_RowEvArgName="ibis_tasktypeRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ibis_tasktype_id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnibis_tasktype_id" msprop:Generator_ColumnPropNameInRow="ibis_tasktype_id" msprop:Generator_ColumnPropNameInTable="ibis_tasktype_idColumn" msprop:Generator_UserColumnName="ibis_tasktype_id" type="xs:int" />
@@ -10225,7 +9801,7 @@ LEFT JOIN client ON client_code = job_ccode)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="job" msprop:Generator_TableClassName="jobDataTable" msprop:Generator_TableVarName="tablejob" msprop:Generator_TablePropName="job" msprop:Generator_RowDeletingName="jobRowDeleting" msprop:Generator_RowChangingName="jobRowChanging" msprop:Generator_RowEvHandlerName="jobRowChangeEventHandler" msprop:Generator_RowDeletedName="jobRowDeleted" msprop:Generator_UserTableName="job" msprop:Generator_RowChangedName="jobRowChanged" msprop:Generator_RowEvArgName="jobRowChangeEvent" msprop:Generator_RowClassName="jobRow">
+        <xs:element name="job" msprop:Generator_TableClassName="jobDataTable" msprop:Generator_TableVarName="tablejob" msprop:Generator_RowChangedName="jobRowChanged" msprop:Generator_TablePropName="job" msprop:Generator_RowDeletingName="jobRowDeleting" msprop:Generator_RowChangingName="jobRowChanging" msprop:Generator_RowEvHandlerName="jobRowChangeEventHandler" msprop:Generator_RowDeletedName="jobRowDeleted" msprop:Generator_RowClassName="jobRow" msprop:Generator_UserTableName="job" msprop:Generator_RowEvArgName="jobRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="job_job_key" msprop:Generator_ColumnVarNameInTable="columnjob_job_key" msprop:Generator_ColumnPropNameInRow="job_job_key" msprop:Generator_ColumnPropNameInTable="job_job_keyColumn" msprop:Generator_UserColumnName="job_job_key" minOccurs="0">
@@ -10235,88 +9811,10 @@ LEFT JOIN client ON client_code = job_ccode)</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="job_j_yr" msprop:Generator_ColumnVarNameInTable="columnjob_j_yr" msprop:Generator_ColumnPropNameInRow="job_j_yr" msprop:Generator_ColumnPropNameInTable="job_j_yrColumn" msprop:Generator_UserColumnName="job_j_yr" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="2" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="job_jcode" msprop:Generator_ColumnVarNameInTable="columnjob_jcode" msprop:Generator_ColumnPropNameInRow="job_jcode" msprop:Generator_ColumnPropNameInTable="job_jcodeColumn" msprop:Generator_UserColumnName="job_jcode" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="5" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="job_new_jcode" msprop:Generator_ColumnVarNameInTable="columnjob_new_jcode" msprop:Generator_ColumnPropNameInRow="job_new_jcode" msprop:Generator_ColumnPropNameInTable="job_new_jcodeColumn" msprop:Generator_UserColumnName="job_new_jcode" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="5" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="job_iterate_job" msprop:Generator_ColumnVarNameInTable="columnjob_iterate_job" msprop:Generator_ColumnPropNameInRow="job_iterate_job" msprop:Generator_ColumnPropNameInTable="job_iterate_jobColumn" msprop:Generator_UserColumnName="job_iterate_job" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="1" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
               <xs:element name="job_ccode" msprop:Generator_ColumnVarNameInTable="columnjob_ccode" msprop:Generator_ColumnPropNameInRow="job_ccode" msprop:Generator_ColumnPropNameInTable="job_ccodeColumn" msprop:Generator_UserColumnName="job_ccode" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="5" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="job_j_projmgr2" msprop:Generator_ColumnVarNameInTable="columnjob_j_projmgr2" msprop:Generator_ColumnPropNameInRow="job_j_projmgr2" msprop:Generator_ColumnPropNameInTable="job_j_projmgr2Column" msprop:Generator_UserColumnName="job_j_projmgr2" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="3" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="job_addendum" msprop:Generator_ColumnVarNameInTable="columnjob_addendum" msprop:Generator_ColumnPropNameInRow="job_addendum" msprop:Generator_ColumnPropNameInTable="job_addendumColumn" msprop:Generator_UserColumnName="job_addendum" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="3" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="job_j_projmgr" msprop:Generator_ColumnVarNameInTable="columnjob_j_projmgr" msprop:Generator_ColumnPropNameInRow="job_j_projmgr" msprop:Generator_ColumnPropNameInTable="job_j_projmgrColumn" msprop:Generator_UserColumnName="job_j_projmgr" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="3" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="job_start_date" msprop:Generator_ColumnVarNameInTable="columnjob_start_date" msprop:Generator_ColumnPropNameInRow="job_start_date" msprop:Generator_ColumnPropNameInTable="job_start_dateColumn" msprop:Generator_UserColumnName="job_start_date" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="job_page_flag" msprop:Generator_ColumnVarNameInTable="columnjob_page_flag" msprop:Generator_ColumnPropNameInRow="job_page_flag" msprop:Generator_ColumnPropNameInTable="job_page_flagColumn" msprop:Generator_UserColumnName="job_page_flag" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="1" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="job_proj_code" msprop:Generator_ColumnVarNameInTable="columnjob_proj_code" msprop:Generator_ColumnPropNameInRow="job_proj_code" msprop:Generator_ColumnPropNameInTable="job_proj_codeColumn" msprop:Generator_UserColumnName="job_proj_code" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="3" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="job_c_type" msprop:Generator_ColumnVarNameInTable="columnjob_c_type" msprop:Generator_ColumnPropNameInRow="job_c_type" msprop:Generator_ColumnPropNameInTable="job_c_typeColumn" msprop:Generator_UserColumnName="job_c_type" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="2" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="job_inv_typ" msprop:Generator_ColumnVarNameInTable="columnjob_inv_typ" msprop:Generator_ColumnPropNameInRow="job_inv_typ" msprop:Generator_ColumnPropNameInTable="job_inv_typColumn" msprop:Generator_UserColumnName="job_inv_typ" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="2" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -10355,111 +9853,10 @@ LEFT JOIN client ON client_code = job_ccode)</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="job_zip" msprop:Generator_ColumnVarNameInTable="columnjob_zip" msprop:Generator_ColumnPropNameInRow="job_zip" msprop:Generator_ColumnPropNameInTable="job_zipColumn" msprop:Generator_UserColumnName="job_zip" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="10" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="job_due_date" msprop:Generator_ColumnVarNameInTable="columnjob_due_date" msprop:Generator_ColumnPropNameInRow="job_due_date" msprop:Generator_ColumnPropNameInTable="job_due_dateColumn" msprop:Generator_UserColumnName="job_due_date" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="job_auth" msprop:Generator_ColumnVarNameInTable="columnjob_auth" msprop:Generator_ColumnPropNameInRow="job_auth" msprop:Generator_ColumnPropNameInTable="job_authColumn" msprop:Generator_UserColumnName="job_auth" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="25" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="job_status" msprop:Generator_ColumnVarNameInTable="columnjob_status" msprop:Generator_ColumnPropNameInRow="job_status" msprop:Generator_ColumnPropNameInTable="job_statusColumn" msprop:Generator_UserColumnName="job_status" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="1" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="job_s_cntrc" msprop:Generator_ColumnVarNameInTable="columnjob_s_cntrc" msprop:Generator_ColumnPropNameInRow="job_s_cntrc" msprop:Generator_ColumnPropNameInTable="job_s_cntrcColumn" msprop:Generator_UserColumnName="job_s_cntrc" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="job_r_cntrc" msprop:Generator_ColumnVarNameInTable="columnjob_r_cntrc" msprop:Generator_ColumnPropNameInRow="job_r_cntrc" msprop:Generator_ColumnPropNameInTable="job_r_cntrcColumn" msprop:Generator_UserColumnName="job_r_cntrc" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="job_pname" msprop:Generator_ColumnVarNameInTable="columnjob_pname" msprop:Generator_ColumnPropNameInRow="job_pname" msprop:Generator_ColumnPropNameInTable="job_pnameColumn" msprop:Generator_UserColumnName="job_pname" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="30" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="job_paddr" msprop:Generator_ColumnVarNameInTable="columnjob_paddr" msprop:Generator_ColumnPropNameInRow="job_paddr" msprop:Generator_ColumnPropNameInTable="job_paddrColumn" msprop:Generator_UserColumnName="job_paddr" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="30" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="job_pcity" msprop:Generator_ColumnVarNameInTable="columnjob_pcity" msprop:Generator_ColumnPropNameInRow="job_pcity" msprop:Generator_ColumnPropNameInTable="job_pcityColumn" msprop:Generator_UserColumnName="job_pcity" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="20" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="job_pstate" msprop:Generator_ColumnVarNameInTable="columnjob_pstate" msprop:Generator_ColumnPropNameInRow="job_pstate" msprop:Generator_ColumnPropNameInTable="job_pstateColumn" msprop:Generator_UserColumnName="job_pstate" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="2" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="job_pzip" msprop:Generator_ColumnVarNameInTable="columnjob_pzip" msprop:Generator_ColumnPropNameInRow="job_pzip" msprop:Generator_ColumnPropNameInTable="job_pzipColumn" msprop:Generator_UserColumnName="job_pzip" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="10" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="job_pphone" msprop:Generator_ColumnVarNameInTable="columnjob_pphone" msprop:Generator_ColumnPropNameInRow="job_pphone" msprop:Generator_ColumnPropNameInTable="job_pphoneColumn" msprop:Generator_UserColumnName="job_pphone" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="15" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="job_pwphone" msprop:Generator_ColumnVarNameInTable="columnjob_pwphone" msprop:Generator_ColumnPropNameInRow="job_pwphone" msprop:Generator_ColumnPropNameInTable="job_pwphoneColumn" msprop:Generator_UserColumnName="job_pwphone" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="15" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="job_pfax" msprop:Generator_ColumnVarNameInTable="columnjob_pfax" msprop:Generator_ColumnPropNameInRow="job_pfax" msprop:Generator_ColumnPropNameInTable="job_pfaxColumn" msprop:Generator_UserColumnName="job_pfax" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="15" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="job_br_table" msprop:Generator_ColumnVarNameInTable="columnjob_br_table" msprop:Generator_ColumnPropNameInRow="job_br_table" msprop:Generator_ColumnPropNameInTable="job_br_tableColumn" msprop:Generator_UserColumnName="job_br_table" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="3" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
               <xs:element name="job_pcontact" msprop:Generator_ColumnVarNameInTable="columnjob_pcontact" msprop:Generator_ColumnPropNameInRow="job_pcontact" msprop:Generator_ColumnPropNameInTable="job_pcontactColumn" msprop:Generator_UserColumnName="job_pcontact" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="30" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="job_dotpp" msprop:Generator_ColumnVarNameInTable="columnjob_dotpp" msprop:Generator_ColumnPropNameInRow="job_dotpp" msprop:Generator_ColumnPropNameInTable="job_dotppColumn" msprop:Generator_UserColumnName="job_dotpp" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="3" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="job_ic_jobnum" msprop:Generator_ColumnVarNameInTable="columnjob_ic_jobnum" msprop:Generator_ColumnPropNameInRow="job_ic_jobnum" msprop:Generator_ColumnPropNameInTable="job_ic_jobnumColumn" msprop:Generator_UserColumnName="job_ic_jobnum" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="8" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -10470,71 +9867,7 @@ LEFT JOIN client ON client_code = job_ccode)</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="job_need_contract" msprop:Generator_ColumnVarNameInTable="columnjob_need_contract" msprop:Generator_ColumnPropNameInRow="job_need_contract" msprop:Generator_ColumnPropNameInTable="job_need_contractColumn" msprop:Generator_UserColumnName="job_need_contract" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="1" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="job_ot_billing" msprop:Generator_ColumnVarNameInTable="columnjob_ot_billing" msprop:Generator_ColumnPropNameInRow="job_ot_billing" msprop:Generator_ColumnPropNameInTable="job_ot_billingColumn" msprop:Generator_UserColumnName="job_ot_billing" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="1" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="job_client_bud" msprop:Generator_ColumnVarNameInTable="columnjob_client_bud" msprop:Generator_ColumnPropNameInRow="job_client_bud" msprop:Generator_ColumnPropNameInTable="job_client_budColumn" msprop:Generator_UserColumnName="job_client_bud" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="11" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="job_proposed_bud" msprop:Generator_ColumnVarNameInTable="columnjob_proposed_bud" msprop:Generator_ColumnPropNameInRow="job_proposed_bud" msprop:Generator_ColumnPropNameInTable="job_proposed_budColumn" msprop:Generator_UserColumnName="job_proposed_bud" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="11" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="job_budget_type" msprop:Generator_ColumnVarNameInTable="columnjob_budget_type" msprop:Generator_ColumnPropNameInRow="job_budget_type" msprop:Generator_ColumnPropNameInTable="job_budget_typeColumn" msprop:Generator_UserColumnName="job_budget_type" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="4" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="job_financial_status" msprop:Generator_ColumnVarNameInTable="columnjob_financial_status" msprop:Generator_ColumnPropNameInRow="job_financial_status" msprop:Generator_ColumnPropNameInTable="job_financial_statusColumn" msprop:Generator_UserColumnName="job_financial_status" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="1" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="job_insurance_status" msprop:Generator_ColumnVarNameInTable="columnjob_insurance_status" msprop:Generator_ColumnPropNameInRow="job_insurance_status" msprop:Generator_ColumnPropNameInTable="job_insurance_statusColumn" msprop:Generator_UserColumnName="job_insurance_status" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="2" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="job_abandoned_date" msprop:Generator_ColumnVarNameInTable="columnjob_abandoned_date" msprop:Generator_ColumnPropNameInRow="job_abandoned_date" msprop:Generator_ColumnPropNameInTable="job_abandoned_dateColumn" msprop:Generator_UserColumnName="job_abandoned_date" type="xs:dateTime" minOccurs="0" />
               <xs:element name="job_id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnjob_id" msprop:Generator_ColumnPropNameInRow="job_id" msprop:Generator_ColumnPropNameInTable="job_idColumn" msprop:Generator_UserColumnName="job_id" type="xs:int" />
-              <xs:element name="job_jobtypes" msprop:Generator_ColumnVarNameInTable="columnjob_jobtypes" msprop:Generator_ColumnPropNameInRow="job_jobtypes" msprop:Generator_ColumnPropNameInTable="job_jobtypesColumn" msprop:Generator_UserColumnName="job_jobtypes" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="100" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="job_company" msprop:Generator_ColumnVarNameInTable="columnjob_company" msprop:Generator_ColumnPropNameInRow="job_company" msprop:Generator_ColumnPropNameInTable="job_companyColumn" msprop:Generator_UserColumnName="job_company" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="2" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
               <xs:element name="client_name" msprop:Generator_ColumnVarNameInTable="columnclient_name" msprop:Generator_ColumnPropNameInRow="client_name" msprop:Generator_ColumnPropNameInTable="client_nameColumn" msprop:Generator_UserColumnName="client_name" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -10545,7 +9878,7 @@ LEFT JOIN client ON client_code = job_ccode)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="jobtype" msprop:Generator_TableClassName="jobtypeDataTable" msprop:Generator_TableVarName="tablejobtype" msprop:Generator_TablePropName="jobtype" msprop:Generator_RowDeletingName="jobtypeRowDeleting" msprop:Generator_RowChangingName="jobtypeRowChanging" msprop:Generator_RowEvHandlerName="jobtypeRowChangeEventHandler" msprop:Generator_RowDeletedName="jobtypeRowDeleted" msprop:Generator_UserTableName="jobtype" msprop:Generator_RowChangedName="jobtypeRowChanged" msprop:Generator_RowEvArgName="jobtypeRowChangeEvent" msprop:Generator_RowClassName="jobtypeRow">
+        <xs:element name="jobtype" msprop:Generator_TableClassName="jobtypeDataTable" msprop:Generator_TableVarName="tablejobtype" msprop:Generator_RowChangedName="jobtypeRowChanged" msprop:Generator_TablePropName="jobtype" msprop:Generator_RowDeletingName="jobtypeRowDeleting" msprop:Generator_RowChangingName="jobtypeRowChanging" msprop:Generator_RowEvHandlerName="jobtypeRowChangeEventHandler" msprop:Generator_RowDeletedName="jobtypeRowDeleted" msprop:Generator_RowClassName="jobtypeRow" msprop:Generator_UserTableName="jobtype" msprop:Generator_RowEvArgName="jobtypeRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="jobtype_id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnjobtype_id" msprop:Generator_ColumnPropNameInRow="jobtype_id" msprop:Generator_ColumnPropNameInTable="jobtype_idColumn" msprop:Generator_UserColumnName="jobtype_id" type="xs:int" />
@@ -10566,327 +9899,7 @@ LEFT JOIN client ON client_code = job_ccode)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="oldjob" msprop:Generator_TableClassName="oldjobDataTable" msprop:Generator_TableVarName="tableoldjob" msprop:Generator_TablePropName="oldjob" msprop:Generator_RowDeletingName="oldjobRowDeleting" msprop:Generator_RowChangingName="oldjobRowChanging" msprop:Generator_RowEvHandlerName="oldjobRowChangeEventHandler" msprop:Generator_RowDeletedName="oldjobRowDeleted" msprop:Generator_UserTableName="oldjob" msprop:Generator_RowChangedName="oldjobRowChanged" msprop:Generator_RowEvArgName="oldjobRowChangeEvent" msprop:Generator_RowClassName="oldjobRow">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="job_job_key" msprop:Generator_ColumnVarNameInTable="columnjob_job_key" msprop:Generator_ColumnPropNameInRow="job_job_key" msprop:Generator_ColumnPropNameInTable="job_job_keyColumn" msprop:Generator_UserColumnName="job_job_key" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="12" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="job_j_yr" msprop:Generator_ColumnVarNameInTable="columnjob_j_yr" msprop:Generator_ColumnPropNameInRow="job_j_yr" msprop:Generator_ColumnPropNameInTable="job_j_yrColumn" msprop:Generator_UserColumnName="job_j_yr" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="4" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="job_jcode" msprop:Generator_ColumnVarNameInTable="columnjob_jcode" msprop:Generator_ColumnPropNameInRow="job_jcode" msprop:Generator_ColumnPropNameInTable="job_jcodeColumn" msprop:Generator_UserColumnName="job_jcode" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="12" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="job_new_jcode" msprop:Generator_ColumnVarNameInTable="columnjob_new_jcode" msprop:Generator_ColumnPropNameInRow="job_new_jcode" msprop:Generator_ColumnPropNameInTable="job_new_jcodeColumn" msprop:Generator_UserColumnName="job_new_jcode" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="12" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="job_iterate_job" msprop:Generator_ColumnVarNameInTable="columnjob_iterate_job" msprop:Generator_ColumnPropNameInRow="job_iterate_job" msprop:Generator_ColumnPropNameInTable="job_iterate_jobColumn" msprop:Generator_UserColumnName="job_iterate_job" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="1" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="job_ccode" msprop:Generator_ColumnVarNameInTable="columnjob_ccode" msprop:Generator_ColumnPropNameInRow="job_ccode" msprop:Generator_ColumnPropNameInTable="job_ccodeColumn" msprop:Generator_UserColumnName="job_ccode" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="5" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="job_j_projmgr2" msprop:Generator_ColumnVarNameInTable="columnjob_j_projmgr2" msprop:Generator_ColumnPropNameInRow="job_j_projmgr2" msprop:Generator_ColumnPropNameInTable="job_j_projmgr2Column" msprop:Generator_UserColumnName="job_j_projmgr2" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="32" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="job_addendum" msprop:Generator_ColumnVarNameInTable="columnjob_addendum" msprop:Generator_ColumnPropNameInRow="job_addendum" msprop:Generator_ColumnPropNameInTable="job_addendumColumn" msprop:Generator_UserColumnName="job_addendum" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="3" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="job_j_projmgr" msprop:Generator_ColumnVarNameInTable="columnjob_j_projmgr" msprop:Generator_ColumnPropNameInRow="job_j_projmgr" msprop:Generator_ColumnPropNameInTable="job_j_projmgrColumn" msprop:Generator_UserColumnName="job_j_projmgr" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="32" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="job_start_date" msprop:Generator_ColumnVarNameInTable="columnjob_start_date" msprop:Generator_ColumnPropNameInRow="job_start_date" msprop:Generator_ColumnPropNameInTable="job_start_dateColumn" msprop:Generator_UserColumnName="job_start_date" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="job_page_flag" msprop:Generator_ColumnVarNameInTable="columnjob_page_flag" msprop:Generator_ColumnPropNameInRow="job_page_flag" msprop:Generator_ColumnPropNameInTable="job_page_flagColumn" msprop:Generator_UserColumnName="job_page_flag" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="1" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="job_proj_code" msprop:Generator_ColumnVarNameInTable="columnjob_proj_code" msprop:Generator_ColumnPropNameInRow="job_proj_code" msprop:Generator_ColumnPropNameInTable="job_proj_codeColumn" msprop:Generator_UserColumnName="job_proj_code" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="3" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="job_c_type" msprop:Generator_ColumnVarNameInTable="columnjob_c_type" msprop:Generator_ColumnPropNameInRow="job_c_type" msprop:Generator_ColumnPropNameInTable="job_c_typeColumn" msprop:Generator_UserColumnName="job_c_type" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="2" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="job_inv_typ" msprop:Generator_ColumnVarNameInTable="columnjob_inv_typ" msprop:Generator_ColumnPropNameInRow="job_inv_typ" msprop:Generator_ColumnPropNameInTable="job_inv_typColumn" msprop:Generator_UserColumnName="job_inv_typ" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="2" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="job_descr" msprop:Generator_ColumnVarNameInTable="columnjob_descr" msprop:Generator_ColumnPropNameInRow="job_descr" msprop:Generator_ColumnPropNameInTable="job_descrColumn" msprop:Generator_UserColumnName="job_descr" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="30" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="job_addr1" msprop:Generator_ColumnVarNameInTable="columnjob_addr1" msprop:Generator_ColumnPropNameInRow="job_addr1" msprop:Generator_ColumnPropNameInTable="job_addr1Column" msprop:Generator_UserColumnName="job_addr1" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="30" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="job_addr3" msprop:Generator_ColumnVarNameInTable="columnjob_addr3" msprop:Generator_ColumnPropNameInRow="job_addr3" msprop:Generator_ColumnPropNameInTable="job_addr3Column" msprop:Generator_UserColumnName="job_addr3" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="30" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="job_city" msprop:Generator_ColumnVarNameInTable="columnjob_city" msprop:Generator_ColumnPropNameInRow="job_city" msprop:Generator_ColumnPropNameInTable="job_cityColumn" msprop:Generator_UserColumnName="job_city" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="30" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="job_state" msprop:Generator_ColumnVarNameInTable="columnjob_state" msprop:Generator_ColumnPropNameInRow="job_state" msprop:Generator_ColumnPropNameInTable="job_stateColumn" msprop:Generator_UserColumnName="job_state" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="2" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="job_zip" msprop:Generator_ColumnVarNameInTable="columnjob_zip" msprop:Generator_ColumnPropNameInRow="job_zip" msprop:Generator_ColumnPropNameInTable="job_zipColumn" msprop:Generator_UserColumnName="job_zip" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="10" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="job_due_date" msprop:Generator_ColumnVarNameInTable="columnjob_due_date" msprop:Generator_ColumnPropNameInRow="job_due_date" msprop:Generator_ColumnPropNameInTable="job_due_dateColumn" msprop:Generator_UserColumnName="job_due_date" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="job_auth" msprop:Generator_ColumnVarNameInTable="columnjob_auth" msprop:Generator_ColumnPropNameInRow="job_auth" msprop:Generator_ColumnPropNameInTable="job_authColumn" msprop:Generator_UserColumnName="job_auth" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="25" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="job_status" msprop:Generator_ColumnVarNameInTable="columnjob_status" msprop:Generator_ColumnPropNameInRow="job_status" msprop:Generator_ColumnPropNameInTable="job_statusColumn" msprop:Generator_UserColumnName="job_status" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="1" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="job_s_cntrc" msprop:Generator_ColumnVarNameInTable="columnjob_s_cntrc" msprop:Generator_ColumnPropNameInRow="job_s_cntrc" msprop:Generator_ColumnPropNameInTable="job_s_cntrcColumn" msprop:Generator_UserColumnName="job_s_cntrc" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="job_r_cntrc" msprop:Generator_ColumnVarNameInTable="columnjob_r_cntrc" msprop:Generator_ColumnPropNameInRow="job_r_cntrc" msprop:Generator_ColumnPropNameInTable="job_r_cntrcColumn" msprop:Generator_UserColumnName="job_r_cntrc" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="job_pname" msprop:Generator_ColumnVarNameInTable="columnjob_pname" msprop:Generator_ColumnPropNameInRow="job_pname" msprop:Generator_ColumnPropNameInTable="job_pnameColumn" msprop:Generator_UserColumnName="job_pname" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="30" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="job_paddr" msprop:Generator_ColumnVarNameInTable="columnjob_paddr" msprop:Generator_ColumnPropNameInRow="job_paddr" msprop:Generator_ColumnPropNameInTable="job_paddrColumn" msprop:Generator_UserColumnName="job_paddr" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="30" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="job_pcity" msprop:Generator_ColumnVarNameInTable="columnjob_pcity" msprop:Generator_ColumnPropNameInRow="job_pcity" msprop:Generator_ColumnPropNameInTable="job_pcityColumn" msprop:Generator_UserColumnName="job_pcity" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="20" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="job_pstate" msprop:Generator_ColumnVarNameInTable="columnjob_pstate" msprop:Generator_ColumnPropNameInRow="job_pstate" msprop:Generator_ColumnPropNameInTable="job_pstateColumn" msprop:Generator_UserColumnName="job_pstate" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="2" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="job_pzip" msprop:Generator_ColumnVarNameInTable="columnjob_pzip" msprop:Generator_ColumnPropNameInRow="job_pzip" msprop:Generator_ColumnPropNameInTable="job_pzipColumn" msprop:Generator_UserColumnName="job_pzip" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="10" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="job_pphone" msprop:Generator_ColumnVarNameInTable="columnjob_pphone" msprop:Generator_ColumnPropNameInRow="job_pphone" msprop:Generator_ColumnPropNameInTable="job_pphoneColumn" msprop:Generator_UserColumnName="job_pphone" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="15" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="job_pwphone" msprop:Generator_ColumnVarNameInTable="columnjob_pwphone" msprop:Generator_ColumnPropNameInRow="job_pwphone" msprop:Generator_ColumnPropNameInTable="job_pwphoneColumn" msprop:Generator_UserColumnName="job_pwphone" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="15" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="job_pfax" msprop:Generator_ColumnVarNameInTable="columnjob_pfax" msprop:Generator_ColumnPropNameInRow="job_pfax" msprop:Generator_ColumnPropNameInTable="job_pfaxColumn" msprop:Generator_UserColumnName="job_pfax" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="15" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="job_br_table" msprop:Generator_ColumnVarNameInTable="columnjob_br_table" msprop:Generator_ColumnPropNameInRow="job_br_table" msprop:Generator_ColumnPropNameInTable="job_br_tableColumn" msprop:Generator_UserColumnName="job_br_table" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="3" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="job_pcontact" msprop:Generator_ColumnVarNameInTable="columnjob_pcontact" msprop:Generator_ColumnPropNameInRow="job_pcontact" msprop:Generator_ColumnPropNameInTable="job_pcontactColumn" msprop:Generator_UserColumnName="job_pcontact" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="30" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="job_dotpp" msprop:Generator_ColumnVarNameInTable="columnjob_dotpp" msprop:Generator_ColumnPropNameInRow="job_dotpp" msprop:Generator_ColumnPropNameInTable="job_dotppColumn" msprop:Generator_UserColumnName="job_dotpp" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="3" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="job_ic_jobnum" msprop:Generator_ColumnVarNameInTable="columnjob_ic_jobnum" msprop:Generator_ColumnPropNameInRow="job_ic_jobnum" msprop:Generator_ColumnPropNameInTable="job_ic_jobnumColumn" msprop:Generator_UserColumnName="job_ic_jobnum" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="8" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="job_descr2" msprop:Generator_ColumnVarNameInTable="columnjob_descr2" msprop:Generator_ColumnPropNameInRow="job_descr2" msprop:Generator_ColumnPropNameInTable="job_descr2Column" msprop:Generator_UserColumnName="job_descr2" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="1024" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="job_need_contract" msprop:Generator_ColumnVarNameInTable="columnjob_need_contract" msprop:Generator_ColumnPropNameInRow="job_need_contract" msprop:Generator_ColumnPropNameInTable="job_need_contractColumn" msprop:Generator_UserColumnName="job_need_contract" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="1" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="job_ot_billing" msprop:Generator_ColumnVarNameInTable="columnjob_ot_billing" msprop:Generator_ColumnPropNameInRow="job_ot_billing" msprop:Generator_ColumnPropNameInTable="job_ot_billingColumn" msprop:Generator_UserColumnName="job_ot_billing" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="1" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="job_client_bud" msprop:Generator_ColumnVarNameInTable="columnjob_client_bud" msprop:Generator_ColumnPropNameInRow="job_client_bud" msprop:Generator_ColumnPropNameInTable="job_client_budColumn" msprop:Generator_UserColumnName="job_client_bud" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="11" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="job_proposed_bud" msprop:Generator_ColumnVarNameInTable="columnjob_proposed_bud" msprop:Generator_ColumnPropNameInRow="job_proposed_bud" msprop:Generator_ColumnPropNameInTable="job_proposed_budColumn" msprop:Generator_UserColumnName="job_proposed_bud" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="11" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="job_budget_type" msprop:Generator_ColumnVarNameInTable="columnjob_budget_type" msprop:Generator_ColumnPropNameInRow="job_budget_type" msprop:Generator_ColumnPropNameInTable="job_budget_typeColumn" msprop:Generator_UserColumnName="job_budget_type" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="4" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="job_financial_status" msprop:Generator_ColumnVarNameInTable="columnjob_financial_status" msprop:Generator_ColumnPropNameInRow="job_financial_status" msprop:Generator_ColumnPropNameInTable="job_financial_statusColumn" msprop:Generator_UserColumnName="job_financial_status" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="1" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="job_insurance_status" msprop:Generator_ColumnVarNameInTable="columnjob_insurance_status" msprop:Generator_ColumnPropNameInRow="job_insurance_status" msprop:Generator_ColumnPropNameInTable="job_insurance_statusColumn" msprop:Generator_UserColumnName="job_insurance_status" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="2" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="job_abandoned_date" msprop:Generator_ColumnVarNameInTable="columnjob_abandoned_date" msprop:Generator_ColumnPropNameInRow="job_abandoned_date" msprop:Generator_ColumnPropNameInTable="job_abandoned_dateColumn" msprop:Generator_UserColumnName="job_abandoned_date" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="oldjob_id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnoldjob_id" msprop:Generator_ColumnPropNameInRow="oldjob_id" msprop:Generator_ColumnPropNameInTable="oldjob_idColumn" msprop:Generator_UserColumnName="oldjob_id" type="xs:int" />
-              <xs:element name="job_jobtypes" msprop:Generator_ColumnVarNameInTable="columnjob_jobtypes" msprop:Generator_ColumnPropNameInRow="job_jobtypes" msprop:Generator_ColumnPropNameInTable="job_jobtypesColumn" msprop:Generator_UserColumnName="job_jobtypes" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="100" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="job_company" msprop:Generator_ColumnVarNameInTable="columnjob_company" msprop:Generator_ColumnPropNameInRow="job_company" msprop:Generator_ColumnPropNameInTable="job_companyColumn" msprop:Generator_UserColumnName="job_company" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="2" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="job_paddr2" msprop:Generator_ColumnVarNameInTable="columnjob_paddr2" msprop:Generator_ColumnPropNameInRow="job_paddr2" msprop:Generator_ColumnPropNameInTable="job_paddr2Column" msprop:Generator_UserColumnName="job_paddr2" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="32" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="job_oldjob_union" msprop:Generator_TableClassName="job_oldjob_unionDataTable" msprop:Generator_TableVarName="tablejob_oldjob_union" msprop:Generator_TablePropName="job_oldjob_union" msprop:Generator_RowDeletingName="job_oldjob_unionRowDeleting" msprop:Generator_RowChangingName="job_oldjob_unionRowChanging" msprop:Generator_RowEvHandlerName="job_oldjob_unionRowChangeEventHandler" msprop:Generator_RowDeletedName="job_oldjob_unionRowDeleted" msprop:Generator_UserTableName="job_oldjob_union" msprop:Generator_RowChangedName="job_oldjob_unionRowChanged" msprop:Generator_RowEvArgName="job_oldjob_unionRowChangeEvent" msprop:Generator_RowClassName="job_oldjob_unionRow">
+        <xs:element name="oldjob" msprop:Generator_TableClassName="oldjobDataTable" msprop:Generator_TableVarName="tableoldjob" msprop:Generator_RowChangedName="oldjobRowChanged" msprop:Generator_TablePropName="oldjob" msprop:Generator_RowDeletingName="oldjobRowDeleting" msprop:Generator_RowChangingName="oldjobRowChanging" msprop:Generator_RowEvHandlerName="oldjobRowChangeEventHandler" msprop:Generator_RowDeletedName="oldjobRowDeleted" msprop:Generator_RowClassName="oldjobRow" msprop:Generator_UserTableName="oldjob" msprop:Generator_RowEvArgName="oldjobRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="job_job_key" msprop:Generator_ColumnVarNameInTable="columnjob_job_key" msprop:Generator_ColumnPropNameInRow="job_job_key" msprop:Generator_ColumnPropNameInTable="job_job_keyColumn" msprop:Generator_UserColumnName="job_job_key" minOccurs="0">
@@ -10952,7 +9965,7 @@ LEFT JOIN client ON client_code = job_ccode)</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="job_id" msprop:Generator_ColumnVarNameInTable="columnjob_id" msprop:Generator_ColumnPropNameInRow="job_id" msprop:Generator_ColumnPropNameInTable="job_idColumn" msprop:Generator_UserColumnName="job_id" type="xs:int" />
+              <xs:element name="job_id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnjob_id" msprop:Generator_ColumnPropNameInRow="job_id" msprop:Generator_ColumnPropNameInTable="job_idColumn" msprop:Generator_UserColumnName="job_id" type="xs:int" />
               <xs:element name="client_name" msprop:Generator_ColumnVarNameInTable="columnclient_name" msprop:Generator_ColumnPropNameInRow="client_name" msprop:Generator_ColumnPropNameInTable="client_nameColumn" msprop:Generator_UserColumnName="client_name" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -11043,7 +10056,7 @@ LEFT JOIN client ON client_code = job_ccode)</CommandText>
     </xs:unique>
     <xs:unique name="oldjob_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:oldjob" />
-      <xs:field xpath="mstns:oldjob_id" />
+      <xs:field xpath="mstns:job_id" />
     </xs:unique>
   </xs:element>
 </xs:schema>

@@ -31,7 +31,18 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmJobBroswer));
             this.dgvJobs = new System.Windows.Forms.DataGridView();
+            this.jobjobkeyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jobccodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jobdescrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jobaddr1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jobaddr3DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jobcityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jobstateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jobpcontactDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jobdescr2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.jobBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.holdenengrDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.holdenengrDataSet = new JobBroswer.holdenengrDataSet();
             this.lblFilterLabel = new System.Windows.Forms.Label();
             this.lblByClientName = new System.Windows.Forms.Label();
             this.lblByProjectAddress = new System.Windows.Forms.Label();
@@ -68,18 +79,8 @@
             this.btnExit = new System.Windows.Forms.Button();
             this.lblResultsCount = new System.Windows.Forms.Label();
             this.lblNumRecsLabel = new System.Windows.Forms.Label();
-            this.holdenengrDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.holdenengrDataSet = new JobBroswer.holdenengrDataSet();
             this.jobTableAdapter = new JobBroswer.holdenengrDataSetTableAdapters.jobTableAdapter();
-            this.jobdescr2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.jobpcontactDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.jobstateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.jobcityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.jobaddr3DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.jobaddr1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.jobdescrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.jobccodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.jobjobkeyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnSwitchTables = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvJobs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.jobBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.holdenengrDataSetBindingSource)).BeginInit();
@@ -114,10 +115,81 @@
             this.dgvJobs.Size = new System.Drawing.Size(1146, 365);
             this.dgvJobs.TabIndex = 0;
             // 
+            // jobjobkeyDataGridViewTextBoxColumn
+            // 
+            this.jobjobkeyDataGridViewTextBoxColumn.DataPropertyName = "job_job_key";
+            this.jobjobkeyDataGridViewTextBoxColumn.HeaderText = "Job Number";
+            this.jobjobkeyDataGridViewTextBoxColumn.Name = "jobjobkeyDataGridViewTextBoxColumn";
+            this.jobjobkeyDataGridViewTextBoxColumn.Width = 99;
+            // 
+            // jobccodeDataGridViewTextBoxColumn
+            // 
+            this.jobccodeDataGridViewTextBoxColumn.DataPropertyName = "client_name";
+            this.jobccodeDataGridViewTextBoxColumn.HeaderText = "Client Name";
+            this.jobccodeDataGridViewTextBoxColumn.Name = "jobccodeDataGridViewTextBoxColumn";
+            this.jobccodeDataGridViewTextBoxColumn.Width = 97;
+            // 
+            // jobdescrDataGridViewTextBoxColumn
+            // 
+            this.jobdescrDataGridViewTextBoxColumn.DataPropertyName = "job_descr";
+            this.jobdescrDataGridViewTextBoxColumn.HeaderText = "Description";
+            this.jobdescrDataGridViewTextBoxColumn.Name = "jobdescrDataGridViewTextBoxColumn";
+            // 
+            // jobaddr1DataGridViewTextBoxColumn
+            // 
+            this.jobaddr1DataGridViewTextBoxColumn.DataPropertyName = "job_addr1";
+            this.jobaddr1DataGridViewTextBoxColumn.HeaderText = "Project Address";
+            this.jobaddr1DataGridViewTextBoxColumn.Name = "jobaddr1DataGridViewTextBoxColumn";
+            this.jobaddr1DataGridViewTextBoxColumn.Width = 114;
+            // 
+            // jobaddr3DataGridViewTextBoxColumn
+            // 
+            this.jobaddr3DataGridViewTextBoxColumn.DataPropertyName = "job_addr3";
+            this.jobaddr3DataGridViewTextBoxColumn.HeaderText = "Project Address 2";
+            this.jobaddr3DataGridViewTextBoxColumn.Name = "jobaddr3DataGridViewTextBoxColumn";
+            this.jobaddr3DataGridViewTextBoxColumn.Width = 123;
+            // 
+            // jobcityDataGridViewTextBoxColumn
+            // 
+            this.jobcityDataGridViewTextBoxColumn.DataPropertyName = "job_city";
+            this.jobcityDataGridViewTextBoxColumn.HeaderText = "Project Town";
+            this.jobcityDataGridViewTextBoxColumn.Name = "jobcityDataGridViewTextBoxColumn";
+            this.jobcityDataGridViewTextBoxColumn.Width = 103;
+            // 
+            // jobstateDataGridViewTextBoxColumn
+            // 
+            this.jobstateDataGridViewTextBoxColumn.DataPropertyName = "job_state";
+            this.jobstateDataGridViewTextBoxColumn.HeaderText = "State";
+            this.jobstateDataGridViewTextBoxColumn.Name = "jobstateDataGridViewTextBoxColumn";
+            this.jobstateDataGridViewTextBoxColumn.Width = 60;
+            // 
+            // jobpcontactDataGridViewTextBoxColumn
+            // 
+            this.jobpcontactDataGridViewTextBoxColumn.DataPropertyName = "job_pcontact";
+            this.jobpcontactDataGridViewTextBoxColumn.HeaderText = "Client Contact";
+            this.jobpcontactDataGridViewTextBoxColumn.Name = "jobpcontactDataGridViewTextBoxColumn";
+            this.jobpcontactDataGridViewTextBoxColumn.Width = 105;
+            // 
+            // jobdescr2DataGridViewTextBoxColumn
+            // 
+            this.jobdescr2DataGridViewTextBoxColumn.DataPropertyName = "job_descr2";
+            this.jobdescr2DataGridViewTextBoxColumn.HeaderText = "Description";
+            this.jobdescr2DataGridViewTextBoxColumn.Name = "jobdescr2DataGridViewTextBoxColumn";
+            // 
             // jobBindingSource
             // 
             this.jobBindingSource.DataMember = "job";
             this.jobBindingSource.DataSource = this.holdenengrDataSetBindingSource;
+            // 
+            // holdenengrDataSetBindingSource
+            // 
+            this.holdenengrDataSetBindingSource.DataSource = this.holdenengrDataSet;
+            this.holdenengrDataSetBindingSource.Position = 0;
+            // 
+            // holdenengrDataSet
+            // 
+            this.holdenengrDataSet.DataSetName = "holdenengrDataSet";
+            this.holdenengrDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // lblFilterLabel
             // 
@@ -470,86 +542,26 @@
             this.lblNumRecsLabel.TabIndex = 32;
             this.lblNumRecsLabel.Text = "Results Count:";
             // 
-            // holdenengrDataSetBindingSource
-            // 
-            this.holdenengrDataSetBindingSource.DataSource = this.holdenengrDataSet;
-            this.holdenengrDataSetBindingSource.Position = 0;
-            // 
-            // holdenengrDataSet
-            // 
-            this.holdenengrDataSet.DataSetName = "holdenengrDataSet";
-            this.holdenengrDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // jobTableAdapter
             // 
             this.jobTableAdapter.ClearBeforeFill = true;
             // 
-            // jobdescr2DataGridViewTextBoxColumn
+            // btnSwitchTables
             // 
-            this.jobdescr2DataGridViewTextBoxColumn.DataPropertyName = "job_descr2";
-            this.jobdescr2DataGridViewTextBoxColumn.HeaderText = "Description";
-            this.jobdescr2DataGridViewTextBoxColumn.Name = "jobdescr2DataGridViewTextBoxColumn";
-            // 
-            // jobpcontactDataGridViewTextBoxColumn
-            // 
-            this.jobpcontactDataGridViewTextBoxColumn.DataPropertyName = "job_pcontact";
-            this.jobpcontactDataGridViewTextBoxColumn.HeaderText = "Client Contact";
-            this.jobpcontactDataGridViewTextBoxColumn.Name = "jobpcontactDataGridViewTextBoxColumn";
-            this.jobpcontactDataGridViewTextBoxColumn.Width = 105;
-            // 
-            // jobstateDataGridViewTextBoxColumn
-            // 
-            this.jobstateDataGridViewTextBoxColumn.DataPropertyName = "job_state";
-            this.jobstateDataGridViewTextBoxColumn.HeaderText = "State";
-            this.jobstateDataGridViewTextBoxColumn.Name = "jobstateDataGridViewTextBoxColumn";
-            this.jobstateDataGridViewTextBoxColumn.Width = 60;
-            // 
-            // jobcityDataGridViewTextBoxColumn
-            // 
-            this.jobcityDataGridViewTextBoxColumn.DataPropertyName = "job_city";
-            this.jobcityDataGridViewTextBoxColumn.HeaderText = "Project Town";
-            this.jobcityDataGridViewTextBoxColumn.Name = "jobcityDataGridViewTextBoxColumn";
-            this.jobcityDataGridViewTextBoxColumn.Width = 103;
-            // 
-            // jobaddr3DataGridViewTextBoxColumn
-            // 
-            this.jobaddr3DataGridViewTextBoxColumn.DataPropertyName = "job_addr3";
-            this.jobaddr3DataGridViewTextBoxColumn.HeaderText = "Project Address 2";
-            this.jobaddr3DataGridViewTextBoxColumn.Name = "jobaddr3DataGridViewTextBoxColumn";
-            this.jobaddr3DataGridViewTextBoxColumn.Width = 123;
-            // 
-            // jobaddr1DataGridViewTextBoxColumn
-            // 
-            this.jobaddr1DataGridViewTextBoxColumn.DataPropertyName = "job_addr1";
-            this.jobaddr1DataGridViewTextBoxColumn.HeaderText = "Project Address";
-            this.jobaddr1DataGridViewTextBoxColumn.Name = "jobaddr1DataGridViewTextBoxColumn";
-            this.jobaddr1DataGridViewTextBoxColumn.Width = 114;
-            // 
-            // jobdescrDataGridViewTextBoxColumn
-            // 
-            this.jobdescrDataGridViewTextBoxColumn.DataPropertyName = "job_descr";
-            this.jobdescrDataGridViewTextBoxColumn.HeaderText = "Description";
-            this.jobdescrDataGridViewTextBoxColumn.Name = "jobdescrDataGridViewTextBoxColumn";
-            // 
-            // jobccodeDataGridViewTextBoxColumn
-            // 
-            this.jobccodeDataGridViewTextBoxColumn.DataPropertyName = "client_name";
-            this.jobccodeDataGridViewTextBoxColumn.HeaderText = "Client Name";
-            this.jobccodeDataGridViewTextBoxColumn.Name = "jobccodeDataGridViewTextBoxColumn";
-            this.jobccodeDataGridViewTextBoxColumn.Width = 97;
-            // 
-            // jobjobkeyDataGridViewTextBoxColumn
-            // 
-            this.jobjobkeyDataGridViewTextBoxColumn.DataPropertyName = "job_job_key";
-            this.jobjobkeyDataGridViewTextBoxColumn.HeaderText = "Job Number";
-            this.jobjobkeyDataGridViewTextBoxColumn.Name = "jobjobkeyDataGridViewTextBoxColumn";
-            this.jobjobkeyDataGridViewTextBoxColumn.Width = 99;
+            this.btnSwitchTables.Image = ((System.Drawing.Image)(resources.GetObject("btnSwitchTables.Image")));
+            this.btnSwitchTables.Location = new System.Drawing.Point(1116, 30);
+            this.btnSwitchTables.Name = "btnSwitchTables";
+            this.btnSwitchTables.Size = new System.Drawing.Size(50, 50);
+            this.btnSwitchTables.TabIndex = 34;
+            this.btnSwitchTables.UseVisualStyleBackColor = true;
+            this.btnSwitchTables.Click += new System.EventHandler(this.btnSwitchTables_Click);
             // 
             // frmJobBroswer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1175, 597);
+            this.Controls.Add(this.btnSwitchTables);
             this.Controls.Add(this.lblResultsCount);
             this.Controls.Add(this.lblNumRecsLabel);
             this.Controls.Add(this.btnPrint);
@@ -654,6 +666,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn jobstateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn jobpcontactDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn jobdescr2DataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btnSwitchTables;
     }
 }
 
