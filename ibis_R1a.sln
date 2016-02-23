@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HoldenClasses", "HoldenClas
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobBroswer", "JobBroswer\JobBroswer.csproj", "{4E746036-BD78-4956-948B-D5D61EA76C91}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupJobBrowser", "SetupJobBrowser\SetupJobBrowser.vdproj", "{A1D7F587-EA6C-4D05-935B-2693D77F8D33}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,14 @@ Global
 		{4E746036-BD78-4956-948B-D5D61EA76C91}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4E746036-BD78-4956-948B-D5D61EA76C91}.Release|x86.ActiveCfg = Release|Any CPU
 		{4E746036-BD78-4956-948B-D5D61EA76C91}.Release|x86.Build.0 = Release|Any CPU
+		{A1D7F587-EA6C-4D05-935B-2693D77F8D33}.Debug|Any CPU.ActiveCfg = Debug
+		{A1D7F587-EA6C-4D05-935B-2693D77F8D33}.Debug|Any CPU.Build.0 = Debug
+		{A1D7F587-EA6C-4D05-935B-2693D77F8D33}.Debug|x86.ActiveCfg = Debug
+		{A1D7F587-EA6C-4D05-935B-2693D77F8D33}.Debug|x86.Build.0 = Debug
+		{A1D7F587-EA6C-4D05-935B-2693D77F8D33}.Release|Any CPU.ActiveCfg = Release
+		{A1D7F587-EA6C-4D05-935B-2693D77F8D33}.Release|Any CPU.Build.0 = Release
+		{A1D7F587-EA6C-4D05-935B-2693D77F8D33}.Release|x86.ActiveCfg = Release
+		{A1D7F587-EA6C-4D05-935B-2693D77F8D33}.Release|x86.Build.0 = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
