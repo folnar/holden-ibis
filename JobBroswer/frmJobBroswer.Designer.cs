@@ -112,7 +112,7 @@
             this.dgvJobs.Name = "dgvJobs";
             this.dgvJobs.RowHeadersVisible = false;
             this.dgvJobs.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvJobs.Size = new System.Drawing.Size(1146, 365);
+            this.dgvJobs.Size = new System.Drawing.Size(1084, 365);
             this.dgvJobs.TabIndex = 0;
             // 
             // jobjobkeyDataGridViewTextBoxColumn
@@ -505,8 +505,9 @@
             // 
             // btnPrint
             // 
+            this.btnPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnPrint.Image = global::JobBroswer.Properties.Resources.PRINT_BTN;
-            this.btnPrint.Location = new System.Drawing.Point(1116, 86);
+            this.btnPrint.Location = new System.Drawing.Point(1056, 102);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(50, 50);
             this.btnPrint.TabIndex = 31;
@@ -515,8 +516,9 @@
             // 
             // btnExit
             // 
+            this.btnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnExit.Image = global::JobBroswer.Properties.Resources.EXIT_BUTTON_32;
-            this.btnExit.Location = new System.Drawing.Point(1116, 142);
+            this.btnExit.Location = new System.Drawing.Point(1056, 158);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(50, 50);
             this.btnExit.TabIndex = 30;
@@ -548,8 +550,9 @@
             // 
             // btnSwitchTables
             // 
+            this.btnSwitchTables.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSwitchTables.Image = ((System.Drawing.Image)(resources.GetObject("btnSwitchTables.Image")));
-            this.btnSwitchTables.Location = new System.Drawing.Point(1116, 30);
+            this.btnSwitchTables.Location = new System.Drawing.Point(1056, 46);
             this.btnSwitchTables.Name = "btnSwitchTables";
             this.btnSwitchTables.Size = new System.Drawing.Size(50, 50);
             this.btnSwitchTables.TabIndex = 34;
@@ -560,7 +563,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1175, 597);
+            this.ClientSize = new System.Drawing.Size(1118, 597);
             this.Controls.Add(this.btnSwitchTables);
             this.Controls.Add(this.lblResultsCount);
             this.Controls.Add(this.lblNumRecsLabel);
