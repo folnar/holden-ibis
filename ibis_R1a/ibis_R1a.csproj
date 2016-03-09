@@ -140,7 +140,7 @@
     <Compile Include="holdenengrDataSet.cs">
       <DependentUpon>holdenengrDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="holdenengrDataSet.Designer.cs">
+    <Compile Include="holdenengrDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>holdenengrDataSet.xsd</DependentUpon>
@@ -194,8 +194,8 @@
     </None>
     <None Include="holdenengrDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>holdenengrDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>holdenengrDataSet1.Designer.cs</LastGenOutput>
     </None>
     <None Include="holdenengrDataSet.xss">
       <DependentUpon>holdenengrDataSet.xsd</DependentUpon>
