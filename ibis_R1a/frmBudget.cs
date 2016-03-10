@@ -13,8 +13,8 @@ namespace ibis_R1a
 
         private void frmBudget_Load(object sender, EventArgs e)
         {
-            budget_lineitemTableAdapter.Fill(holdenengrDataSet.budget_lineitem);
-            using (holdenengrDataSet.jobDataTable jobtbl = jobTableAdapter1.GetData())
+            hesemployee1TableAdapter.Fill(holdenengrDataSet.hesemployee1);
+            using (holdenengrDataSet.jobDataTable jobtbl = jobTableAdapter1.GetData_JobNumberPName())
             {
                 cbxJobNums.DataSource = jobtbl.DefaultView;
                 cbxJobNums.DisplayMember = "job_job_key";
@@ -70,8 +70,7 @@ namespace ibis_R1a
                     else
                         txtPName.Text = "";
                 }
-                budget_lineitemTableAdapter.FillByJobNumber(holdenengrDataSet.budget_lineitem, cbxJobNums.SelectedValue.ToString());
-                //budget_lineitemTableAdapter.FillByJobNumber(Convert.ToInt32(cbxJobNums.SelectedValue));
+                budget_lineitemTableAdapter.FillByJobNumber(holdenengrDataSet.budget_lineitem, ((DataRowView)cbxJobNums.SelectedItem)[0].ToString());
             }
             catch (InvalidCastException ice)
             {
@@ -81,8 +80,38 @@ namespace ibis_R1a
 
         private void cmdSave_Click(object sender, EventArgs e)
         {
-            budget_lineitemTableAdapter.Adapter.Update(holdenengrDataSet.budget_lineitem);
-            budget_lineitemTableAdapter.Fill(holdenengrDataSet.budget_lineitem);
+
+            // NEED TO CATCH DATA ERROR FOR WHEN SOMETHING IS NULL.
+
+            try
+            {
+                budget_lineitemTableAdapter.Adapter.Update(holdenengrDataSet.budget_lineitem);
+                //budget_lineitemTableAdapter.Fill(holdenengrDataSet.budget_lineitem);
+                budget_lineitemTableAdapter.FillByJobNumber(holdenengrDataSet.budget_lineitem, ((DataRowView)cbxJobNums.SelectedItem)[0].ToString());
+            }
+            catch (DataException de)
+            {
+                MessageBox.Show("Data Exception: \n" + de.Message + "\nContact dcasale@umd.edu");
+            }
+
+            MessageBox.Show("Database updated.");
+        }
+
+        private void dgvBudgetLineItems_DefaultValuesNeeded(object sender, DataGridViewRowEventArgs e)
+        {
+            e.Row.Cells[0].Value = ((DataRowView)cbxJobNums.SelectedItem)[0].ToString();
+        }
+
+        private void dgvBudgetLineItems_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+
+            // NEED TO FIX THIS HAPPENING ON STARTUP
+
+            if (e.ColumnIndex == 5)
+            {
+                MessageBox.Show("curr: ");
+                //dgvBudgetLineItems.Rows[e.RowIndex].Cells[7].Value = 1;
+            }
         }
     }
 }

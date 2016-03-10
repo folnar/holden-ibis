@@ -230,21 +230,53 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="employeeTableAdapter" GeneratorDataComponentClassName="employeeTableAdapter" Name="employee" UserDataComponentName="employeeTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="holdenengrConnectionString (Settings)" DbObjectName="holdenengr.employee" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="holdenengrConnectionString (Settings)" DbObjectName="holdenengr.employee" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT `employee_id`, `employee_e_uname`, `employee_e_num`, `employee_lr_date`, `employee_m_status`, `employee_bank_acc`, `employee_ot_rate`, `employee_wh_allow`, `employee_dept`, `employee_e_type`, `employee_area`, `employee_change_date`, `employee_bank_name`, `employee_def_stime`, `employee_wek_hrrt`, `employee_wek_hrot`, `employee_e_prem`, `employee_vacation`, `employee_pay_rate`, `employee_time_style`, `employee_billing_rate`, `employee_comp_bank_size`, `employee_f_or_p`, `employee_rej_entry`, `employee_status`, `employee_class`, `employee_pay_rate2`, `employee_ot_rate2`, `employee_permprofile`, `employee_password`, `employee_active` FROM `employee`</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
             </MainSource>
-            <Mappings />
+            <Mappings>
+              <Mapping SourceColumn="employee_id" DataSetColumn="employee_id" />
+              <Mapping SourceColumn="employee_e_uname" DataSetColumn="employee_e_uname" />
+              <Mapping SourceColumn="employee_e_num" DataSetColumn="employee_e_num" />
+              <Mapping SourceColumn="employee_lr_date" DataSetColumn="employee_lr_date" />
+              <Mapping SourceColumn="employee_m_status" DataSetColumn="employee_m_status" />
+              <Mapping SourceColumn="employee_bank_acc" DataSetColumn="employee_bank_acc" />
+              <Mapping SourceColumn="employee_ot_rate" DataSetColumn="employee_ot_rate" />
+              <Mapping SourceColumn="employee_wh_allow" DataSetColumn="employee_wh_allow" />
+              <Mapping SourceColumn="employee_dept" DataSetColumn="employee_dept" />
+              <Mapping SourceColumn="employee_e_type" DataSetColumn="employee_e_type" />
+              <Mapping SourceColumn="employee_area" DataSetColumn="employee_area" />
+              <Mapping SourceColumn="employee_change_date" DataSetColumn="employee_change_date" />
+              <Mapping SourceColumn="employee_bank_name" DataSetColumn="employee_bank_name" />
+              <Mapping SourceColumn="employee_def_stime" DataSetColumn="employee_def_stime" />
+              <Mapping SourceColumn="employee_wek_hrrt" DataSetColumn="employee_wek_hrrt" />
+              <Mapping SourceColumn="employee_wek_hrot" DataSetColumn="employee_wek_hrot" />
+              <Mapping SourceColumn="employee_e_prem" DataSetColumn="employee_e_prem" />
+              <Mapping SourceColumn="employee_vacation" DataSetColumn="employee_vacation" />
+              <Mapping SourceColumn="employee_pay_rate" DataSetColumn="employee_pay_rate" />
+              <Mapping SourceColumn="employee_time_style" DataSetColumn="employee_time_style" />
+              <Mapping SourceColumn="employee_billing_rate" DataSetColumn="employee_billing_rate" />
+              <Mapping SourceColumn="employee_comp_bank_size" DataSetColumn="employee_comp_bank_size" />
+              <Mapping SourceColumn="employee_f_or_p" DataSetColumn="employee_f_or_p" />
+              <Mapping SourceColumn="employee_rej_entry" DataSetColumn="employee_rej_entry" />
+              <Mapping SourceColumn="employee_status" DataSetColumn="employee_status" />
+              <Mapping SourceColumn="employee_class" DataSetColumn="employee_class" />
+              <Mapping SourceColumn="employee_pay_rate2" DataSetColumn="employee_pay_rate2" />
+              <Mapping SourceColumn="employee_ot_rate2" DataSetColumn="employee_ot_rate2" />
+              <Mapping SourceColumn="employee_permprofile" DataSetColumn="employee_permprofile" />
+              <Mapping SourceColumn="employee_password" DataSetColumn="employee_password" />
+              <Mapping SourceColumn="employee_active" DataSetColumn="employee_active" />
+            </Mappings>
             <Sources>
               <DbSource ConnectionRef="holdenengrConnectionString (Settings)" DbObjectName="holdenengr.employee" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillForComboBox" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataForComboBox" GeneratorSourceName="FillForComboBox" GetMethodModifier="Public" GetMethodName="GetDataForComboBox" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataForComboBox" UserSourceName="FillForComboBox">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT CONCAT(employee_e_num, ' -- ', employee_e_uname) AS employee_un, employee_id FROM employee WHERE employee_active = 1 ORDER BY employee_e_num ASC</CommandText>
+                    <CommandText>SELECT employee_active, employee_area, employee_bank_acc, employee_bank_name, employee_billing_rate, employee_change_date, employee_class, employee_comp_bank_size, employee_def_stime, employee_dept, employee_e_num, employee_e_prem, employee_e_type, employee_e_uname, employee_f_or_p, employee_id, employee_lr_date, employee_m_status, employee_ot_rate, employee_ot_rate2, employee_password, employee_pay_rate, employee_pay_rate2, employee_permprofile, employee_rej_entry, employee_status, employee_time_style, employee_vacation, employee_wek_hrot, employee_wek_hrrt, employee_wh_allow FROM employee WHERE (employee_active = 1) ORDER BY employee_e_num</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -529,6 +561,14 @@
             </MainSource>
             <Mappings />
             <Sources>
+              <DbSource ConnectionRef="holdenengrConnectionString (Settings)" DbObjectName="holdenengr.job" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill_JobNumberPName" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData_JobNumberPName" GeneratorSourceName="Fill_JobNumberPName" GetMethodModifier="Public" GetMethodName="GetData_JobNumberPName" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData_JobNumberPName" UserSourceName="Fill_JobNumberPName">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT job_job_key, job_pname, job_id FROM job</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
               <DbSource ConnectionRef="holdenengrConnectionString (Settings)" DbObjectName="holdenengr.job" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByID" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByID" GeneratorSourceName="FillByID" GetMethodModifier="Public" GetMethodName="GetDataByID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByID" UserSourceName="FillByID">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
@@ -890,6 +930,259 @@ VALUES        (@p2, @p3, @p4, @p5, @p6, @p7, @p8, @p11)</CommandText>
                 </SelectCommand>
               </DbSource>
             </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="hesemployeeTableAdapter" GeneratorDataComponentClassName="hesemployeeTableAdapter" Name="hesemployee" UserDataComponentName="hesemployeeTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="holdenengrConnectionString (Settings)" DbObjectName="holdenengr.hesemployee" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM `hesemployee` WHERE ((`hesemployee_id` = @p1) AND ((@p2 = 1 AND `hesemployee_lastname` IS NULL) OR (`hesemployee_lastname` = @p3)) AND ((@p4 = 1 AND `hesemployee_middlename` IS NULL) OR (`hesemployee_middlename` = @p5)) AND ((@p6 = 1 AND `hesemployee_firstname` IS NULL) OR (`hesemployee_firstname` = @p7)) AND ((@p8 = 1 AND `hesemployee_hesnumber` IS NULL) OR (`hesemployee_hesnumber` = @p9)) AND ((@p10 = 1 AND `hesemployee_username` IS NULL) OR (`hesemployee_username` = @p11)) AND ((@p12 = 1 AND `hesemployee_password` IS NULL) OR (`hesemployee_password` = @p13)) AND ((@p14 = 1 AND `hesemployee_payrate` IS NULL) OR (`hesemployee_payrate` = @p15)) AND ((@p16 = 1 AND `hesemployee_otrate` IS NULL) OR (`hesemployee_otrate` = @p17)) AND ((@p18 = 1 AND `hesemployee_startdate` IS NULL) OR (`hesemployee_startdate` = @p19)) AND ((@p20 = 1 AND `hesemployee_leavedate` IS NULL) OR (`hesemployee_leavedate` = @p21)) AND ((@p22 = 1 AND `hesemployee_active` IS NULL) OR (`hesemployee_active` = @p23)) AND ((@p24 = 1 AND `hesemployee_permprofile` IS NULL) OR (`hesemployee_permprofile` = @p25)) AND ((@p26 = 1 AND `hesemployee_address` IS NULL) OR (`hesemployee_address` = @p27)) AND ((@p28 = 1 AND `hesemployee_address2` IS NULL) OR (`hesemployee_address2` = @p29)) AND ((@p30 = 1 AND `hesemployee_city` IS NULL) OR (`hesemployee_city` = @p31)) AND ((@p32 = 1 AND `hesemployee_state` IS NULL) OR (`hesemployee_state` = @p33)) AND ((@p34 = 1 AND `hesemployee_zip` IS NULL) OR (`hesemployee_zip` = @p35)) AND ((@p36 = 1 AND `hesemployee_homephone` IS NULL) OR (`hesemployee_homephone` = @p37)) AND ((@p38 = 1 AND `hesemployee_mobilephone` IS NULL) OR (`hesemployee_mobilephone` = @p39)) AND ((@p40 = 1 AND `hesemployee_heslocation` IS NULL) OR (`hesemployee_heslocation` = @p41)) AND ((@p42 = 1 AND `hesemployee_jobtitle` IS NULL) OR (`hesemployee_jobtitle` = @p43)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="hesemployee_id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="hesemployee_lastname" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="hesemployee_lastname" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p4" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="hesemployee_middlename" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p5" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="hesemployee_middlename" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p6" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="hesemployee_firstname" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p7" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="hesemployee_firstname" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p8" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="hesemployee_hesnumber" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p9" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="hesemployee_hesnumber" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p10" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="hesemployee_username" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p11" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="hesemployee_username" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p12" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="hesemployee_password" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p13" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="hesemployee_password" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p14" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="hesemployee_payrate" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@p15" Precision="0" ProviderType="NewDecimal" Scale="0" Size="0" SourceColumn="hesemployee_payrate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p16" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="hesemployee_otrate" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@p17" Precision="0" ProviderType="NewDecimal" Scale="0" Size="0" SourceColumn="hesemployee_otrate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p18" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="hesemployee_startdate" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@p19" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="hesemployee_startdate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p20" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="hesemployee_leavedate" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@p21" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="hesemployee_leavedate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p22" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="hesemployee_active" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p23" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="hesemployee_active" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p24" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="hesemployee_permprofile" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p25" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="hesemployee_permprofile" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p26" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="hesemployee_address" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p27" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="hesemployee_address" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p28" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="hesemployee_address2" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p29" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="hesemployee_address2" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p30" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="hesemployee_city" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p31" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="hesemployee_city" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p32" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="hesemployee_state" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p33" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="hesemployee_state" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p34" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="hesemployee_zip" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p35" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="hesemployee_zip" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p36" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="hesemployee_homephone" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p37" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="hesemployee_homephone" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p38" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="hesemployee_mobilephone" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p39" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="hesemployee_mobilephone" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p40" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="hesemployee_heslocation" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p41" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="hesemployee_heslocation" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p42" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="hesemployee_jobtitle" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p43" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="hesemployee_jobtitle" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO `hesemployee` (`hesemployee_lastname`, `hesemployee_middlename`, `hesemployee_firstname`, `hesemployee_hesnumber`, `hesemployee_username`, `hesemployee_password`, `hesemployee_payrate`, `hesemployee_otrate`, `hesemployee_startdate`, `hesemployee_leavedate`, `hesemployee_active`, `hesemployee_permprofile`, `hesemployee_address`, `hesemployee_address2`, `hesemployee_city`, `hesemployee_state`, `hesemployee_zip`, `hesemployee_homephone`, `hesemployee_mobilephone`, `hesemployee_heslocation`, `hesemployee_jobtitle`) VALUES (@p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="hesemployee_lastname" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="hesemployee_middlename" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="hesemployee_firstname" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p4" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="hesemployee_hesnumber" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p5" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="hesemployee_username" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p6" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="hesemployee_password" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@p7" Precision="0" ProviderType="NewDecimal" Scale="0" Size="0" SourceColumn="hesemployee_payrate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@p8" Precision="0" ProviderType="NewDecimal" Scale="0" Size="0" SourceColumn="hesemployee_otrate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@p9" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="hesemployee_startdate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@p10" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="hesemployee_leavedate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p11" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="hesemployee_active" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p12" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="hesemployee_permprofile" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p13" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="hesemployee_address" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p14" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="hesemployee_address2" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p15" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="hesemployee_city" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p16" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="hesemployee_state" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p17" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="hesemployee_zip" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p18" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="hesemployee_homephone" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p19" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="hesemployee_mobilephone" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p20" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="hesemployee_heslocation" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p21" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="hesemployee_jobtitle" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT * FROM hesemployee</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE `hesemployee` SET `hesemployee_lastname` = @p1, `hesemployee_middlename` = @p2, `hesemployee_firstname` = @p3, `hesemployee_hesnumber` = @p4, `hesemployee_username` = @p5, `hesemployee_password` = @p6, `hesemployee_payrate` = @p7, `hesemployee_otrate` = @p8, `hesemployee_startdate` = @p9, `hesemployee_leavedate` = @p10, `hesemployee_active` = @p11, `hesemployee_permprofile` = @p12, `hesemployee_address` = @p13, `hesemployee_address2` = @p14, `hesemployee_city` = @p15, `hesemployee_state` = @p16, `hesemployee_zip` = @p17, `hesemployee_homephone` = @p18, `hesemployee_mobilephone` = @p19, `hesemployee_heslocation` = @p20, `hesemployee_jobtitle` = @p21 WHERE ((`hesemployee_id` = @p22) AND ((@p23 = 1 AND `hesemployee_lastname` IS NULL) OR (`hesemployee_lastname` = @p24)) AND ((@p25 = 1 AND `hesemployee_middlename` IS NULL) OR (`hesemployee_middlename` = @p26)) AND ((@p27 = 1 AND `hesemployee_firstname` IS NULL) OR (`hesemployee_firstname` = @p28)) AND ((@p29 = 1 AND `hesemployee_hesnumber` IS NULL) OR (`hesemployee_hesnumber` = @p30)) AND ((@p31 = 1 AND `hesemployee_username` IS NULL) OR (`hesemployee_username` = @p32)) AND ((@p33 = 1 AND `hesemployee_password` IS NULL) OR (`hesemployee_password` = @p34)) AND ((@p35 = 1 AND `hesemployee_payrate` IS NULL) OR (`hesemployee_payrate` = @p36)) AND ((@p37 = 1 AND `hesemployee_otrate` IS NULL) OR (`hesemployee_otrate` = @p38)) AND ((@p39 = 1 AND `hesemployee_startdate` IS NULL) OR (`hesemployee_startdate` = @p40)) AND ((@p41 = 1 AND `hesemployee_leavedate` IS NULL) OR (`hesemployee_leavedate` = @p42)) AND ((@p43 = 1 AND `hesemployee_active` IS NULL) OR (`hesemployee_active` = @p44)) AND ((@p45 = 1 AND `hesemployee_permprofile` IS NULL) OR (`hesemployee_permprofile` = @p46)) AND ((@p47 = 1 AND `hesemployee_address` IS NULL) OR (`hesemployee_address` = @p48)) AND ((@p49 = 1 AND `hesemployee_address2` IS NULL) OR (`hesemployee_address2` = @p50)) AND ((@p51 = 1 AND `hesemployee_city` IS NULL) OR (`hesemployee_city` = @p52)) AND ((@p53 = 1 AND `hesemployee_state` IS NULL) OR (`hesemployee_state` = @p54)) AND ((@p55 = 1 AND `hesemployee_zip` IS NULL) OR (`hesemployee_zip` = @p56)) AND ((@p57 = 1 AND `hesemployee_homephone` IS NULL) OR (`hesemployee_homephone` = @p58)) AND ((@p59 = 1 AND `hesemployee_mobilephone` IS NULL) OR (`hesemployee_mobilephone` = @p60)) AND ((@p61 = 1 AND `hesemployee_heslocation` IS NULL) OR (`hesemployee_heslocation` = @p62)) AND ((@p63 = 1 AND `hesemployee_jobtitle` IS NULL) OR (`hesemployee_jobtitle` = @p64)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="hesemployee_lastname" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="hesemployee_middlename" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="hesemployee_firstname" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p4" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="hesemployee_hesnumber" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p5" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="hesemployee_username" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p6" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="hesemployee_password" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@p7" Precision="0" ProviderType="NewDecimal" Scale="0" Size="0" SourceColumn="hesemployee_payrate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@p8" Precision="0" ProviderType="NewDecimal" Scale="0" Size="0" SourceColumn="hesemployee_otrate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@p9" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="hesemployee_startdate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@p10" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="hesemployee_leavedate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p11" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="hesemployee_active" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p12" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="hesemployee_permprofile" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p13" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="hesemployee_address" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p14" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="hesemployee_address2" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p15" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="hesemployee_city" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p16" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="hesemployee_state" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p17" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="hesemployee_zip" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p18" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="hesemployee_homephone" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p19" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="hesemployee_mobilephone" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p20" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="hesemployee_heslocation" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p21" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="hesemployee_jobtitle" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p22" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="hesemployee_id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p23" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="hesemployee_lastname" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p24" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="hesemployee_lastname" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p25" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="hesemployee_middlename" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p26" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="hesemployee_middlename" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p27" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="hesemployee_firstname" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p28" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="hesemployee_firstname" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p29" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="hesemployee_hesnumber" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p30" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="hesemployee_hesnumber" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p31" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="hesemployee_username" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p32" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="hesemployee_username" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p33" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="hesemployee_password" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p34" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="hesemployee_password" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p35" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="hesemployee_payrate" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@p36" Precision="0" ProviderType="NewDecimal" Scale="0" Size="0" SourceColumn="hesemployee_payrate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p37" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="hesemployee_otrate" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@p38" Precision="0" ProviderType="NewDecimal" Scale="0" Size="0" SourceColumn="hesemployee_otrate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p39" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="hesemployee_startdate" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@p40" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="hesemployee_startdate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p41" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="hesemployee_leavedate" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@p42" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="hesemployee_leavedate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p43" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="hesemployee_active" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p44" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="hesemployee_active" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p45" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="hesemployee_permprofile" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p46" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="hesemployee_permprofile" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p47" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="hesemployee_address" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p48" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="hesemployee_address" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p49" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="hesemployee_address2" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p50" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="hesemployee_address2" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p51" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="hesemployee_city" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p52" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="hesemployee_city" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p53" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="hesemployee_state" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p54" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="hesemployee_state" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p55" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="hesemployee_zip" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p56" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="hesemployee_zip" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p57" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="hesemployee_homephone" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p58" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="hesemployee_homephone" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p59" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="hesemployee_mobilephone" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p60" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="hesemployee_mobilephone" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p61" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="hesemployee_heslocation" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p62" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="hesemployee_heslocation" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p63" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="hesemployee_jobtitle" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p64" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="hesemployee_jobtitle" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="hesemployee_id" DataSetColumn="hesemployee_id" />
+              <Mapping SourceColumn="hesemployee_lastname" DataSetColumn="hesemployee_lastname" />
+              <Mapping SourceColumn="hesemployee_middlename" DataSetColumn="hesemployee_middlename" />
+              <Mapping SourceColumn="hesemployee_firstname" DataSetColumn="hesemployee_firstname" />
+              <Mapping SourceColumn="hesemployee_hesnumber" DataSetColumn="hesemployee_hesnumber" />
+              <Mapping SourceColumn="hesemployee_username" DataSetColumn="hesemployee_username" />
+              <Mapping SourceColumn="hesemployee_password" DataSetColumn="hesemployee_password" />
+              <Mapping SourceColumn="hesemployee_payrate" DataSetColumn="hesemployee_payrate" />
+              <Mapping SourceColumn="hesemployee_otrate" DataSetColumn="hesemployee_otrate" />
+              <Mapping SourceColumn="hesemployee_startdate" DataSetColumn="hesemployee_startdate" />
+              <Mapping SourceColumn="hesemployee_leavedate" DataSetColumn="hesemployee_leavedate" />
+              <Mapping SourceColumn="hesemployee_active" DataSetColumn="hesemployee_active" />
+              <Mapping SourceColumn="hesemployee_permprofile" DataSetColumn="hesemployee_permprofile" />
+              <Mapping SourceColumn="hesemployee_address" DataSetColumn="hesemployee_address" />
+              <Mapping SourceColumn="hesemployee_address2" DataSetColumn="hesemployee_address2" />
+              <Mapping SourceColumn="hesemployee_city" DataSetColumn="hesemployee_city" />
+              <Mapping SourceColumn="hesemployee_state" DataSetColumn="hesemployee_state" />
+              <Mapping SourceColumn="hesemployee_zip" DataSetColumn="hesemployee_zip" />
+              <Mapping SourceColumn="hesemployee_homephone" DataSetColumn="hesemployee_homephone" />
+              <Mapping SourceColumn="hesemployee_mobilephone" DataSetColumn="hesemployee_mobilephone" />
+              <Mapping SourceColumn="hesemployee_heslocation" DataSetColumn="hesemployee_heslocation" />
+              <Mapping SourceColumn="hesemployee_jobtitle" DataSetColumn="hesemployee_jobtitle" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="holdenengrConnectionString (Settings)" DbObjectName="holdenengr.hesemployee" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillForDD" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataForDD" GeneratorSourceName="FillForDD" GetMethodModifier="Public" GetMethodName="GetDataForDD" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataForDD" UserSourceName="FillForDD">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT hesemployee_id, hesemployee_payrate, hesemployee_otrate, 
+CONCAT(hesemployee_hesnumber, ' - ', hesemployee_lastname, ', ', hesemployee_firstname) AS hesemployee_name 
+FROM hesemployee</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="hesemployee1TableAdapter" GeneratorDataComponentClassName="hesemployee1TableAdapter" Name="hesemployee1" UserDataComponentName="hesemployee1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="holdenengrConnectionString (Settings)" DbObjectName="holdenengr.hesemployee" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM `hesemployee` WHERE ((`hesemployee_id` = @p1) AND ((@p2 = 1 AND `hesemployee_payrate` IS NULL) OR (`hesemployee_payrate` = @p3)) AND ((@p4 = 1 AND `hesemployee_otrate` IS NULL) OR (`hesemployee_otrate` = @p5)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="hesemployee_id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="hesemployee_payrate" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="NewDecimal" Scale="0" Size="0" SourceColumn="hesemployee_payrate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p4" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="hesemployee_otrate" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@p5" Precision="0" ProviderType="NewDecimal" Scale="0" Size="0" SourceColumn="hesemployee_otrate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO `hesemployee` (`hesemployee_payrate`, `hesemployee_otrate`) VALUES (@p1, @p2)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="NewDecimal" Scale="0" Size="0" SourceColumn="hesemployee_payrate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="NewDecimal" Scale="0" Size="0" SourceColumn="hesemployee_otrate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT hesemployee_id, hesemployee_payrate, hesemployee_otrate, 
+CONCAT(hesemployee_hesnumber, ' - ', hesemployee_lastname, ', ', hesemployee_firstname) AS hesemployee_name 
+FROM hesemployee</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE `hesemployee` SET `hesemployee_payrate` = @p1, `hesemployee_otrate` = @p2 WHERE ((`hesemployee_id` = @p3) AND ((@p4 = 1 AND `hesemployee_payrate` IS NULL) OR (`hesemployee_payrate` = @p5)) AND ((@p6 = 1 AND `hesemployee_otrate` IS NULL) OR (`hesemployee_otrate` = @p7)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="NewDecimal" Scale="0" Size="0" SourceColumn="hesemployee_payrate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="NewDecimal" Scale="0" Size="0" SourceColumn="hesemployee_otrate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="hesemployee_id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p4" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="hesemployee_payrate" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@p5" Precision="0" ProviderType="NewDecimal" Scale="0" Size="0" SourceColumn="hesemployee_payrate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p6" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="hesemployee_otrate" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@p7" Precision="0" ProviderType="NewDecimal" Scale="0" Size="0" SourceColumn="hesemployee_otrate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="hesemployee_id" DataSetColumn="hesemployee_id" />
+              <Mapping SourceColumn="hesemployee_payrate" DataSetColumn="hesemployee_payrate" />
+              <Mapping SourceColumn="hesemployee_otrate" DataSetColumn="hesemployee_otrate" />
+              <Mapping SourceColumn="hesemployee_name" DataSetColumn="hesemployee_name" />
+            </Mappings>
+            <Sources />
           </TableAdapter>
         </Tables>
         <Sources>
@@ -3455,6 +3748,183 @@ VALUES        (@p2, @p3, @p4, @p5, @p6, @p7, @p8, @p11)</CommandText>
         </xs:element>
         <xs:element name="employee" msprop:Generator_TableClassName="employeeDataTable" msprop:Generator_TableVarName="tableemployee" msprop:Generator_RowChangedName="employeeRowChanged" msprop:Generator_TablePropName="employee" msprop:Generator_RowDeletingName="employeeRowDeleting" msprop:Generator_RowChangingName="employeeRowChanging" msprop:Generator_RowEvHandlerName="employeeRowChangeEventHandler" msprop:Generator_RowDeletedName="employeeRowDeleted" msprop:Generator_RowClassName="employeeRow" msprop:Generator_UserTableName="employee" msprop:Generator_RowEvArgName="employeeRowChangeEvent">
           <xs:complexType>
+            <xs:sequence>
+              <xs:element name="employee_id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnemployee_id" msprop:Generator_ColumnPropNameInRow="employee_id" msprop:Generator_ColumnPropNameInTable="employee_idColumn" msprop:Generator_UserColumnName="employee_id" type="xs:int" />
+              <xs:element name="employee_e_uname" msprop:Generator_ColumnVarNameInTable="columnemployee_e_uname" msprop:Generator_ColumnPropNameInRow="employee_e_uname" msprop:Generator_ColumnPropNameInTable="employee_e_unameColumn" msprop:Generator_UserColumnName="employee_e_uname" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="32" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="employee_e_num" msprop:Generator_ColumnVarNameInTable="columnemployee_e_num" msprop:Generator_ColumnPropNameInRow="employee_e_num" msprop:Generator_ColumnPropNameInTable="employee_e_numColumn" msprop:Generator_UserColumnName="employee_e_num" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="3" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="employee_lr_date" msprop:Generator_ColumnVarNameInTable="columnemployee_lr_date" msprop:Generator_ColumnPropNameInRow="employee_lr_date" msprop:Generator_ColumnPropNameInTable="employee_lr_dateColumn" msprop:Generator_UserColumnName="employee_lr_date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="employee_m_status" msprop:Generator_ColumnVarNameInTable="columnemployee_m_status" msprop:Generator_ColumnPropNameInRow="employee_m_status" msprop:Generator_ColumnPropNameInTable="employee_m_statusColumn" msprop:Generator_UserColumnName="employee_m_status" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="employee_bank_acc" msprop:Generator_ColumnVarNameInTable="columnemployee_bank_acc" msprop:Generator_ColumnPropNameInRow="employee_bank_acc" msprop:Generator_ColumnPropNameInTable="employee_bank_accColumn" msprop:Generator_UserColumnName="employee_bank_acc" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="employee_ot_rate" msprop:Generator_ColumnVarNameInTable="columnemployee_ot_rate" msprop:Generator_ColumnPropNameInRow="employee_ot_rate" msprop:Generator_ColumnPropNameInTable="employee_ot_rateColumn" msprop:Generator_UserColumnName="employee_ot_rate" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="employee_wh_allow" msprop:Generator_ColumnVarNameInTable="columnemployee_wh_allow" msprop:Generator_ColumnPropNameInRow="employee_wh_allow" msprop:Generator_ColumnPropNameInTable="employee_wh_allowColumn" msprop:Generator_UserColumnName="employee_wh_allow" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="employee_dept" msprop:Generator_ColumnVarNameInTable="columnemployee_dept" msprop:Generator_ColumnPropNameInRow="employee_dept" msprop:Generator_ColumnPropNameInTable="employee_deptColumn" msprop:Generator_UserColumnName="employee_dept" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="employee_e_type" msprop:Generator_ColumnVarNameInTable="columnemployee_e_type" msprop:Generator_ColumnPropNameInRow="employee_e_type" msprop:Generator_ColumnPropNameInTable="employee_e_typeColumn" msprop:Generator_UserColumnName="employee_e_type" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="employee_area" msprop:Generator_ColumnVarNameInTable="columnemployee_area" msprop:Generator_ColumnPropNameInRow="employee_area" msprop:Generator_ColumnPropNameInTable="employee_areaColumn" msprop:Generator_UserColumnName="employee_area" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="employee_change_date" msprop:Generator_ColumnVarNameInTable="columnemployee_change_date" msprop:Generator_ColumnPropNameInRow="employee_change_date" msprop:Generator_ColumnPropNameInTable="employee_change_dateColumn" msprop:Generator_UserColumnName="employee_change_date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="employee_bank_name" msprop:Generator_ColumnVarNameInTable="columnemployee_bank_name" msprop:Generator_ColumnPropNameInRow="employee_bank_name" msprop:Generator_ColumnPropNameInTable="employee_bank_nameColumn" msprop:Generator_UserColumnName="employee_bank_name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="employee_def_stime" msprop:Generator_ColumnVarNameInTable="columnemployee_def_stime" msprop:Generator_ColumnPropNameInRow="employee_def_stime" msprop:Generator_ColumnPropNameInTable="employee_def_stimeColumn" msprop:Generator_UserColumnName="employee_def_stime" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="employee_wek_hrrt" msprop:Generator_ColumnVarNameInTable="columnemployee_wek_hrrt" msprop:Generator_ColumnPropNameInRow="employee_wek_hrrt" msprop:Generator_ColumnPropNameInTable="employee_wek_hrrtColumn" msprop:Generator_UserColumnName="employee_wek_hrrt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="employee_wek_hrot" msprop:Generator_ColumnVarNameInTable="columnemployee_wek_hrot" msprop:Generator_ColumnPropNameInRow="employee_wek_hrot" msprop:Generator_ColumnPropNameInTable="employee_wek_hrotColumn" msprop:Generator_UserColumnName="employee_wek_hrot" type="xs:decimal" minOccurs="0" />
+              <xs:element name="employee_e_prem" msprop:Generator_ColumnVarNameInTable="columnemployee_e_prem" msprop:Generator_ColumnPropNameInRow="employee_e_prem" msprop:Generator_ColumnPropNameInTable="employee_e_premColumn" msprop:Generator_UserColumnName="employee_e_prem" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="employee_vacation" msprop:Generator_ColumnVarNameInTable="columnemployee_vacation" msprop:Generator_ColumnPropNameInRow="employee_vacation" msprop:Generator_ColumnPropNameInTable="employee_vacationColumn" msprop:Generator_UserColumnName="employee_vacation" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="3" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="employee_pay_rate" msprop:Generator_ColumnVarNameInTable="columnemployee_pay_rate" msprop:Generator_ColumnPropNameInRow="employee_pay_rate" msprop:Generator_ColumnPropNameInTable="employee_pay_rateColumn" msprop:Generator_UserColumnName="employee_pay_rate" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="employee_time_style" msprop:Generator_ColumnVarNameInTable="columnemployee_time_style" msprop:Generator_ColumnPropNameInRow="employee_time_style" msprop:Generator_ColumnPropNameInTable="employee_time_styleColumn" msprop:Generator_UserColumnName="employee_time_style" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="employee_billing_rate" msprop:Generator_ColumnVarNameInTable="columnemployee_billing_rate" msprop:Generator_ColumnPropNameInRow="employee_billing_rate" msprop:Generator_ColumnPropNameInTable="employee_billing_rateColumn" msprop:Generator_UserColumnName="employee_billing_rate" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="employee_comp_bank_size" msprop:Generator_ColumnVarNameInTable="columnemployee_comp_bank_size" msprop:Generator_ColumnPropNameInRow="employee_comp_bank_size" msprop:Generator_ColumnPropNameInTable="employee_comp_bank_sizeColumn" msprop:Generator_UserColumnName="employee_comp_bank_size" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="employee_f_or_p" msprop:Generator_ColumnVarNameInTable="columnemployee_f_or_p" msprop:Generator_ColumnPropNameInRow="employee_f_or_p" msprop:Generator_ColumnPropNameInTable="employee_f_or_pColumn" msprop:Generator_UserColumnName="employee_f_or_p" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="employee_rej_entry" msprop:Generator_ColumnVarNameInTable="columnemployee_rej_entry" msprop:Generator_ColumnPropNameInRow="employee_rej_entry" msprop:Generator_ColumnPropNameInTable="employee_rej_entryColumn" msprop:Generator_UserColumnName="employee_rej_entry" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="employee_status" msprop:Generator_ColumnVarNameInTable="columnemployee_status" msprop:Generator_ColumnPropNameInRow="employee_status" msprop:Generator_ColumnPropNameInTable="employee_statusColumn" msprop:Generator_UserColumnName="employee_status" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="employee_class" msprop:Generator_ColumnVarNameInTable="columnemployee_class" msprop:Generator_ColumnPropNameInRow="employee_class" msprop:Generator_ColumnPropNameInTable="employee_classColumn" msprop:Generator_UserColumnName="employee_class" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="employee_pay_rate2" msprop:Generator_ColumnVarNameInTable="columnemployee_pay_rate2" msprop:Generator_ColumnPropNameInRow="employee_pay_rate2" msprop:Generator_ColumnPropNameInTable="employee_pay_rate2Column" msprop:Generator_UserColumnName="employee_pay_rate2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="employee_ot_rate2" msprop:Generator_ColumnVarNameInTable="columnemployee_ot_rate2" msprop:Generator_ColumnPropNameInRow="employee_ot_rate2" msprop:Generator_ColumnPropNameInTable="employee_ot_rate2Column" msprop:Generator_UserColumnName="employee_ot_rate2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="employee_permprofile" msprop:Generator_ColumnVarNameInTable="columnemployee_permprofile" msprop:Generator_ColumnPropNameInRow="employee_permprofile" msprop:Generator_ColumnPropNameInTable="employee_permprofileColumn" msprop:Generator_UserColumnName="employee_permprofile" type="xs:unsignedInt" minOccurs="0" />
+              <xs:element name="employee_password" msprop:Generator_ColumnVarNameInTable="columnemployee_password" msprop:Generator_ColumnPropNameInRow="employee_password" msprop:Generator_ColumnPropNameInTable="employee_passwordColumn" msprop:Generator_UserColumnName="employee_password" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="32" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="employee_active" msprop:Generator_ColumnVarNameInTable="columnemployee_active" msprop:Generator_ColumnPropNameInRow="employee_active" msprop:Generator_ColumnPropNameInTable="employee_activeColumn" msprop:Generator_UserColumnName="employee_active" type="xs:int" minOccurs="0" />
+            </xs:sequence>
           </xs:complexType>
         </xs:element>
         <xs:element name="fedfuncclass" msprop:Generator_TableClassName="fedfuncclassDataTable" msprop:Generator_TableVarName="tablefedfuncclass" msprop:Generator_RowChangedName="fedfuncclassRowChanged" msprop:Generator_TablePropName="fedfuncclass" msprop:Generator_RowDeletingName="fedfuncclassRowDeleting" msprop:Generator_RowChangingName="fedfuncclassRowChanging" msprop:Generator_RowEvHandlerName="fedfuncclassRowChangeEventHandler" msprop:Generator_RowDeletedName="fedfuncclassRowDeleted" msprop:Generator_RowClassName="fedfuncclassRow" msprop:Generator_UserTableName="fedfuncclass" msprop:Generator_RowEvArgName="fedfuncclassRowChangeEvent">
@@ -3627,11 +4097,145 @@ VALUES        (@p2, @p3, @p4, @p5, @p6, @p7, @p8, @p11)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="hesemployee" msprop:Generator_TableClassName="hesemployeeDataTable" msprop:Generator_TableVarName="tablehesemployee" msprop:Generator_RowChangedName="hesemployeeRowChanged" msprop:Generator_TablePropName="hesemployee" msprop:Generator_RowDeletingName="hesemployeeRowDeleting" msprop:Generator_RowChangingName="hesemployeeRowChanging" msprop:Generator_RowEvHandlerName="hesemployeeRowChangeEventHandler" msprop:Generator_RowDeletedName="hesemployeeRowDeleted" msprop:Generator_RowClassName="hesemployeeRow" msprop:Generator_UserTableName="hesemployee" msprop:Generator_RowEvArgName="hesemployeeRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="hesemployee_id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnhesemployee_id" msprop:Generator_ColumnPropNameInRow="hesemployee_id" msprop:Generator_ColumnPropNameInTable="hesemployee_idColumn" msprop:Generator_UserColumnName="hesemployee_id" type="xs:int" />
+              <xs:element name="hesemployee_lastname" msprop:Generator_ColumnVarNameInTable="columnhesemployee_lastname" msprop:Generator_ColumnPropNameInRow="hesemployee_lastname" msprop:Generator_ColumnPropNameInTable="hesemployee_lastnameColumn" msprop:Generator_UserColumnName="hesemployee_lastname" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="hesemployee_middlename" msprop:Generator_ColumnVarNameInTable="columnhesemployee_middlename" msprop:Generator_ColumnPropNameInRow="hesemployee_middlename" msprop:Generator_ColumnPropNameInTable="hesemployee_middlenameColumn" msprop:Generator_UserColumnName="hesemployee_middlename" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="hesemployee_firstname" msprop:Generator_ColumnVarNameInTable="columnhesemployee_firstname" msprop:Generator_ColumnPropNameInRow="hesemployee_firstname" msprop:Generator_ColumnPropNameInTable="hesemployee_firstnameColumn" msprop:Generator_UserColumnName="hesemployee_firstname" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="hesemployee_hesnumber" msprop:Generator_ColumnVarNameInTable="columnhesemployee_hesnumber" msprop:Generator_ColumnPropNameInRow="hesemployee_hesnumber" msprop:Generator_ColumnPropNameInTable="hesemployee_hesnumberColumn" msprop:Generator_UserColumnName="hesemployee_hesnumber" type="xs:int" minOccurs="0" />
+              <xs:element name="hesemployee_username" msprop:Generator_ColumnVarNameInTable="columnhesemployee_username" msprop:Generator_ColumnPropNameInRow="hesemployee_username" msprop:Generator_ColumnPropNameInTable="hesemployee_usernameColumn" msprop:Generator_UserColumnName="hesemployee_username" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="21" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="hesemployee_password" msprop:Generator_ColumnVarNameInTable="columnhesemployee_password" msprop:Generator_ColumnPropNameInRow="hesemployee_password" msprop:Generator_ColumnPropNameInTable="hesemployee_passwordColumn" msprop:Generator_UserColumnName="hesemployee_password" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="24" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="hesemployee_payrate" msprop:Generator_ColumnVarNameInTable="columnhesemployee_payrate" msprop:Generator_ColumnPropNameInRow="hesemployee_payrate" msprop:Generator_ColumnPropNameInTable="hesemployee_payrateColumn" msprop:Generator_UserColumnName="hesemployee_payrate" type="xs:decimal" minOccurs="0" />
+              <xs:element name="hesemployee_otrate" msprop:Generator_ColumnVarNameInTable="columnhesemployee_otrate" msprop:Generator_ColumnPropNameInRow="hesemployee_otrate" msprop:Generator_ColumnPropNameInTable="hesemployee_otrateColumn" msprop:Generator_UserColumnName="hesemployee_otrate" type="xs:decimal" minOccurs="0" />
+              <xs:element name="hesemployee_startdate" msprop:Generator_ColumnVarNameInTable="columnhesemployee_startdate" msprop:Generator_ColumnPropNameInRow="hesemployee_startdate" msprop:Generator_ColumnPropNameInTable="hesemployee_startdateColumn" msprop:Generator_UserColumnName="hesemployee_startdate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="hesemployee_leavedate" msprop:Generator_ColumnVarNameInTable="columnhesemployee_leavedate" msprop:Generator_ColumnPropNameInRow="hesemployee_leavedate" msprop:Generator_ColumnPropNameInTable="hesemployee_leavedateColumn" msprop:Generator_UserColumnName="hesemployee_leavedate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="hesemployee_active" msprop:Generator_ColumnVarNameInTable="columnhesemployee_active" msprop:Generator_ColumnPropNameInRow="hesemployee_active" msprop:Generator_ColumnPropNameInTable="hesemployee_activeColumn" msprop:Generator_UserColumnName="hesemployee_active" type="xs:int" minOccurs="0" />
+              <xs:element name="hesemployee_permprofile" msprop:Generator_ColumnVarNameInTable="columnhesemployee_permprofile" msprop:Generator_ColumnPropNameInRow="hesemployee_permprofile" msprop:Generator_ColumnPropNameInTable="hesemployee_permprofileColumn" msprop:Generator_UserColumnName="hesemployee_permprofile" type="xs:int" minOccurs="0" />
+              <xs:element name="hesemployee_address" msprop:Generator_ColumnVarNameInTable="columnhesemployee_address" msprop:Generator_ColumnPropNameInRow="hesemployee_address" msprop:Generator_ColumnPropNameInTable="hesemployee_addressColumn" msprop:Generator_UserColumnName="hesemployee_address" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="hesemployee_address2" msprop:Generator_ColumnVarNameInTable="columnhesemployee_address2" msprop:Generator_ColumnPropNameInRow="hesemployee_address2" msprop:Generator_ColumnPropNameInTable="hesemployee_address2Column" msprop:Generator_UserColumnName="hesemployee_address2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="hesemployee_city" msprop:Generator_ColumnVarNameInTable="columnhesemployee_city" msprop:Generator_ColumnPropNameInRow="hesemployee_city" msprop:Generator_ColumnPropNameInTable="hesemployee_cityColumn" msprop:Generator_UserColumnName="hesemployee_city" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="24" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="hesemployee_state" msprop:Generator_ColumnVarNameInTable="columnhesemployee_state" msprop:Generator_ColumnPropNameInRow="hesemployee_state" msprop:Generator_ColumnPropNameInTable="hesemployee_stateColumn" msprop:Generator_UserColumnName="hesemployee_state" type="xs:int" minOccurs="0" />
+              <xs:element name="hesemployee_zip" msprop:Generator_ColumnVarNameInTable="columnhesemployee_zip" msprop:Generator_ColumnPropNameInRow="hesemployee_zip" msprop:Generator_ColumnPropNameInTable="hesemployee_zipColumn" msprop:Generator_UserColumnName="hesemployee_zip" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="hesemployee_homephone" msprop:Generator_ColumnVarNameInTable="columnhesemployee_homephone" msprop:Generator_ColumnPropNameInRow="hesemployee_homephone" msprop:Generator_ColumnPropNameInTable="hesemployee_homephoneColumn" msprop:Generator_UserColumnName="hesemployee_homephone" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="hesemployee_mobilephone" msprop:Generator_ColumnVarNameInTable="columnhesemployee_mobilephone" msprop:Generator_ColumnPropNameInRow="hesemployee_mobilephone" msprop:Generator_ColumnPropNameInTable="hesemployee_mobilephoneColumn" msprop:Generator_UserColumnName="hesemployee_mobilephone" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="hesemployee_heslocation" msprop:Generator_ColumnVarNameInTable="columnhesemployee_heslocation" msprop:Generator_ColumnPropNameInRow="hesemployee_heslocation" msprop:Generator_ColumnPropNameInTable="hesemployee_heslocationColumn" msprop:Generator_UserColumnName="hesemployee_heslocation" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="hesemployee_jobtitle" msprop:Generator_ColumnVarNameInTable="columnhesemployee_jobtitle" msprop:Generator_ColumnPropNameInRow="hesemployee_jobtitle" msprop:Generator_ColumnPropNameInTable="hesemployee_jobtitleColumn" msprop:Generator_UserColumnName="hesemployee_jobtitle" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="32" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="hesemployee1" msprop:Generator_TableClassName="hesemployee1DataTable" msprop:Generator_TableVarName="tablehesemployee1" msprop:Generator_TablePropName="hesemployee1" msprop:Generator_RowDeletingName="hesemployee1RowDeleting" msprop:Generator_RowChangingName="hesemployee1RowChanging" msprop:Generator_RowEvHandlerName="hesemployee1RowChangeEventHandler" msprop:Generator_RowDeletedName="hesemployee1RowDeleted" msprop:Generator_UserTableName="hesemployee1" msprop:Generator_RowChangedName="hesemployee1RowChanged" msprop:Generator_RowEvArgName="hesemployee1RowChangeEvent" msprop:Generator_RowClassName="hesemployee1Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="hesemployee_id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnhesemployee_id" msprop:Generator_ColumnPropNameInRow="hesemployee_id" msprop:Generator_ColumnPropNameInTable="hesemployee_idColumn" msprop:Generator_UserColumnName="hesemployee_id" type="xs:int" />
+              <xs:element name="hesemployee_payrate" msprop:Generator_ColumnVarNameInTable="columnhesemployee_payrate" msprop:Generator_ColumnPropNameInRow="hesemployee_payrate" msprop:Generator_ColumnPropNameInTable="hesemployee_payrateColumn" msprop:Generator_UserColumnName="hesemployee_payrate" type="xs:decimal" minOccurs="0" />
+              <xs:element name="hesemployee_otrate" msprop:Generator_ColumnVarNameInTable="columnhesemployee_otrate" msprop:Generator_ColumnPropNameInRow="hesemployee_otrate" msprop:Generator_ColumnPropNameInTable="hesemployee_otrateColumn" msprop:Generator_UserColumnName="hesemployee_otrate" type="xs:decimal" minOccurs="0" />
+              <xs:element name="hesemployee_name" msprop:Generator_ColumnVarNameInTable="columnhesemployee_name" msprop:Generator_ColumnPropNameInRow="hesemployee_name" msprop:Generator_ColumnPropNameInTable="hesemployee_nameColumn" msprop:Generator_UserColumnName="hesemployee_name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="56" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:employee" />
+      <xs:field xpath="mstns:employee_id" />
+    </xs:unique>
+    <xs:unique name="budget_lineitem_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:budget_lineitem" />
       <xs:field xpath="mstns:budget_lineitem_id" />
+    </xs:unique>
+    <xs:unique name="hesemployee_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:hesemployee" />
+      <xs:field xpath="mstns:hesemployee_id" />
+    </xs:unique>
+    <xs:unique name="hesemployee1_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:hesemployee1" />
+      <xs:field xpath="mstns:hesemployee_id" />
     </xs:unique>
   </xs:element>
 </xs:schema>
