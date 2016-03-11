@@ -31112,9 +31112,9 @@ VALUES        (@p2, @p3, @p4, @p5, @p6, @p7, @p8, @p11)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT hesemployee_id, hesemployee_payrate, hesemployee_otrate, \nCONCAT(hesemploy" +
-                "ee_hesnumber, \' - \', hesemployee_lastname, \', \', hesemployee_firstname) AS hesem" +
-                "ployee_name \nFROM hesemployee";
+            this._commandCollection[1].CommandText = "SELECT hesemployee_id, hesemployee_payrate, hesemployee_otrate, \r\nCONCAT(hesemplo" +
+                "yee_hesnumber, \' - \', hesemployee_lastname, \', \', hesemployee_firstname) AS hese" +
+                "mployee_name \r\nFROM hesemployee";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -32203,9 +32203,9 @@ VALUES        (@p2, @p3, @p4, @p5, @p6, @p7, @p8, @p11)";
             this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT hesemployee_id, hesemployee_payrate, hesemployee_otrate, \nCONCAT(hesemploy" +
-                "ee_hesnumber, \' - \', hesemployee_lastname, \', \', hesemployee_firstname) AS hesem" +
-                "ployee_name \nFROM hesemployee";
+            this._commandCollection[0].CommandText = "SELECT hesemployee_id, hesemployee_payrate, hesemployee_otrate, \r\nCONCAT(hesemplo" +
+                "yee_hesnumber, \' - \', hesemployee_lastname, \', \', hesemployee_firstname) AS hese" +
+                "mployee_name \r\nFROM hesemployee";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

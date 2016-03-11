@@ -28,25 +28,13 @@
         "Entry"
         {
         "MsmKey" = "8:_4432DFBD7F24C211DAB9DE52077249AE"
-        "OwnerKey" = "8:_62419C283D788059A739DFFEC616707A"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_4432DFBD7F24C211DAB9DE52077249AE"
         "OwnerKey" = "8:_F0781F7F3F29B5560CD457131894FABC"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_472DCE955EEA3AD79BA5356544A95929"
-        "OwnerKey" = "8:_42924FF01AAF4F0CA20FE48DDEF5A1F5"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_472DCE955EEA3AD79BA5356544A95929"
-        "OwnerKey" = "8:_DDC2410FAFFDA1556F3EBAFB78F462F3"
+        "MsmKey" = "8:_4432DFBD7F24C211DAB9DE52077249AE"
+        "OwnerKey" = "8:_62419C283D788059A739DFFEC616707A"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -69,24 +57,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_A3CB84B993A3A3BAAD955C4FCA59FD3F"
-        "OwnerKey" = "8:_472DCE955EEA3AD79BA5356544A95929"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_A3CB84B993A3A3BAAD955C4FCA59FD3F"
-        "OwnerKey" = "8:_FF85292ABE7A63AE63CE6D1F792B7EBC"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_A3CB84B993A3A3BAAD955C4FCA59FD3F"
-        "OwnerKey" = "8:_DDC2410FAFFDA1556F3EBAFB78F462F3"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_B0AA76AB7CB6F2685B35D8E4D386E315"
         "OwnerKey" = "8:_62419C283D788059A739DFFEC616707A"
         "MsmSig" = "8:_UNDEFINED"
@@ -94,12 +64,6 @@
         "Entry"
         {
         "MsmKey" = "8:_B0AA76AB7CB6F2685B35D8E4D386E315"
-        "OwnerKey" = "8:_42924FF01AAF4F0CA20FE48DDEF5A1F5"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_DDC2410FAFFDA1556F3EBAFB78F462F3"
         "OwnerKey" = "8:_42924FF01AAF4F0CA20FE48DDEF5A1F5"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -123,24 +87,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_FF85292ABE7A63AE63CE6D1F792B7EBC"
-        "OwnerKey" = "8:_472DCE955EEA3AD79BA5356544A95929"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_FF85292ABE7A63AE63CE6D1F792B7EBC"
-        "OwnerKey" = "8:_42924FF01AAF4F0CA20FE48DDEF5A1F5"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_FF85292ABE7A63AE63CE6D1F792B7EBC"
-        "OwnerKey" = "8:_DDC2410FAFFDA1556F3EBAFB78F462F3"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_42924FF01AAF4F0CA20FE48DDEF5A1F5"
         "MsmSig" = "8:_UNDEFINED"
@@ -148,43 +94,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_4432DFBD7F24C211DAB9DE52077249AE"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_FA15884BC6ED1801C472B2CA391AA478"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_A3CB84B993A3A3BAAD955C4FCA59FD3F"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_FF85292ABE7A63AE63CE6D1F792B7EBC"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_472DCE955EEA3AD79BA5356544A95929"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_DDC2410FAFFDA1556F3EBAFB78F462F3"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_62419C283D788059A739DFFEC616707A"
+        "OwnerKey" = "8:_F0781F7F3F29B5560CD457131894FABC"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -196,7 +106,25 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_F0781F7F3F29B5560CD457131894FABC"
+        "OwnerKey" = "8:_62419C283D788059A739DFFEC616707A"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_A3CB84B993A3A3BAAD955C4FCA59FD3F"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_FA15884BC6ED1801C472B2CA391AA478"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_4432DFBD7F24C211DAB9DE52077249AE"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -301,34 +229,13 @@
             "AssemblyAsmDisplayName" = "8:Microsoft.SqlServer.Types, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
+                    "_4432DFBD7F24C211DAB9DE52077249AE"
+                    {
+                    "Name" = "8:Microsoft.SqlServer.Types.dll"
+                    "Attributes" = "3:512"
+                    }
                 }
             "SourcePath" = "8:Microsoft.SqlServer.Types.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_A1156CA5743141CEB3FB1E5761BD291D"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_472DCE955EEA3AD79BA5356544A95929"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:HoldenClasses, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86"
-                "ScatterAssemblies"
-                {
-                }
-            "SourcePath" = "8:HoldenClasses.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_A1156CA5743141CEB3FB1E5761BD291D"
@@ -384,6 +291,11 @@
             "AssemblyAsmDisplayName" = "8:MySql.Data, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
+                    "_A3CB84B993A3A3BAAD955C4FCA59FD3F"
+                    {
+                    "Name" = "8:MySql.Data.dll"
+                    "Attributes" = "3:512"
+                    }
                 }
             "SourcePath" = "8:MySql.Data.dll"
             "TargetName" = "8:"
@@ -417,32 +329,6 @@
                     }
                 }
             "SourcePath" = "8:Microsoft.ReportViewer.ProcessingObjectModel.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_A1156CA5743141CEB3FB1E5761BD291D"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_DDC2410FAFFDA1556F3EBAFB78F462F3"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:ibis_R1a, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86"
-                "ScatterAssemblies"
-                {
-                }
-            "SourcePath" = "8:ibis_R1a.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_A1156CA5743141CEB3FB1E5761BD291D"
@@ -498,34 +384,13 @@
             "AssemblyAsmDisplayName" = "8:Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
+                    "_FA15884BC6ED1801C472B2CA391AA478"
+                    {
+                    "Name" = "8:Microsoft.ReportViewer.WinForms.dll"
+                    "Attributes" = "3:512"
+                    }
                 }
             "SourcePath" = "8:Microsoft.ReportViewer.WinForms.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_A1156CA5743141CEB3FB1E5761BD291D"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_FF85292ABE7A63AE63CE6D1F792B7EBC"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:IbisUtils, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86"
-                "ScatterAssemblies"
-                {
-                }
-            "SourcePath" = "8:IbisUtils.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_A1156CA5743141CEB3FB1E5761BD291D"
@@ -599,15 +464,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Holden Job Browser"
-        "ProductCode" = "8:{E195777D-C7A6-4217-80B4-BE8A7D77BF0C}"
-        "PackageCode" = "8:{EDC096AC-D304-444A-88AA-344E3F6B93E4}"
+        "ProductCode" = "8:{ED977F8F-E653-4901-A416-31B383B3E751}"
+        "PackageCode" = "8:{F830B59E-664A-4CF2-9D7C-8D238A89CBA1}"
         "UpgradeCode" = "8:{88DDC377-7418-4510-8936-4A6D0BF1104C}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.0.1"
+        "ProductVersion" = "8:1.0.2"
         "Manufacturer" = "8:Holden Tools"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
@@ -1135,7 +1000,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_42924FF01AAF4F0CA20FE48DDEF5A1F5"
             {
-            "SourcePath" = "8:..\\JobBroswer\\obj\\x86\\Debug\\JobBroswer.exe"
+            "SourcePath" = "8:..\\JobBroswer\\obj\\Debug\\JobBroswer.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_A1156CA5743141CEB3FB1E5761BD291D"

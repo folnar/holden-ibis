@@ -16,7 +16,7 @@ namespace JobBroswer
 
         private void frmJobBroswer_Load(object sender, EventArgs e)
         {
-            this.jobTableAdapter.Fill(this.holdenengrDataSet.job);
+            jobTableAdapter.Fill(holdenengrDataSet.job);
             initForm();
         }
 
@@ -177,8 +177,8 @@ namespace JobBroswer
 
         private void btnSwitchTables_Click(object sender, EventArgs e)
         {
-            // NEED WORK HERE.
-            initForm();
+            jobTableAdapter.FillIncludeOldJobs(holdenengrDataSet.job);
+            updateFilter();
         }
     }
 }
