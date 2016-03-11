@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace ibis_R1a
@@ -14,6 +15,7 @@ namespace ibis_R1a
         private void frmBudget_Load(object sender, EventArgs e)
         {
             hesemployee1TableAdapter.Fill(holdenengrDataSet.hesemployee1);
+
             using (holdenengrDataSet.jobDataTable jobtbl = jobTableAdapter1.GetData_JobNumberPName())
             {
                 cbxJobNums.DataSource = jobtbl.DefaultView;
@@ -49,13 +51,14 @@ namespace ibis_R1a
             //    cbxWorkCode.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             //    cbxWorkCode.AutoCompleteSource = AutoCompleteSource.ListItems;
             //}
+            dgvBudgetLineItems.CellValueChanged += dgvBudgetLineItems_CellValueChanged;
         }
 
         private void cmdExit_Click(object sender, EventArgs e)
         {
             jobTableAdapter1.Dispose();
-            this.Dispose();
-            this.Close();
+            Dispose();
+            Close();
         }
 
         private void cbxJobNums_SelectedIndexChanged(object sender, EventArgs e)
@@ -80,13 +83,9 @@ namespace ibis_R1a
 
         private void cmdSave_Click(object sender, EventArgs e)
         {
-
-            // NEED TO CATCH DATA ERROR FOR WHEN SOMETHING IS NULL.
-
             try
             {
                 budget_lineitemTableAdapter.Adapter.Update(holdenengrDataSet.budget_lineitem);
-                //budget_lineitemTableAdapter.Fill(holdenengrDataSet.budget_lineitem);
                 budget_lineitemTableAdapter.FillByJobNumber(holdenengrDataSet.budget_lineitem, ((DataRowView)cbxJobNums.SelectedItem)[0].ToString());
             }
             catch (DataException de)
@@ -104,14 +103,30 @@ namespace ibis_R1a
 
         private void dgvBudgetLineItems_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
+            // MIGHT WANT TO SEE ABOUT CLEANING UP THE INDICES BELOW SO THAT,
+            // INSTEAD OF INTEGERS, WE REFERENCE CELLS BY COLUMN NAME.
 
-            // NEED TO FIX THIS HAPPENING ON STARTUP
-
-            if (e.ColumnIndex == 5)
+            if ((e.ColumnIndex == 5 || e.ColumnIndex == 4) &&
+                !(dgvBudgetLineItems.CurrentRow.Cells[4].Value == null ||
+                dgvBudgetLineItems.CurrentRow.Cells[4].Value == DBNull.Value ||
+                String.IsNullOrWhiteSpace(dgvBudgetLineItems.CurrentRow.Cells[4].Value.ToString()) ||
+                dgvBudgetLineItems.CurrentRow.Cells[5].Value == null ||
+                dgvBudgetLineItems.CurrentRow.Cells[5].Value == DBNull.Value ||
+                String.IsNullOrWhiteSpace(dgvBudgetLineItems.CurrentRow.Cells[5].Value.ToString())))
             {
-                MessageBox.Show("curr: ");
-                //dgvBudgetLineItems.Rows[e.RowIndex].Cells[7].Value = 1;
+                decimal tmppayrate = Convert.ToDecimal(holdenengrDataSet.hesemployee1.AsEnumerable().
+                    SingleOrDefault(
+                        r => r.Field<int>("hesemployee_id") ==
+                        (int)dgvBudgetLineItems.CurrentRow.Cells[4].Value
+                        )["hesemployee_payrate"]);
+                decimal tmpnumhrs = (decimal)dgvBudgetLineItems.CurrentRow.Cells[5].Value;
+                dgvBudgetLineItems.CurrentRow.Cells[6].Value = tmppayrate * tmpnumhrs;
             }
+        }
+
+        private void dgvBudgetLineItems_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            MessageBox.Show("Data Error Event: \n" + e.Exception.Message + "\nContact dcasale@umd.edu");
         }
     }
 }

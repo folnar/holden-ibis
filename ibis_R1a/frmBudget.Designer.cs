@@ -36,15 +36,15 @@
             this.lblJobNumber = new System.Windows.Forms.Label();
             this.lblJobName = new System.Windows.Forms.Label();
             this.dgvBudgetLineItems = new System.Windows.Forms.DataGridView();
-            this.cmdSave = new System.Windows.Forms.Button();
-            this.budgetlineitemBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.hesemployee1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.holdenengrDataSet = new ibis_R1a.holdenengrDataSet();
+            this.budgetlineitemBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cmdSave = new System.Windows.Forms.Button();
             this.jobTableAdapter1 = new ibis_R1a.holdenengrDataSetTableAdapters.jobTableAdapter();
             this.ibis_workcodeTableAdapter1 = new ibis_R1a.holdenengrDataSetTableAdapters.ibis_workcodeTableAdapter();
             this.ibis_activitycodeTableAdapter1 = new ibis_R1a.holdenengrDataSetTableAdapters.ibis_activitycodeTableAdapter();
             this.ibis_taskcodeTableAdapter1 = new ibis_R1a.holdenengrDataSetTableAdapters.ibis_taskcodeTableAdapter();
             this.budget_lineitemTableAdapter = new ibis_R1a.holdenengrDataSetTableAdapters.budget_lineitemTableAdapter();
-            this.hesemployee1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.hesemployee1TableAdapter = new ibis_R1a.holdenengrDataSetTableAdapters.hesemployee1TableAdapter();
             this.budgetlineitemjobnumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.budgetlineitemworkidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,9 +56,9 @@
             this.budgetlineitemnoteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.budgetlineitemdatestampDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBudgetLineItems)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.budgetlineitemBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.holdenengrDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hesemployee1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.holdenengrDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.budgetlineitemBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // cbxJobNums
@@ -130,8 +130,23 @@
             this.dgvBudgetLineItems.Name = "dgvBudgetLineItems";
             this.dgvBudgetLineItems.Size = new System.Drawing.Size(1142, 379);
             this.dgvBudgetLineItems.TabIndex = 8;
-            this.dgvBudgetLineItems.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBudgetLineItems_CellValueChanged);
+            this.dgvBudgetLineItems.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvBudgetLineItems_DataError);
             this.dgvBudgetLineItems.DefaultValuesNeeded += new System.Windows.Forms.DataGridViewRowEventHandler(this.dgvBudgetLineItems_DefaultValuesNeeded);
+            // 
+            // hesemployee1BindingSource
+            // 
+            this.hesemployee1BindingSource.DataMember = "hesemployee1";
+            this.hesemployee1BindingSource.DataSource = this.holdenengrDataSet;
+            // 
+            // holdenengrDataSet
+            // 
+            this.holdenengrDataSet.DataSetName = "holdenengrDataSet";
+            this.holdenengrDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // budgetlineitemBindingSource
+            // 
+            this.budgetlineitemBindingSource.DataMember = "budget_lineitem";
+            this.budgetlineitemBindingSource.DataSource = this.holdenengrDataSet;
             // 
             // cmdSave
             // 
@@ -144,16 +159,6 @@
             this.cmdSave.Text = "&Save Changes";
             this.cmdSave.UseVisualStyleBackColor = true;
             this.cmdSave.Click += new System.EventHandler(this.cmdSave_Click);
-            // 
-            // budgetlineitemBindingSource
-            // 
-            this.budgetlineitemBindingSource.DataMember = "budget_lineitem";
-            this.budgetlineitemBindingSource.DataSource = this.holdenengrDataSet;
-            // 
-            // holdenengrDataSet
-            // 
-            this.holdenengrDataSet.DataSetName = "holdenengrDataSet";
-            this.holdenengrDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // jobTableAdapter1
             // 
@@ -174,11 +179,6 @@
             // budget_lineitemTableAdapter
             // 
             this.budget_lineitemTableAdapter.ClearBeforeFill = true;
-            // 
-            // hesemployee1BindingSource
-            // 
-            this.hesemployee1BindingSource.DataMember = "hesemployee1";
-            this.hesemployee1BindingSource.DataSource = this.holdenengrDataSet;
             // 
             // hesemployee1TableAdapter
             // 
@@ -233,6 +233,7 @@
             this.budgetlineitemvalueDataGridViewTextBoxColumn.DataPropertyName = "budget_lineitem_value";
             this.budgetlineitemvalueDataGridViewTextBoxColumn.HeaderText = "Value";
             this.budgetlineitemvalueDataGridViewTextBoxColumn.Name = "budgetlineitemvalueDataGridViewTextBoxColumn";
+            this.budgetlineitemvalueDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // budgetlineitemnoteDataGridViewTextBoxColumn
             // 
@@ -268,9 +269,9 @@
             this.Text = "Budget Form";
             this.Load += new System.EventHandler(this.frmBudget_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBudgetLineItems)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.budgetlineitemBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.holdenengrDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hesemployee1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.holdenengrDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.budgetlineitemBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
