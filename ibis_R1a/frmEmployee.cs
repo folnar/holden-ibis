@@ -18,6 +18,8 @@ namespace ibis_R1a
 
         private void frmEmployee_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'holdenengrDataSet.ibis_yesno' table. You can move, or remove it, as needed.
+            this.ibis_yesnoTableAdapter.Fill(this.holdenengrDataSet.ibis_yesno);
             // TODO: This line of code loads data into the 'holdenengrDataSet.hesemployee' table. You can move, or remove it, as needed.
             this.hesemployeeTableAdapter.Fill(this.holdenengrDataSet.hesemployee);
 
