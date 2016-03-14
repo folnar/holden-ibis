@@ -141,20 +141,20 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cmdAdmin_UpdatePerms.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="cmdExitfromMM.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="cmdExitfromMM.Location" type="System.Drawing.Point, System.Drawing">
-    <value>228, 460</value>
+    <value>228, 534</value>
   </data>
   <data name="cmdExitfromMM.Size" type="System.Drawing.Size, System.Drawing">
     <value>170, 43</value>
   </data>
   <data name="cmdExitfromMM.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="cmdExitfromMM.Text" xml:space="preserve">
     <value>E&amp;xit</value>
@@ -169,7 +169,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cmdExitfromMM.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="cmdJobInfoSheet.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -196,7 +196,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cmdJobInfoSheet.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="btnAddressForm.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -223,7 +223,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnAddressForm.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="btnContactForm.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -250,7 +250,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnContactForm.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="btnBudgetForm.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -277,6 +277,33 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnBudgetForm.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnManageEmployees.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnManageEmployees.Location" type="System.Drawing.Point, System.Drawing">
+    <value>228, 459</value>
+  </data>
+  <data name="btnManageEmployees.Size" type="System.Drawing.Size, System.Drawing">
+    <value>170, 43</value>
+  </data>
+  <data name="btnManageEmployees.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="btnManageEmployees.Text" xml:space="preserve">
+    <value>Manage &amp;Employees</value>
+  </data>
+  <data name="&gt;&gt;btnManageEmployees.Name" xml:space="preserve">
+    <value>btnManageEmployees</value>
+  </data>
+  <data name="&gt;&gt;btnManageEmployees.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnManageEmployees.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnManageEmployees.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -286,7 +313,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>657, 598</value>
+    <value>657, 637</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

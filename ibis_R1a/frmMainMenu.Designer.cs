@@ -35,6 +35,7 @@
             this.btnAddressForm = new System.Windows.Forms.Button();
             this.btnContactForm = new System.Windows.Forms.Button();
             this.btnBudgetForm = new System.Windows.Forms.Button();
+            this.btnManageEmployees = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // cmdAdmin_UpdatePerms
@@ -79,10 +80,18 @@
             this.btnBudgetForm.UseVisualStyleBackColor = true;
             this.btnBudgetForm.Click += new System.EventHandler(this.btnTestForms_Click);
             // 
+            // btnManageEmployees
+            // 
+            resources.ApplyResources(this.btnManageEmployees, "btnManageEmployees");
+            this.btnManageEmployees.Name = "btnManageEmployees";
+            this.btnManageEmployees.UseVisualStyleBackColor = true;
+            this.btnManageEmployees.Click += new System.EventHandler(this.btnManageEmployees_Click);
+            // 
             // frmMainMenu
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnManageEmployees);
             this.Controls.Add(this.btnBudgetForm);
             this.Controls.Add(this.btnContactForm);
             this.Controls.Add(this.btnAddressForm);
@@ -102,5 +111,6 @@
         private System.Windows.Forms.Button btnAddressForm;
         private System.Windows.Forms.Button btnContactForm;
         private System.Windows.Forms.Button btnBudgetForm;
+        private System.Windows.Forms.Button btnManageEmployees;
     }
 }

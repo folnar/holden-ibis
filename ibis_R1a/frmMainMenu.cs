@@ -64,5 +64,11 @@ namespace ibis_R1a
             frmBudget frmJ = new frmBudget();
             frmJ.Show();
         }
+
+        private void btnManageEmployees_Click(object sender, EventArgs e)
+        {
+            frmEmployee frmE = new frmEmployee();
+            frmE.Show();
+        }
     }
 }
