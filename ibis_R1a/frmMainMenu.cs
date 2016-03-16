@@ -12,7 +12,7 @@ namespace ibis_R1a
         public frmMainMenu()
         {
             InitializeComponent();
-            this.FormClosing += frmMainMenu_FormClosing;
+            FormClosing += frmMainMenu_FormClosing;
 
             IFormatter formatter = new BinaryFormatter();
             Stream stream = new FileStream(Resource1.SESSION_FN, FileMode.Open, FileAccess.Read, FileShare.Read);

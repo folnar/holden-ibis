@@ -77,7 +77,7 @@ namespace ibis_R1a
             }
             catch (InvalidCastException ice)
             {
-                MessageBox.Show("Invalid Cast Exception.: \n" + ice.Message + "\nContact dcasale@umd.edu");
+                MessageBox.Show("(0x01a3)Invalid Cast Exception.: \n" + ice.Message + "\nContact dcasale@umd.edu");
             }
         }
 
@@ -90,7 +90,7 @@ namespace ibis_R1a
             }
             catch (DataException de)
             {
-                MessageBox.Show("Data Exception: \n" + de.Message + "\nContact dcasale@umd.edu");
+                MessageBox.Show("(0x011f)Data Exception: \n" + de.Message + "\nContact dcasale@umd.edu");
             }
 
             MessageBox.Show("Database updated.");
@@ -126,7 +126,7 @@ namespace ibis_R1a
 
         private void dgvBudgetLineItems_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
-            MessageBox.Show("Data Error Event: \n" + e.Exception.Message + "\nContact dcasale@umd.edu");
+            MessageBox.Show("(0xea11)Data Error Event: \n" + e.Exception.Message + "\nContact dcasale@umd.edu");
         }
     }
 }

@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Windows.Forms;
+using HoldenClasses;
 
 namespace ibis_R1a
 {
@@ -18,11 +17,67 @@ namespace ibis_R1a
 
         private void frmEmployee_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'holdenengrDataSet.ibis_yesno' table. You can move, or remove it, as needed.
-            this.ibis_yesnoTableAdapter.Fill(this.holdenengrDataSet.ibis_yesno);
-            // TODO: This line of code loads data into the 'holdenengrDataSet.hesemployee' table. You can move, or remove it, as needed.
-            this.hesemployeeTableAdapter.Fill(this.holdenengrDataSet.hesemployee);
+            ibis_stateTableAdapter.Fill(holdenengrDataSet.ibis_state);
+            ibis_perms_forDDTableAdapter.Fill(holdenengrDataSet.ibis_perms_forDD);
+            ibis_yesnoTableAdapter.Fill(holdenengrDataSet.ibis_yesno);
+            hesemployeeTableAdapter.Fill(holdenengrDataSet.hesemployee);
 
+            IFormatter formatter = new BinaryFormatter();
+            Stream stream = new FileStream(Resource1.SESSION_FN, FileMode.Open, FileAccess.Read, FileShare.Read);
+            HoldenUser hu = (HoldenUser)formatter.Deserialize(stream);
+            stream.Close();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            ((sender as Button).Parent as Form).Close();
+        }
+
+        private void btnCommitToDB_Click(object sender, EventArgs e)
+        {
+            Validate();
+            hesemployeeBindingSource.EndEdit();
+            try
+            {
+                hesemployeeTableAdapter.Update(holdenengrDataSet.hesemployee);
+            }
+            catch (DataException de)
+            {
+                MessageBox.Show("(0x0113)Data Exception: \n" + de.Message + "\nContact dcasale@umd.edu");
+            }
+
+            MessageBox.Show("Database updated.");
+        }
+
+        private void saveToolStripButton_Click(object sender, EventArgs e)
+        {
+            Validate();
+            hesemployeeBindingSource.EndEdit();
+            try
+            {
+                hesemployeeTableAdapter.Update(holdenengrDataSet.hesemployee);
+            }
+            catch (DataException de)
+            {
+                MessageBox.Show("(0x0114)Data Exception: \n" + de.Message + "\nContact dcasale@umd.edu");
+            }
+
+            MessageBox.Show("Database updated.");
+        }
+
+        private void tsbtnSearch_Click(object sender, EventArgs e)
+        {
+            int pos = hesemployeeBindingSource.Find("hesemployee_lastname", tstxtLastNameSearch.Text);
+            hesemployeeBindingSource.Position = pos;
+        }
+
+        private void tstxtLastNameSearch_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                e.Handled = true;
+                tsbtnSearch.PerformClick();
+            }
         }
     }
 }
