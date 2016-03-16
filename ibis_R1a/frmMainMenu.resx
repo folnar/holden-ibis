@@ -148,7 +148,7 @@
     <value>NoControl</value>
   </data>
   <data name="cmdExitfromMM.Location" type="System.Drawing.Point, System.Drawing">
-    <value>228, 534</value>
+    <value>228, 453</value>
   </data>
   <data name="cmdExitfromMM.Size" type="System.Drawing.Size, System.Drawing">
     <value>170, 43</value>
@@ -171,11 +171,14 @@
   <data name="&gt;&gt;cmdExitfromMM.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <data name="cmdJobInfoSheet.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="cmdJobInfoSheet.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="cmdJobInfoSheet.Location" type="System.Drawing.Point, System.Drawing">
-    <value>228, 155</value>
+    <value>442, 80</value>
   </data>
   <data name="cmdJobInfoSheet.Size" type="System.Drawing.Size, System.Drawing">
     <value>170, 43</value>
@@ -202,7 +205,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnAddressForm.Location" type="System.Drawing.Point, System.Drawing">
-    <value>228, 233</value>
+    <value>228, 154</value>
   </data>
   <data name="btnAddressForm.Size" type="System.Drawing.Size, System.Drawing">
     <value>170, 43</value>
@@ -229,7 +232,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnContactForm.Location" type="System.Drawing.Point, System.Drawing">
-    <value>228, 310</value>
+    <value>228, 229</value>
   </data>
   <data name="btnContactForm.Size" type="System.Drawing.Size, System.Drawing">
     <value>170, 43</value>
@@ -256,7 +259,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnBudgetForm.Location" type="System.Drawing.Point, System.Drawing">
-    <value>228, 384</value>
+    <value>228, 303</value>
   </data>
   <data name="btnBudgetForm.Size" type="System.Drawing.Size, System.Drawing">
     <value>170, 43</value>
@@ -283,7 +286,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnManageEmployees.Location" type="System.Drawing.Point, System.Drawing">
-    <value>228, 459</value>
+    <value>228, 378</value>
   </data>
   <data name="btnManageEmployees.Size" type="System.Drawing.Size, System.Drawing">
     <value>170, 43</value>

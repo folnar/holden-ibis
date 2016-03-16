@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.IO;
+using System.Reflection;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Windows.Forms;
@@ -22,10 +23,52 @@ namespace ibis_R1a
             ibis_yesnoTableAdapter.Fill(holdenengrDataSet.ibis_yesno);
             hesemployeeTableAdapter.Fill(holdenengrDataSet.hesemployee);
 
+            setupAccessControl();
+        }
+
+        private void setupAccessControl()
+        {
             IFormatter formatter = new BinaryFormatter();
             Stream stream = new FileStream(Resource1.SESSION_FN, FileMode.Open, FileAccess.Read, FileShare.Read);
             HoldenUser hu = (HoldenUser)formatter.Deserialize(stream);
             stream.Close();
+
+            if (Convert.ToInt16(hu.hpp.Permissions["hesemployee_hesemployee_password"]) < IbisPermClass.View)
+            {
+                txtPassword.PasswordChar = '*';
+                txtPassword.Enabled = false;
+            }
+            if (Convert.ToInt16(hu.hpp.Permissions["tbl_hesemployee"]) < IbisPermClass.AddNew)
+            {
+                bindingNavigatorAddNewItem.Enabled = false;
+            }
+            if (Convert.ToInt16(hu.hpp.Permissions["tbl_hesemployee"]) < IbisPermClass.Delete)
+            {
+                bindingNavigatorDeleteItem.Enabled = false;
+            }
+            if (Convert.ToInt16(hu.hpp.Permissions["tbl_hesemployee"]) < IbisPermClass.Edit)
+            {
+                foreach (Control c in panelRHS.Controls)
+                {
+                    PropertyInfo prop = c.GetType().GetProperty("ReadOnly", BindingFlags.Public | BindingFlags.Instance);
+                    if (null != prop && prop.CanWrite)
+                    {
+                        prop.SetValue(c, true, null);
+                        c.BackColor = System.Drawing.Color.White;
+                    }
+                }
+                foreach (Control c in panelLHS.Controls)
+                {
+                    PropertyInfo prop = c.GetType().GetProperty("ReadOnly", BindingFlags.Public | BindingFlags.Instance);
+                    if (null != prop && prop.CanWrite)
+                    {
+                        prop.SetValue(c, true, null);
+                        c.BackColor = System.Drawing.Color.White;
+                    }
+                }
+                btnCommitToDB.Enabled = false;
+                saveToolStripButton.Enabled = false;
+            }
         }
 
         private void btnExit_Click(object sender, EventArgs e)
