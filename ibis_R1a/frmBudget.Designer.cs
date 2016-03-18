@@ -189,7 +189,6 @@
             this.budgetlineitemjobnumberDataGridViewTextBoxColumn.DataPropertyName = "budget_lineitem_jobnumber";
             this.budgetlineitemjobnumberDataGridViewTextBoxColumn.HeaderText = "Job Number";
             this.budgetlineitemjobnumberDataGridViewTextBoxColumn.Name = "budgetlineitemjobnumberDataGridViewTextBoxColumn";
-            this.budgetlineitemjobnumberDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // budgetlineitemworkidDataGridViewTextBoxColumn
             // 
@@ -245,7 +244,7 @@
             // budgetlineitemdatestampDataGridViewTextBoxColumn
             // 
             this.budgetlineitemdatestampDataGridViewTextBoxColumn.DataPropertyName = "budget_lineitem_datestamp";
-            this.budgetlineitemdatestampDataGridViewTextBoxColumn.HeaderText = "Last Updated";
+            this.budgetlineitemdatestampDataGridViewTextBoxColumn.HeaderText = "Date Entered";
             this.budgetlineitemdatestampDataGridViewTextBoxColumn.Name = "budgetlineitemdatestampDataGridViewTextBoxColumn";
             this.budgetlineitemdatestampDataGridViewTextBoxColumn.ReadOnly = true;
             this.budgetlineitemdatestampDataGridViewTextBoxColumn.Width = 150;

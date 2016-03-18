@@ -12,7 +12,7 @@ namespace IbisUtils
         {
             get
             {
-                return IbisUtils.Resource1.DB_CONNSTR_HES;
+                return Resource1.DB_CONNSTR_HES;
             }
         }
 
@@ -20,15 +20,15 @@ namespace IbisUtils
         {
             get
             {
-                return IbisUtils.Resource1.DB_CONNSTR_HES;
+                return Resource1.DB_CONNSTR_HES;
             }
         }
 
         public string genLoginSQL (string un, string pw)
         {
             return "SELECT ibis_perms.ibis_perms_profilename, ibis_perms.ibis_perms_id, " +
-                   "employee.employee_e_uname, employee.employee_e_num FROM employee, ibis_perms WHERE employee.employee_e_uname='" + un +
-                   "' AND employee.employee_password='" + pw + "' AND ibis_perms.ibis_perms_id=employee.employee_permprofile";
+                   "hesemployee_username, hesemployee_hesnumber FROM hesemployee, ibis_perms WHERE hesemployee_username='" + un +
+                   "' AND hesemployee_password='" + pw + "' AND ibis_perms.ibis_perms_id = hesemployee_permprofile";
         }
 
         public List<IbisSchemaTable> loadDBSchema(MySqlConnection dbh)
@@ -36,7 +36,7 @@ namespace IbisUtils
             string sql = "SELECT t.table_schema AS 'Database', t.table_name AS 'Table', t.table_type AS 'Table Type', " +
                          "c.column_name AS 'Column', c.data_type AS 'Data Type' FROM information_schema.tables t " +
                          "JOIN information_schema.columns c ON t.table_schema = c.table_schema AND t.table_name = c.table_name " +
-                         "WHERE t.table_schema = '" + IbisUtils.Resource1.DB_HES_DBNAME + "' " +
+                         "WHERE t.table_schema = '" + Resource1.DB_HES_DBNAME + "' " +
                          "ORDER BY t.table_type, t.table_name, c.ordinal_position";
 
             MySqlCommand command = dbh.CreateCommand();

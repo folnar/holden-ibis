@@ -12,6 +12,14 @@ namespace ibis_R1a
             InitializeComponent();
         }
 
+        private void x2()
+        {
+            foreach (DataGridViewRow dgvr in dgvBudgetLineItems.Rows)
+            {
+                dgvr.ReadOnly = true;
+            }
+        }
+
         private void frmBudget_Load(object sender, EventArgs e)
         {
             hesemployee1TableAdapter.Fill(holdenengrDataSet.hesemployee1);
@@ -79,6 +87,11 @@ namespace ibis_R1a
             {
                 MessageBox.Show("(0x01a3)Invalid Cast Exception.: \n" + ice.Message + "\nContact dcasale@umd.edu");
             }
+
+            // DGV ROWS LOSE READONLY = TRUE AFTER SAVING. NEED TO FIX.
+
+
+            x2();
         }
 
         private void cmdSave_Click(object sender, EventArgs e)
@@ -99,6 +112,7 @@ namespace ibis_R1a
         private void dgvBudgetLineItems_DefaultValuesNeeded(object sender, DataGridViewRowEventArgs e)
         {
             e.Row.Cells[0].Value = ((DataRowView)cbxJobNums.SelectedItem)[0].ToString();
+            e.Row.ReadOnly = false;
         }
 
         private void dgvBudgetLineItems_CellValueChanged(object sender, DataGridViewCellEventArgs e)

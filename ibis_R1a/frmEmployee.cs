@@ -35,7 +35,7 @@ namespace ibis_R1a
 
             if (Convert.ToInt16(hu.hpp.Permissions["hesemployee_hesemployee_password"]) < IbisPermClass.View)
             {
-                txtPassword.PasswordChar = '*';
+                txtPassword.UseSystemPasswordChar = true;
                 txtPassword.Enabled = false;
             }
             if (Convert.ToInt16(hu.hpp.Permissions["tbl_hesemployee"]) < IbisPermClass.AddNew)
@@ -66,6 +66,8 @@ namespace ibis_R1a
                         c.BackColor = System.Drawing.Color.White;
                     }
                 }
+                //cbxState.Enabled = false;
+                //cbxState.BackColor = System.Drawing.Color.White;
                 btnCommitToDB.Enabled = false;
                 saveToolStripButton.Enabled = false;
             }

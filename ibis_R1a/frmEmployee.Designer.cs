@@ -515,6 +515,8 @@
             this.cbxIsActive.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.hesemployeeBindingSource, "hesemployee_active", true));
             this.cbxIsActive.DataSource = this.ibisyesnoBindingSource;
             this.cbxIsActive.DisplayMember = "ibis_yesno_label";
+            this.cbxIsActive.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxIsActive.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbxIsActive.FormattingEnabled = true;
             this.cbxIsActive.Location = new System.Drawing.Point(5, 308);
             this.cbxIsActive.Name = "cbxIsActive";
@@ -626,6 +628,7 @@
             this.cbxPermProfile.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.hesemployeeBindingSource, "hesemployee_permprofile", true));
             this.cbxPermProfile.DataSource = this.ibispermsforDDBindingSource;
             this.cbxPermProfile.DisplayMember = "ibis_perms_profilename";
+            this.cbxPermProfile.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxPermProfile.FormattingEnabled = true;
             this.cbxPermProfile.Location = new System.Drawing.Point(3, 7);
             this.cbxPermProfile.Name = "cbxPermProfile";
@@ -662,6 +665,7 @@
             this.cbxState.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.hesemployeeBindingSource, "hesemployee_state", true));
             this.cbxState.DataSource = this.ibisstateBindingSource;
             this.cbxState.DisplayMember = "state_abbr";
+            this.cbxState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxState.FormattingEnabled = true;
             this.cbxState.Location = new System.Drawing.Point(3, 127);
             this.cbxState.Name = "cbxState";

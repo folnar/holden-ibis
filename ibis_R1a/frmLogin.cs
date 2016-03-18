@@ -36,7 +36,7 @@ namespace ibis_R1a
                 // open main menu
                 frmMainMenu frmMM1 = new frmMainMenu();
                 frmMM1.Show();
-                this.Hide(); // this.Close() will trigger the frmLogin_FormClosed event which closes the application.
+                Hide(); // this.Close() will trigger the frmLogin_FormClosed event which closes the application.
             }
             else
             {
