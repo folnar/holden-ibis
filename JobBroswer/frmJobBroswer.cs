@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Windows.Forms;
 
 namespace JobBroswer
 {
     public partial class frmJobBroswer : Form
     {
+        private bool inclOldJobs = false;
+
         public frmJobBroswer()
         {
             InitializeComponent();
@@ -164,21 +167,36 @@ namespace JobBroswer
             }
         }
 
-        private void btnExit_Click(object sender, EventArgs e)
+        private void versionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Version version = Assembly.GetExecutingAssembly().GetName().Version;
+            MessageBox.Show("Version: " + version.Major + "." + version.Minor + "." + version.Build + "." + version.Revision);
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void btnPrint_Click(object sender, EventArgs e)
+        private void includeArchiveRecordsPreJCTSToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmJobsReportViewer frmRV = new frmJobsReportViewer(jobBindingSource.Filter);
-            frmRV.Show();
+            if ((sender as ToolStripMenuItem).Checked)
+            {
+                jobTableAdapter.FillIncludeOldJobs(holdenengrDataSet.job);
+                inclOldJobs = true;
+            }
+            else
+            {
+                jobTableAdapter.Fill(holdenengrDataSet.job);
+                inclOldJobs = false;
+            }
+            updateFilter();
         }
 
-        private void btnSwitchTables_Click(object sender, EventArgs e)
+        private void showPrintReportToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            jobTableAdapter.FillIncludeOldJobs(holdenengrDataSet.job);
-            updateFilter();
+            frmJobsReportViewer frmRV = new frmJobsReportViewer(jobBindingSource.Filter, inclOldJobs);
+            frmRV.ShowDialog();
         }
     }
 }

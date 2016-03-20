@@ -516,13 +516,13 @@
             this.cbxIsActive.DataSource = this.ibisyesnoBindingSource;
             this.cbxIsActive.DisplayMember = "ibis_yesno_label";
             this.cbxIsActive.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxIsActive.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbxIsActive.FormattingEnabled = true;
             this.cbxIsActive.Location = new System.Drawing.Point(5, 308);
             this.cbxIsActive.Name = "cbxIsActive";
             this.cbxIsActive.Size = new System.Drawing.Size(63, 25);
             this.cbxIsActive.TabIndex = 11;
             this.cbxIsActive.ValueMember = "ibis_yesno_value";
+            this.cbxIsActive.Enter += new System.EventHandler(this.cbxIsActive_Enter);
             // 
             // lblPermProfile
             // 
@@ -635,6 +635,7 @@
             this.cbxPermProfile.Size = new System.Drawing.Size(166, 25);
             this.cbxPermProfile.TabIndex = 12;
             this.cbxPermProfile.ValueMember = "ibis_perms_id";
+            this.cbxPermProfile.Enter += new System.EventHandler(this.cbxPermProfile_Enter);
             // 
             // txtAddress
             // 
@@ -672,6 +673,7 @@
             this.cbxState.Size = new System.Drawing.Size(63, 25);
             this.cbxState.TabIndex = 16;
             this.cbxState.ValueMember = "state_id";
+            this.cbxState.Enter += new System.EventHandler(this.cbxState_Enter);
             // 
             // txtZipCode
             // 

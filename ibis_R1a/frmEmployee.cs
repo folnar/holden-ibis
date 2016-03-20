@@ -11,6 +11,8 @@ namespace ibis_R1a
 {
     public partial class frmEmployee : Form
     {
+        private HoldenUser hu;
+
         public frmEmployee()
         {
             InitializeComponent();
@@ -30,7 +32,7 @@ namespace ibis_R1a
         {
             IFormatter formatter = new BinaryFormatter();
             Stream stream = new FileStream(Resource1.SESSION_FN, FileMode.Open, FileAccess.Read, FileShare.Read);
-            HoldenUser hu = (HoldenUser)formatter.Deserialize(stream);
+            hu = (HoldenUser)formatter.Deserialize(stream);
             stream.Close();
 
             if (Convert.ToInt16(hu.hpp.Permissions["hesemployee_hesemployee_password"]) < IbisPermClass.View)
@@ -122,6 +124,30 @@ namespace ibis_R1a
             {
                 e.Handled = true;
                 tsbtnSearch.PerformClick();
+            }
+        }
+
+        private void cbxPermProfile_Enter(object sender, EventArgs e)
+        {
+            if (Convert.ToInt16(hu.hpp.Permissions["tbl_hesemployee"]) < IbisPermClass.Edit)
+            {
+                ((sender as ComboBox).Parent as Panel).Focus();
+            }
+        }
+
+        private void cbxState_Enter(object sender, EventArgs e)
+        {
+            if (Convert.ToInt16(hu.hpp.Permissions["tbl_hesemployee"]) < IbisPermClass.Edit)
+            {
+                ((sender as ComboBox).Parent as Panel).Focus();
+            }
+        }
+
+        private void cbxIsActive_Enter(object sender, EventArgs e)
+        {
+            if (Convert.ToInt16(hu.hpp.Permissions["tbl_hesemployee"]) < IbisPermClass.Edit)
+            {
+                ((sender as ComboBox).Parent as Panel).Focus();
             }
         }
     }

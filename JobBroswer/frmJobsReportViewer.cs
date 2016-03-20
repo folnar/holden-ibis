@@ -6,23 +6,32 @@ namespace JobBroswer
     public partial class frmJobsReportViewer : Form
     {
         private string filter;
+        private bool inclOldJobs;
 
         public frmJobsReportViewer()
         {
             InitializeComponent();
         }
 
-        public frmJobsReportViewer(string f)
+        public frmJobsReportViewer(string f, bool i)
         {
             InitializeComponent();
 
             filter = f;
+            inclOldJobs = i;
         }
 
         private void frmJobsReportViewer_Load(object sender, EventArgs e)
         {
             jobBindingSource.Filter = filter;
-            jobTableAdapter.Fill(holdenengrDataSet.job);
+            if (inclOldJobs)
+            {
+                jobTableAdapter.FillIncludeOldJobs(holdenengrDataSet.job);
+            }
+            else
+            {
+                jobTableAdapter.Fill(holdenengrDataSet.job);
+            }
 
             System.Drawing.Printing.PageSettings ps = new System.Drawing.Printing.PageSettings();
             ps.Landscape = true;

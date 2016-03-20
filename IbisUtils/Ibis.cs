@@ -16,7 +16,7 @@ namespace IbisUtils
         private static List<IbisSchemaTable> _dbschema;
 
         public string empun { get; set; }
-        public string empnum { get; set; }
+        public int empnum { get; set; }
 
         public List<string> tblnms { get; set; }
 
@@ -59,14 +59,14 @@ namespace IbisUtils
             _dbh = new MySqlConnection(_iu.ConnID);
             _dbh.Open();
             
-            this.isSU = false;
+            isSU = false;
             
-            this.tblnms = new List<string>();
-            this.loadTableNames();
+            tblnms = new List<string>();
+            loadTableNames();
             
             _dbschema = new List<IbisSchemaTable>();
 
-            this.sessperms = new Dictionary<string,object>();
+            sessperms = new Dictionary<string,object>();
         }
 
         public void loadPermissions()
@@ -96,13 +96,14 @@ namespace IbisUtils
 
             if (dt.Rows.Count > 0)
             {
-                this.profileID = dt.Rows[0].Field<int>(1);
-                this.empun = dt.Rows[0].Field<string>(2);
-                this.empnum = dt.Rows[0].Field<string>(3);
-                
+                profileID = dt.Rows[0].Field<int>(1);
+                empun = dt.Rows[0].Field<string>(2);
+                empnum = dt.Rows[0].Field<int>(3);
+                //empnum = dt.Rows[0].Field<string>(3);
+
                 if (dt.Rows[0].Field<String>(0).Equals("superuser"))
                 {
-                    this.isSU = true;
+                    isSU = true;
                 }
                     
                 return true;
@@ -112,12 +113,12 @@ namespace IbisUtils
 
         public void loadDBSchema()
         {
-            this.DBSchema = _iu.loadDBSchema(dbh);
+            DBSchema = _iu.loadDBSchema(dbh);
         }
 
         private void loadTableNames()
         {
-            this.tblnms = _iu.getTableNames(dbh);
+            tblnms = _iu.getTableNames(dbh);
         }
 
         // this is a wrapper for the ibisutils method.

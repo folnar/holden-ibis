@@ -16,12 +16,12 @@ namespace HoldenClasses
             // default constructor
         }
 
-        public HoldenUser(string inUN, string inPW, string inEN, int inPID, bool inISSU)
+        public HoldenUser(string inUN, string inPW, int inEN, int inPID, bool inISSU)
         {
             un = inUN;
-            int tmpint;
-            int.TryParse(inEN, out tmpint);
-            empnum = tmpint;
+            //int tmpint;
+            //int.TryParse(inEN, out tmpint);
+            empnum = inEN;
             pw = inPW;
             hpp = new HoldenPermissionsProfile(inPID);
             isSU = inISSU;
