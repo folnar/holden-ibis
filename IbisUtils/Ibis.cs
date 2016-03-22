@@ -99,7 +99,6 @@ namespace IbisUtils
                 profileID = dt.Rows[0].Field<int>(1);
                 empun = dt.Rows[0].Field<string>(2);
                 empnum = dt.Rows[0].Field<int>(3);
-                //empnum = dt.Rows[0].Field<string>(3);
 
                 if (dt.Rows[0].Field<String>(0).Equals("superuser"))
                 {

@@ -36,31 +36,31 @@
             this.lblJobNumber = new System.Windows.Forms.Label();
             this.lblJobName = new System.Windows.Forms.Label();
             this.dgvBudgetLineItems = new System.Windows.Forms.DataGridView();
+            this.budget_lineitem_jobnumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.budget_lineitem_workid = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.ibisworkcodeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.holdenengrDataSet = new ibis_R1a.holdenengrDataSet();
+            this.budget_lineitem_activityid = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.ibisactivitycodeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.budget_lineitem_taskid = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.ibistaskcodeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.budget_lineitem_empid = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.hesemployee1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.budget_lineitem_numhrs = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.budget_lineitem_value = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.budget_lineitem_note = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.budget_lineitem_datestamp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.budget_lineitem_enteredby = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.budgetlineitemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cmdSave = new System.Windows.Forms.Button();
             this.lblTotalBudgetValue = new System.Windows.Forms.Label();
             this.lblBudgetTotalDisp = new System.Windows.Forms.Label();
-            this.ibisworkcodeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.holdenengrDataSet = new ibis_R1a.holdenengrDataSet();
-            this.ibisactivitycodeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ibistaskcodeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.hesemployee1BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.budgetlineitemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.jobTableAdapter1 = new ibis_R1a.holdenengrDataSetTableAdapters.jobTableAdapter();
             this.ibis_workcodeTableAdapter1 = new ibis_R1a.holdenengrDataSetTableAdapters.ibis_workcodeTableAdapter();
             this.ibis_activitycodeTableAdapter1 = new ibis_R1a.holdenengrDataSetTableAdapters.ibis_activitycodeTableAdapter();
             this.ibis_taskcodeTableAdapter1 = new ibis_R1a.holdenengrDataSetTableAdapters.ibis_taskcodeTableAdapter();
             this.budget_lineitemTableAdapter = new ibis_R1a.holdenengrDataSetTableAdapters.budget_lineitemTableAdapter();
             this.hesemployee1TableAdapter = new ibis_R1a.holdenengrDataSetTableAdapters.hesemployee1TableAdapter();
-            this.budget_lineitem_jobnumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.budget_lineitem_workid = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.budget_lineitem_activityid = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.budget_lineitem_taskid = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.budget_lineitem_empid = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.budget_lineitem_numhrs = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.budget_lineitem_value = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.budget_lineitem_note = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.budget_lineitem_datestamp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.budget_lineitem_enteredby = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBudgetLineItems)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ibisworkcodeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.holdenengrDataSet)).BeginInit();
@@ -144,39 +144,29 @@
             this.dgvBudgetLineItems.TabIndex = 8;
             this.dgvBudgetLineItems.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvBudgetLineItems_DataError);
             this.dgvBudgetLineItems.DefaultValuesNeeded += new System.Windows.Forms.DataGridViewRowEventHandler(this.dgvBudgetLineItems_DefaultValuesNeeded);
+            this.dgvBudgetLineItems.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgvBudgetLineItems_EditingControlShowing);
             // 
-            // cmdSave
+            // budget_lineitem_jobnumber
             // 
-            this.cmdSave.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.cmdSave.Location = new System.Drawing.Point(851, 13);
-            this.cmdSave.Margin = new System.Windows.Forms.Padding(4);
-            this.cmdSave.Name = "cmdSave";
-            this.cmdSave.Size = new System.Drawing.Size(101, 54);
-            this.cmdSave.TabIndex = 9;
-            this.cmdSave.Text = "&Save Changes";
-            this.cmdSave.UseVisualStyleBackColor = true;
-            this.cmdSave.Click += new System.EventHandler(this.cmdSave_Click);
+            this.budget_lineitem_jobnumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.budget_lineitem_jobnumber.DataPropertyName = "budget_lineitem_jobnumber";
+            this.budget_lineitem_jobnumber.HeaderText = "Job Number";
+            this.budget_lineitem_jobnumber.Name = "budget_lineitem_jobnumber";
+            this.budget_lineitem_jobnumber.Width = 101;
             // 
-            // lblTotalBudgetValue
+            // budget_lineitem_workid
             // 
-            this.lblTotalBudgetValue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblTotalBudgetValue.AutoSize = true;
-            this.lblTotalBudgetValue.Location = new System.Drawing.Point(23, 474);
-            this.lblTotalBudgetValue.Name = "lblTotalBudgetValue";
-            this.lblTotalBudgetValue.Size = new System.Drawing.Size(136, 18);
-            this.lblTotalBudgetValue.TabIndex = 10;
-            this.lblTotalBudgetValue.Text = "Total Budget Value:";
-            // 
-            // lblBudgetTotalDisp
-            // 
-            this.lblBudgetTotalDisp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblBudgetTotalDisp.AutoSize = true;
-            this.lblBudgetTotalDisp.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBudgetTotalDisp.Location = new System.Drawing.Point(165, 474);
-            this.lblBudgetTotalDisp.Name = "lblBudgetTotalDisp";
-            this.lblBudgetTotalDisp.Size = new System.Drawing.Size(89, 18);
-            this.lblBudgetTotalDisp.TabIndex = 11;
-            this.lblBudgetTotalDisp.Text = "placeholder";
+            this.budget_lineitem_workid.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.budget_lineitem_workid.DataPropertyName = "budget_lineitem_workid";
+            this.budget_lineitem_workid.DataSource = this.ibisworkcodeBindingSource;
+            this.budget_lineitem_workid.DisplayMember = "ibis_workcode_label";
+            this.budget_lineitem_workid.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.budget_lineitem_workid.HeaderText = "Work Code";
+            this.budget_lineitem_workid.Name = "budget_lineitem_workid";
+            this.budget_lineitem_workid.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.budget_lineitem_workid.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.budget_lineitem_workid.ValueMember = "ibis_workcode_id";
+            this.budget_lineitem_workid.Width = 96;
             // 
             // ibisworkcodeBindingSource
             // 
@@ -188,83 +178,24 @@
             this.holdenengrDataSet.DataSetName = "holdenengrDataSet";
             this.holdenengrDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // ibisactivitycodeBindingSource
-            // 
-            this.ibisactivitycodeBindingSource.DataMember = "ibis_activitycode";
-            this.ibisactivitycodeBindingSource.DataSource = this.holdenengrDataSet;
-            // 
-            // ibistaskcodeBindingSource
-            // 
-            this.ibistaskcodeBindingSource.DataMember = "ibis_taskcode";
-            this.ibistaskcodeBindingSource.DataSource = this.holdenengrDataSet;
-            // 
-            // hesemployee1BindingSource
-            // 
-            this.hesemployee1BindingSource.DataMember = "hesemployee1";
-            this.hesemployee1BindingSource.DataSource = this.holdenengrDataSet;
-            // 
-            // budgetlineitemBindingSource
-            // 
-            this.budgetlineitemBindingSource.DataMember = "budget_lineitem";
-            this.budgetlineitemBindingSource.DataSource = this.holdenengrDataSet;
-            // 
-            // jobTableAdapter1
-            // 
-            this.jobTableAdapter1.ClearBeforeFill = true;
-            // 
-            // ibis_workcodeTableAdapter1
-            // 
-            this.ibis_workcodeTableAdapter1.ClearBeforeFill = true;
-            // 
-            // ibis_activitycodeTableAdapter1
-            // 
-            this.ibis_activitycodeTableAdapter1.ClearBeforeFill = true;
-            // 
-            // ibis_taskcodeTableAdapter1
-            // 
-            this.ibis_taskcodeTableAdapter1.ClearBeforeFill = true;
-            // 
-            // budget_lineitemTableAdapter
-            // 
-            this.budget_lineitemTableAdapter.ClearBeforeFill = true;
-            // 
-            // hesemployee1TableAdapter
-            // 
-            this.hesemployee1TableAdapter.ClearBeforeFill = true;
-            // 
-            // budget_lineitem_jobnumber
-            // 
-            this.budget_lineitem_jobnumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.budget_lineitem_jobnumber.DataPropertyName = "budget_lineitem_jobnumber";
-            this.budget_lineitem_jobnumber.HeaderText = "Job Number";
-            this.budget_lineitem_jobnumber.Name = "budget_lineitem_jobnumber";
-            this.budget_lineitem_jobnumber.Width = 110;
-            // 
-            // budget_lineitem_workid
-            // 
-            this.budget_lineitem_workid.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.budget_lineitem_workid.DataPropertyName = "budget_lineitem_workid";
-            this.budget_lineitem_workid.DataSource = this.ibisworkcodeBindingSource;
-            this.budget_lineitem_workid.DisplayMember = "ibis_workcode_label";
-            this.budget_lineitem_workid.HeaderText = "Work Code";
-            this.budget_lineitem_workid.Name = "budget_lineitem_workid";
-            this.budget_lineitem_workid.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.budget_lineitem_workid.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.budget_lineitem_workid.ValueMember = "ibis_workcode_id";
-            this.budget_lineitem_workid.Width = 105;
-            // 
             // budget_lineitem_activityid
             // 
             this.budget_lineitem_activityid.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.budget_lineitem_activityid.DataPropertyName = "budget_lineitem_activityid";
             this.budget_lineitem_activityid.DataSource = this.ibisactivitycodeBindingSource;
             this.budget_lineitem_activityid.DisplayMember = "ibis_activitycode_label";
+            this.budget_lineitem_activityid.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
             this.budget_lineitem_activityid.HeaderText = "Activity Code";
             this.budget_lineitem_activityid.Name = "budget_lineitem_activityid";
             this.budget_lineitem_activityid.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.budget_lineitem_activityid.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.budget_lineitem_activityid.ValueMember = "ibis_activitycode_id";
-            this.budget_lineitem_activityid.Width = 121;
+            this.budget_lineitem_activityid.Width = 111;
+            // 
+            // ibisactivitycodeBindingSource
+            // 
+            this.ibisactivitycodeBindingSource.DataMember = "ibis_activitycode";
+            this.ibisactivitycodeBindingSource.DataSource = this.holdenengrDataSet;
             // 
             // budget_lineitem_taskid
             // 
@@ -272,12 +203,18 @@
             this.budget_lineitem_taskid.DataPropertyName = "budget_lineitem_taskid";
             this.budget_lineitem_taskid.DataSource = this.ibistaskcodeBindingSource;
             this.budget_lineitem_taskid.DisplayMember = "ibis_taskcode_label";
+            this.budget_lineitem_taskid.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
             this.budget_lineitem_taskid.HeaderText = "Task Code";
             this.budget_lineitem_taskid.Name = "budget_lineitem_taskid";
             this.budget_lineitem_taskid.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.budget_lineitem_taskid.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.budget_lineitem_taskid.ValueMember = "ibis_taskcode_id";
-            this.budget_lineitem_taskid.Width = 101;
+            this.budget_lineitem_taskid.Width = 93;
+            // 
+            // ibistaskcodeBindingSource
+            // 
+            this.ibistaskcodeBindingSource.DataMember = "ibis_taskcode";
+            this.ibistaskcodeBindingSource.DataSource = this.holdenengrDataSet;
             // 
             // budget_lineitem_empid
             // 
@@ -285,12 +222,18 @@
             this.budget_lineitem_empid.DataPropertyName = "budget_lineitem_empid";
             this.budget_lineitem_empid.DataSource = this.hesemployee1BindingSource;
             this.budget_lineitem_empid.DisplayMember = "hesemployee_name";
+            this.budget_lineitem_empid.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
             this.budget_lineitem_empid.HeaderText = "Assigned Employee";
             this.budget_lineitem_empid.Name = "budget_lineitem_empid";
             this.budget_lineitem_empid.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.budget_lineitem_empid.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.budget_lineitem_empid.ValueMember = "hesemployee_id";
             this.budget_lineitem_empid.Width = 144;
+            // 
+            // hesemployee1BindingSource
+            // 
+            this.hesemployee1BindingSource.DataMember = "hesemployee1";
+            this.hesemployee1BindingSource.DataSource = this.holdenengrDataSet;
             // 
             // budget_lineitem_numhrs
             // 
@@ -334,6 +277,68 @@
             this.budget_lineitem_enteredby.Name = "budget_lineitem_enteredby";
             this.budget_lineitem_enteredby.ReadOnly = true;
             this.budget_lineitem_enteredby.Width = 96;
+            // 
+            // budgetlineitemBindingSource
+            // 
+            this.budgetlineitemBindingSource.DataMember = "budget_lineitem";
+            this.budgetlineitemBindingSource.DataSource = this.holdenengrDataSet;
+            // 
+            // cmdSave
+            // 
+            this.cmdSave.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.cmdSave.Location = new System.Drawing.Point(851, 13);
+            this.cmdSave.Margin = new System.Windows.Forms.Padding(4);
+            this.cmdSave.Name = "cmdSave";
+            this.cmdSave.Size = new System.Drawing.Size(101, 54);
+            this.cmdSave.TabIndex = 9;
+            this.cmdSave.Text = "&Save Changes";
+            this.cmdSave.UseVisualStyleBackColor = true;
+            this.cmdSave.Click += new System.EventHandler(this.cmdSave_Click);
+            // 
+            // lblTotalBudgetValue
+            // 
+            this.lblTotalBudgetValue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblTotalBudgetValue.AutoSize = true;
+            this.lblTotalBudgetValue.Location = new System.Drawing.Point(23, 474);
+            this.lblTotalBudgetValue.Name = "lblTotalBudgetValue";
+            this.lblTotalBudgetValue.Size = new System.Drawing.Size(136, 18);
+            this.lblTotalBudgetValue.TabIndex = 10;
+            this.lblTotalBudgetValue.Text = "Total Budget Value:";
+            // 
+            // lblBudgetTotalDisp
+            // 
+            this.lblBudgetTotalDisp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblBudgetTotalDisp.AutoSize = true;
+            this.lblBudgetTotalDisp.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBudgetTotalDisp.Location = new System.Drawing.Point(165, 474);
+            this.lblBudgetTotalDisp.Name = "lblBudgetTotalDisp";
+            this.lblBudgetTotalDisp.Size = new System.Drawing.Size(89, 18);
+            this.lblBudgetTotalDisp.TabIndex = 11;
+            this.lblBudgetTotalDisp.Text = "placeholder";
+            // 
+            // jobTableAdapter1
+            // 
+            this.jobTableAdapter1.ClearBeforeFill = true;
+            // 
+            // ibis_workcodeTableAdapter1
+            // 
+            this.ibis_workcodeTableAdapter1.ClearBeforeFill = true;
+            // 
+            // ibis_activitycodeTableAdapter1
+            // 
+            this.ibis_activitycodeTableAdapter1.ClearBeforeFill = true;
+            // 
+            // ibis_taskcodeTableAdapter1
+            // 
+            this.ibis_taskcodeTableAdapter1.ClearBeforeFill = true;
+            // 
+            // budget_lineitemTableAdapter
+            // 
+            this.budget_lineitemTableAdapter.ClearBeforeFill = true;
+            // 
+            // hesemployee1TableAdapter
+            // 
+            this.hesemployee1TableAdapter.ClearBeforeFill = true;
             // 
             // frmBudget
             // 

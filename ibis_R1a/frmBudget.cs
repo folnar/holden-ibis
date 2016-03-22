@@ -44,32 +44,6 @@ namespace ibis_R1a
                 cbxJobNums.AutoCompleteSource = AutoCompleteSource.ListItems;
             }
 
-            //using (holdenengrDataSet.ibis_activitycodeDataTable acttbl = ibis_activitycodeTableAdapter1.GetData())
-            //{
-            //    cbxActivityCode.DataSource = acttbl.DefaultView;
-            //    cbxActivityCode.DisplayMember = "ibis_activitycode_code";
-            //    cbxActivityCode.ValueMember = "ibis_activitycode_id";
-            //    cbxActivityCode.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            //    cbxActivityCode.AutoCompleteSource = AutoCompleteSource.ListItems;
-            //}
-
-            //using (holdenengrDataSet.ibis_taskcodeDataTable tsktbl = ibis_taskcodeTableAdapter1.GetData())
-            //{
-            //    cbxTaskCode.DataSource = tsktbl.DefaultView;
-            //    cbxTaskCode.DisplayMember = "ibis_taskcode_code";
-            //    cbxTaskCode.ValueMember = "ibis_taskcode_id";
-            //    cbxTaskCode.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            //    cbxTaskCode.AutoCompleteSource = AutoCompleteSource.ListItems;
-            //}
-
-            //using (holdenengrDataSet.ibis_workcodeDataTable wrktbl = ibis_workcodeTableAdapter1.GetData())
-            //{
-            //    cbxWorkCode.DataSource = wrktbl.DefaultView;
-            //    cbxWorkCode.DisplayMember = "ibis_workcode_code";
-            //    cbxWorkCode.ValueMember = "ibis_workcode_id";
-            //    cbxWorkCode.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            //    cbxWorkCode.AutoCompleteSource = AutoCompleteSource.ListItems;
-            //}
             dgvBudgetLineItems.CellValueChanged += dgvBudgetLineItems_CellValueChanged;
 
             IFormatter formatter = new BinaryFormatter();
@@ -135,7 +109,7 @@ namespace ibis_R1a
 
         private void dgvBudgetLineItems_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            if ((e.ColumnIndex == dgvBudgetLineItems.Columns["budget_lineitem_empid"].Index || 
+            if ((e.ColumnIndex == dgvBudgetLineItems.Columns["budget_lineitem_empid"].Index ||
                 e.ColumnIndex == dgvBudgetLineItems.Columns["budget_lineitem_numhrs"].Index) &&
                 !(dgvBudgetLineItems.CurrentRow.Cells["budget_lineitem_empid"].Value == null ||
                 dgvBudgetLineItems.CurrentRow.Cells["budget_lineitem_empid"].Value == DBNull.Value ||
@@ -170,6 +144,16 @@ namespace ibis_R1a
         private void dgvBudgetLineItems_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
             MessageBox.Show("(0xea11)Data Error Event: \n" + e.Exception.Message + "\nContact dcasale@umd.edu");
+        }
+
+        private void dgvBudgetLineItems_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            if (e.Control is ComboBox)
+            {
+                (e.Control as ComboBox).DropDownStyle = ComboBoxStyle.DropDown;
+                (e.Control as ComboBox).AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                (e.Control as ComboBox).AutoCompleteSource = AutoCompleteSource.ListItems;
+            }
         }
     }
 }
