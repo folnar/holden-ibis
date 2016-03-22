@@ -13947,6 +13947,14 @@ namespace ibis_R1a {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class ibis_activitycodeDataTable : global::System.Data.TypedTableBase<ibis_activitycodeRow> {
             
+            private global::System.Data.DataColumn columnibis_activitycode_id;
+            
+            private global::System.Data.DataColumn columnibis_activitycode_code;
+            
+            private global::System.Data.DataColumn columnibis_activitycode_name;
+            
+            private global::System.Data.DataColumn columnibis_activitycode_label;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public ibis_activitycodeDataTable() {
@@ -13978,6 +13986,38 @@ namespace ibis_R1a {
             protected ibis_activitycodeDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ibis_activitycode_idColumn {
+                get {
+                    return this.columnibis_activitycode_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ibis_activitycode_codeColumn {
+                get {
+                    return this.columnibis_activitycode_code;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ibis_activitycode_nameColumn {
+                get {
+                    return this.columnibis_activitycode_name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ibis_activitycode_labelColumn {
+                get {
+                    return this.columnibis_activitycode_label;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -14017,12 +14057,23 @@ namespace ibis_R1a {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ibis_activitycodeRow Addibis_activitycodeRow() {
+            public ibis_activitycodeRow Addibis_activitycodeRow(string ibis_activitycode_code, string ibis_activitycode_name, string ibis_activitycode_label) {
                 ibis_activitycodeRow rowibis_activitycodeRow = ((ibis_activitycodeRow)(this.NewRow()));
-                object[] columnValuesArray = new object[0];
+                object[] columnValuesArray = new object[] {
+                        null,
+                        ibis_activitycode_code,
+                        ibis_activitycode_name,
+                        ibis_activitycode_label};
                 rowibis_activitycodeRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowibis_activitycodeRow);
                 return rowibis_activitycodeRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ibis_activitycodeRow FindByibis_activitycode_id(int ibis_activitycode_id) {
+                return ((ibis_activitycodeRow)(this.Rows.Find(new object[] {
+                            ibis_activitycode_id})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -14042,11 +14093,36 @@ namespace ibis_R1a {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
+                this.columnibis_activitycode_id = base.Columns["ibis_activitycode_id"];
+                this.columnibis_activitycode_code = base.Columns["ibis_activitycode_code"];
+                this.columnibis_activitycode_name = base.Columns["ibis_activitycode_name"];
+                this.columnibis_activitycode_label = base.Columns["ibis_activitycode_label"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
+                this.columnibis_activitycode_id = new global::System.Data.DataColumn("ibis_activitycode_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnibis_activitycode_id);
+                this.columnibis_activitycode_code = new global::System.Data.DataColumn("ibis_activitycode_code", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnibis_activitycode_code);
+                this.columnibis_activitycode_name = new global::System.Data.DataColumn("ibis_activitycode_name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnibis_activitycode_name);
+                this.columnibis_activitycode_label = new global::System.Data.DataColumn("ibis_activitycode_label", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnibis_activitycode_label);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnibis_activitycode_id}, true));
+                this.columnibis_activitycode_id.AutoIncrement = true;
+                this.columnibis_activitycode_id.AutoIncrementSeed = -1;
+                this.columnibis_activitycode_id.AutoIncrementStep = -1;
+                this.columnibis_activitycode_id.AllowDBNull = false;
+                this.columnibis_activitycode_id.Unique = true;
+                this.columnibis_activitycode_code.AllowDBNull = false;
+                this.columnibis_activitycode_code.MaxLength = 4;
+                this.columnibis_activitycode_name.AllowDBNull = false;
+                this.columnibis_activitycode_name.MaxLength = 45;
+                this.columnibis_activitycode_label.AllowDBNull = false;
+                this.columnibis_activitycode_label.MaxLength = 52;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -14180,6 +14256,14 @@ namespace ibis_R1a {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class ibis_taskcodeDataTable : global::System.Data.TypedTableBase<ibis_taskcodeRow> {
             
+            private global::System.Data.DataColumn columnibis_taskcode_id;
+            
+            private global::System.Data.DataColumn columnibis_taskcode_code;
+            
+            private global::System.Data.DataColumn columnibis_taskcode_name;
+            
+            private global::System.Data.DataColumn columnibis_taskcode_label;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public ibis_taskcodeDataTable() {
@@ -14211,6 +14295,38 @@ namespace ibis_R1a {
             protected ibis_taskcodeDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ibis_taskcode_idColumn {
+                get {
+                    return this.columnibis_taskcode_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ibis_taskcode_codeColumn {
+                get {
+                    return this.columnibis_taskcode_code;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ibis_taskcode_nameColumn {
+                get {
+                    return this.columnibis_taskcode_name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ibis_taskcode_labelColumn {
+                get {
+                    return this.columnibis_taskcode_label;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -14250,12 +14366,23 @@ namespace ibis_R1a {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ibis_taskcodeRow Addibis_taskcodeRow() {
+            public ibis_taskcodeRow Addibis_taskcodeRow(string ibis_taskcode_code, string ibis_taskcode_name, string ibis_taskcode_label) {
                 ibis_taskcodeRow rowibis_taskcodeRow = ((ibis_taskcodeRow)(this.NewRow()));
-                object[] columnValuesArray = new object[0];
+                object[] columnValuesArray = new object[] {
+                        null,
+                        ibis_taskcode_code,
+                        ibis_taskcode_name,
+                        ibis_taskcode_label};
                 rowibis_taskcodeRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowibis_taskcodeRow);
                 return rowibis_taskcodeRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ibis_taskcodeRow FindByibis_taskcode_id(int ibis_taskcode_id) {
+                return ((ibis_taskcodeRow)(this.Rows.Find(new object[] {
+                            ibis_taskcode_id})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -14275,11 +14402,36 @@ namespace ibis_R1a {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
+                this.columnibis_taskcode_id = base.Columns["ibis_taskcode_id"];
+                this.columnibis_taskcode_code = base.Columns["ibis_taskcode_code"];
+                this.columnibis_taskcode_name = base.Columns["ibis_taskcode_name"];
+                this.columnibis_taskcode_label = base.Columns["ibis_taskcode_label"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
+                this.columnibis_taskcode_id = new global::System.Data.DataColumn("ibis_taskcode_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnibis_taskcode_id);
+                this.columnibis_taskcode_code = new global::System.Data.DataColumn("ibis_taskcode_code", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnibis_taskcode_code);
+                this.columnibis_taskcode_name = new global::System.Data.DataColumn("ibis_taskcode_name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnibis_taskcode_name);
+                this.columnibis_taskcode_label = new global::System.Data.DataColumn("ibis_taskcode_label", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnibis_taskcode_label);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnibis_taskcode_id}, true));
+                this.columnibis_taskcode_id.AutoIncrement = true;
+                this.columnibis_taskcode_id.AutoIncrementSeed = -1;
+                this.columnibis_taskcode_id.AutoIncrementStep = -1;
+                this.columnibis_taskcode_id.AllowDBNull = false;
+                this.columnibis_taskcode_id.Unique = true;
+                this.columnibis_taskcode_code.AllowDBNull = false;
+                this.columnibis_taskcode_code.MaxLength = 4;
+                this.columnibis_taskcode_name.AllowDBNull = false;
+                this.columnibis_taskcode_name.MaxLength = 45;
+                this.columnibis_taskcode_label.AllowDBNull = false;
+                this.columnibis_taskcode_label.MaxLength = 52;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -14413,6 +14565,14 @@ namespace ibis_R1a {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class ibis_workcodeDataTable : global::System.Data.TypedTableBase<ibis_workcodeRow> {
             
+            private global::System.Data.DataColumn columnibis_workcode_id;
+            
+            private global::System.Data.DataColumn columnibis_workcode_code;
+            
+            private global::System.Data.DataColumn columnibis_workcode_name;
+            
+            private global::System.Data.DataColumn columnibis_workcode_label;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public ibis_workcodeDataTable() {
@@ -14444,6 +14604,38 @@ namespace ibis_R1a {
             protected ibis_workcodeDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ibis_workcode_idColumn {
+                get {
+                    return this.columnibis_workcode_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ibis_workcode_codeColumn {
+                get {
+                    return this.columnibis_workcode_code;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ibis_workcode_nameColumn {
+                get {
+                    return this.columnibis_workcode_name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ibis_workcode_labelColumn {
+                get {
+                    return this.columnibis_workcode_label;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -14483,12 +14675,23 @@ namespace ibis_R1a {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ibis_workcodeRow Addibis_workcodeRow() {
+            public ibis_workcodeRow Addibis_workcodeRow(string ibis_workcode_code, string ibis_workcode_name, string ibis_workcode_label) {
                 ibis_workcodeRow rowibis_workcodeRow = ((ibis_workcodeRow)(this.NewRow()));
-                object[] columnValuesArray = new object[0];
+                object[] columnValuesArray = new object[] {
+                        null,
+                        ibis_workcode_code,
+                        ibis_workcode_name,
+                        ibis_workcode_label};
                 rowibis_workcodeRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowibis_workcodeRow);
                 return rowibis_workcodeRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ibis_workcodeRow FindByibis_workcode_id(int ibis_workcode_id) {
+                return ((ibis_workcodeRow)(this.Rows.Find(new object[] {
+                            ibis_workcode_id})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -14508,11 +14711,36 @@ namespace ibis_R1a {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
+                this.columnibis_workcode_id = base.Columns["ibis_workcode_id"];
+                this.columnibis_workcode_code = base.Columns["ibis_workcode_code"];
+                this.columnibis_workcode_name = base.Columns["ibis_workcode_name"];
+                this.columnibis_workcode_label = base.Columns["ibis_workcode_label"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
+                this.columnibis_workcode_id = new global::System.Data.DataColumn("ibis_workcode_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnibis_workcode_id);
+                this.columnibis_workcode_code = new global::System.Data.DataColumn("ibis_workcode_code", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnibis_workcode_code);
+                this.columnibis_workcode_name = new global::System.Data.DataColumn("ibis_workcode_name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnibis_workcode_name);
+                this.columnibis_workcode_label = new global::System.Data.DataColumn("ibis_workcode_label", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnibis_workcode_label);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnibis_workcode_id}, true));
+                this.columnibis_workcode_id.AutoIncrement = true;
+                this.columnibis_workcode_id.AutoIncrementSeed = -1;
+                this.columnibis_workcode_id.AutoIncrementStep = -1;
+                this.columnibis_workcode_id.AllowDBNull = false;
+                this.columnibis_workcode_id.Unique = true;
+                this.columnibis_workcode_code.AllowDBNull = false;
+                this.columnibis_workcode_code.MaxLength = 4;
+                this.columnibis_workcode_name.AllowDBNull = false;
+                this.columnibis_workcode_name.MaxLength = 45;
+                this.columnibis_workcode_label.AllowDBNull = false;
+                this.columnibis_workcode_label.MaxLength = 52;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -14670,6 +14898,8 @@ namespace ibis_R1a {
             
             private global::System.Data.DataColumn columnbudget_lineitem_jobnumber;
             
+            private global::System.Data.DataColumn columnbudget_lineitem_enteredby;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public budget_lineitemDataTable() {
@@ -14801,6 +15031,14 @@ namespace ibis_R1a {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn budget_lineitem_enteredbyColumn {
+                get {
+                    return this.columnbudget_lineitem_enteredby;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -14836,7 +15074,7 @@ namespace ibis_R1a {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public budget_lineitemRow Addbudget_lineitemRow(int budget_lineitem_budgetid, int budget_lineitem_workid, int budget_lineitem_activityid, int budget_lineitem_taskid, int budget_lineitem_empid, decimal budget_lineitem_value, decimal budget_lineitem_numhrs, string budget_lineitem_note, System.DateTime budget_lineitem_datestamp, int budget_lineitem_jobid, string budget_lineitem_jobnumber) {
+            public budget_lineitemRow Addbudget_lineitemRow(int budget_lineitem_budgetid, int budget_lineitem_workid, int budget_lineitem_activityid, int budget_lineitem_taskid, int budget_lineitem_empid, decimal budget_lineitem_value, decimal budget_lineitem_numhrs, string budget_lineitem_note, System.DateTime budget_lineitem_datestamp, int budget_lineitem_jobid, string budget_lineitem_jobnumber, string budget_lineitem_enteredby) {
                 budget_lineitemRow rowbudget_lineitemRow = ((budget_lineitemRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -14850,7 +15088,8 @@ namespace ibis_R1a {
                         budget_lineitem_note,
                         budget_lineitem_datestamp,
                         budget_lineitem_jobid,
-                        budget_lineitem_jobnumber};
+                        budget_lineitem_jobnumber,
+                        budget_lineitem_enteredby};
                 rowbudget_lineitemRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowbudget_lineitemRow);
                 return rowbudget_lineitemRow;
@@ -14892,6 +15131,7 @@ namespace ibis_R1a {
                 this.columnbudget_lineitem_datestamp = base.Columns["budget_lineitem_datestamp"];
                 this.columnbudget_lineitem_jobid = base.Columns["budget_lineitem_jobid"];
                 this.columnbudget_lineitem_jobnumber = base.Columns["budget_lineitem_jobnumber"];
+                this.columnbudget_lineitem_enteredby = base.Columns["budget_lineitem_enteredby"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -14921,6 +15161,8 @@ namespace ibis_R1a {
                 base.Columns.Add(this.columnbudget_lineitem_jobid);
                 this.columnbudget_lineitem_jobnumber = new global::System.Data.DataColumn("budget_lineitem_jobnumber", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnbudget_lineitem_jobnumber);
+                this.columnbudget_lineitem_enteredby = new global::System.Data.DataColumn("budget_lineitem_enteredby", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnbudget_lineitem_enteredby);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnbudget_lineitem_id}, true));
                 this.columnbudget_lineitem_id.AutoIncrement = true;
@@ -14939,6 +15181,7 @@ namespace ibis_R1a {
                 this.columnbudget_lineitem_datestamp.ReadOnly = true;
                 this.columnbudget_lineitem_jobnumber.AllowDBNull = false;
                 this.columnbudget_lineitem_jobnumber.MaxLength = 12;
+                this.columnbudget_lineitem_enteredby.MaxLength = 21;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -18144,6 +18387,50 @@ namespace ibis_R1a {
                     base(rb) {
                 this.tableibis_activitycode = ((ibis_activitycodeDataTable)(this.Table));
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int ibis_activitycode_id {
+                get {
+                    return ((int)(this[this.tableibis_activitycode.ibis_activitycode_idColumn]));
+                }
+                set {
+                    this[this.tableibis_activitycode.ibis_activitycode_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string ibis_activitycode_code {
+                get {
+                    return ((string)(this[this.tableibis_activitycode.ibis_activitycode_codeColumn]));
+                }
+                set {
+                    this[this.tableibis_activitycode.ibis_activitycode_codeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string ibis_activitycode_name {
+                get {
+                    return ((string)(this[this.tableibis_activitycode.ibis_activitycode_nameColumn]));
+                }
+                set {
+                    this[this.tableibis_activitycode.ibis_activitycode_nameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string ibis_activitycode_label {
+                get {
+                    return ((string)(this[this.tableibis_activitycode.ibis_activitycode_labelColumn]));
+                }
+                set {
+                    this[this.tableibis_activitycode.ibis_activitycode_labelColumn] = value;
+                }
+            }
         }
         
         /// <summary>
@@ -18159,6 +18446,50 @@ namespace ibis_R1a {
                     base(rb) {
                 this.tableibis_taskcode = ((ibis_taskcodeDataTable)(this.Table));
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int ibis_taskcode_id {
+                get {
+                    return ((int)(this[this.tableibis_taskcode.ibis_taskcode_idColumn]));
+                }
+                set {
+                    this[this.tableibis_taskcode.ibis_taskcode_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string ibis_taskcode_code {
+                get {
+                    return ((string)(this[this.tableibis_taskcode.ibis_taskcode_codeColumn]));
+                }
+                set {
+                    this[this.tableibis_taskcode.ibis_taskcode_codeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string ibis_taskcode_name {
+                get {
+                    return ((string)(this[this.tableibis_taskcode.ibis_taskcode_nameColumn]));
+                }
+                set {
+                    this[this.tableibis_taskcode.ibis_taskcode_nameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string ibis_taskcode_label {
+                get {
+                    return ((string)(this[this.tableibis_taskcode.ibis_taskcode_labelColumn]));
+                }
+                set {
+                    this[this.tableibis_taskcode.ibis_taskcode_labelColumn] = value;
+                }
+            }
         }
         
         /// <summary>
@@ -18173,6 +18504,50 @@ namespace ibis_R1a {
             internal ibis_workcodeRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
                 this.tableibis_workcode = ((ibis_workcodeDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int ibis_workcode_id {
+                get {
+                    return ((int)(this[this.tableibis_workcode.ibis_workcode_idColumn]));
+                }
+                set {
+                    this[this.tableibis_workcode.ibis_workcode_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string ibis_workcode_code {
+                get {
+                    return ((string)(this[this.tableibis_workcode.ibis_workcode_codeColumn]));
+                }
+                set {
+                    this[this.tableibis_workcode.ibis_workcode_codeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string ibis_workcode_name {
+                get {
+                    return ((string)(this[this.tableibis_workcode.ibis_workcode_nameColumn]));
+                }
+                set {
+                    this[this.tableibis_workcode.ibis_workcode_nameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string ibis_workcode_label {
+                get {
+                    return ((string)(this[this.tableibis_workcode.ibis_workcode_labelColumn]));
+                }
+                set {
+                    this[this.tableibis_workcode.ibis_workcode_labelColumn] = value;
+                }
             }
         }
         
@@ -18348,6 +18723,23 @@ namespace ibis_R1a {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string budget_lineitem_enteredby {
+                get {
+                    try {
+                        return ((string)(this[this.tablebudget_lineitem.budget_lineitem_enteredbyColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'budget_lineitem_enteredby\' in table \'budget_lineitem\' is DB" +
+                                "Null.", e);
+                    }
+                }
+                set {
+                    this[this.tablebudget_lineitem.budget_lineitem_enteredbyColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool Isbudget_lineitem_budgetidNull() {
                 return this.IsNull(this.tablebudget_lineitem.budget_lineitem_budgetidColumn);
             }
@@ -18392,6 +18784,18 @@ namespace ibis_R1a {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void Setbudget_lineitem_jobidNull() {
                 this[this.tablebudget_lineitem.budget_lineitem_jobidColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isbudget_lineitem_enteredbyNull() {
+                return this.IsNull(this.tablebudget_lineitem.budget_lineitem_enteredbyColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setbudget_lineitem_enteredbyNull() {
+                this[this.tablebudget_lineitem.budget_lineitem_enteredbyColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -29479,6 +29883,14 @@ namespace ibis_R1a.holdenengrDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitAdapter() {
             this._adapter = new global::MySql.Data.MySqlClient.MySqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "ibis_activitycode";
+            tableMapping.ColumnMappings.Add("ibis_activitycode_id", "ibis_activitycode_id");
+            tableMapping.ColumnMappings.Add("ibis_activitycode_code", "ibis_activitycode_code");
+            tableMapping.ColumnMappings.Add("ibis_activitycode_name", "ibis_activitycode_name");
+            tableMapping.ColumnMappings.Add("ibis_activitycode_label", "ibis_activitycode_label");
+            this._adapter.TableMappings.Add(tableMapping);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -29495,7 +29907,8 @@ namespace ibis_R1a.holdenengrDataSetTableAdapters {
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT `ibis_activitycode_id`, `ibis_activitycode_code`, `ibis_activitycode_name`" +
-                " FROM `ibis_activitycode`";
+                ", CONCAT(ibis_activitycode_code, \' - \', ibis_activitycode_name) AS ibis_activity" +
+                "code_label FROM `ibis_activitycode`";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -29642,6 +30055,14 @@ namespace ibis_R1a.holdenengrDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitAdapter() {
             this._adapter = new global::MySql.Data.MySqlClient.MySqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "ibis_taskcode";
+            tableMapping.ColumnMappings.Add("ibis_taskcode_id", "ibis_taskcode_id");
+            tableMapping.ColumnMappings.Add("ibis_taskcode_code", "ibis_taskcode_code");
+            tableMapping.ColumnMappings.Add("ibis_taskcode_name", "ibis_taskcode_name");
+            tableMapping.ColumnMappings.Add("ibis_taskcode_label", "ibis_taskcode_label");
+            this._adapter.TableMappings.Add(tableMapping);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -29657,8 +30078,9 @@ namespace ibis_R1a.holdenengrDataSetTableAdapters {
             this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT `ibis_taskcode_id`, `ibis_taskcode_code`, `ibis_taskcode_name` FROM `ibis_" +
-                "taskcode`";
+            this._commandCollection[0].CommandText = "SELECT `ibis_taskcode_id`, `ibis_taskcode_code`, `ibis_taskcode_name`, CONCAT(ibi" +
+                "s_taskcode_code, \' - \', ibis_taskcode_name) AS ibis_taskcode_label FROM `ibis_ta" +
+                "skcode`";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -29805,6 +30227,14 @@ namespace ibis_R1a.holdenengrDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitAdapter() {
             this._adapter = new global::MySql.Data.MySqlClient.MySqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "ibis_workcode";
+            tableMapping.ColumnMappings.Add("ibis_workcode_id", "ibis_workcode_id");
+            tableMapping.ColumnMappings.Add("ibis_workcode_code", "ibis_workcode_code");
+            tableMapping.ColumnMappings.Add("ibis_workcode_name", "ibis_workcode_name");
+            tableMapping.ColumnMappings.Add("ibis_workcode_label", "ibis_workcode_label");
+            this._adapter.TableMappings.Add(tableMapping);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -29820,8 +30250,9 @@ namespace ibis_R1a.holdenengrDataSetTableAdapters {
             this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT `ibis_workcode_id`, `ibis_workcode_code`, `ibis_workcode_name` FROM `ibis_" +
-                "workcode`";
+            this._commandCollection[0].CommandText = "SELECT `ibis_workcode_id`, `ibis_workcode_code`, `ibis_workcode_name`, CONCAT(ibi" +
+                "s_workcode_code, \' - \', ibis_workcode_name) AS ibis_workcode_label FROM `ibis_wo" +
+                "rkcode`";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -29983,10 +30414,11 @@ namespace ibis_R1a.holdenengrDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("budget_lineitem_datestamp", "budget_lineitem_datestamp");
             tableMapping.ColumnMappings.Add("budget_lineitem_jobid", "budget_lineitem_jobid");
             tableMapping.ColumnMappings.Add("budget_lineitem_jobnumber", "budget_lineitem_jobnumber");
+            tableMapping.ColumnMappings.Add("budget_lineitem_enteredby", "budget_lineitem_enteredby");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `budget_lineitem` WHERE ((`budget_lineitem_id` = @p1) AND ((@p2 = 1 AND `budget_lineitem_budgetid` IS NULL) OR (`budget_lineitem_budgetid` = @p3)) AND (`budget_lineitem_workid` = @p4) AND (`budget_lineitem_activityid` = @p5) AND (`budget_lineitem_taskid` = @p6) AND (`budget_lineitem_empid` = @p7) AND (`budget_lineitem_value` = @p8) AND (`budget_lineitem_numhrs` = @p9) AND ((@p10 = 1 AND `budget_lineitem_note` IS NULL) OR (`budget_lineitem_note` = @p11)) AND ((@p12 = 1 AND `budget_lineitem_datestamp` IS NULL) OR (`budget_lineitem_datestamp` = @p13)) AND ((@p14 = 1 AND `budget_lineitem_jobid` IS NULL) OR (`budget_lineitem_jobid` = @p15)) AND (`budget_lineitem_jobnumber` = @p16))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `budget_lineitem` WHERE ((`budget_lineitem_id` = @p1) AND ((@p2 = 1 AND `budget_lineitem_budgetid` IS NULL) OR (`budget_lineitem_budgetid` = @p3)) AND (`budget_lineitem_workid` = @p4) AND (`budget_lineitem_activityid` = @p5) AND (`budget_lineitem_taskid` = @p6) AND (`budget_lineitem_empid` = @p7) AND (`budget_lineitem_value` = @p8) AND (`budget_lineitem_numhrs` = @p9) AND ((@p10 = 1 AND `budget_lineitem_note` IS NULL) OR (`budget_lineitem_note` = @p11)) AND ((@p12 = 1 AND `budget_lineitem_datestamp` IS NULL) OR (`budget_lineitem_datestamp` = @p13)) AND ((@p14 = 1 AND `budget_lineitem_jobid` IS NULL) OR (`budget_lineitem_jobid` = @p15)) AND (`budget_lineitem_jobnumber` = @p16) AND ((@p17 = 1 AND `budget_lineitem_enteredby` IS NULL) OR (`budget_lineitem_enteredby` = @p18)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -30120,12 +30552,34 @@ namespace ibis_R1a.holdenengrDataSetTableAdapters {
             param.SourceColumn = "budget_lineitem_jobnumber";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p17";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "budget_lineitem_enteredby";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p18";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.IsNullable = true;
+            param.SourceColumn = "budget_lineitem_enteredby";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO budget_lineitem
-                         (budget_lineitem_workid, budget_lineitem_activityid, budget_lineitem_taskid, budget_lineitem_empid, budget_lineitem_value, budget_lineitem_numhrs, budget_lineitem_note, budget_lineitem_jobnumber)
-VALUES        (@p2, @p3, @p4, @p5, @p6, @p7, @p8, @p11)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO `budget_lineitem` (`budget_lineitem_budgetid`, `budget_lineitem_workid`, `budget_lineitem_activityid`, `budget_lineitem_taskid`, `budget_lineitem_empid`, `budget_lineitem_value`, `budget_lineitem_numhrs`, `budget_lineitem_note`, `budget_lineitem_datestamp`, `budget_lineitem_jobid`, `budget_lineitem_jobnumber`, `budget_lineitem_enteredby`) VALUES (@p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p1";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "budget_lineitem_budgetid";
+            this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p2";
             param.DbType = global::System.Data.DbType.Int32;
@@ -30172,21 +30626,40 @@ VALUES        (@p2, @p3, @p4, @p5, @p6, @p7, @p8, @p11)";
             param.ParameterName = "@p8";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.Size = 255;
             param.IsNullable = true;
             param.SourceColumn = "budget_lineitem_note";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p9";
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Timestamp;
+            param.IsNullable = true;
+            param.SourceColumn = "budget_lineitem_datestamp";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p10";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "budget_lineitem_jobid";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p11";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.Size = 12;
             param.IsNullable = true;
             param.SourceColumn = "budget_lineitem_jobnumber";
             this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p12";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.IsNullable = true;
+            param.SourceColumn = "budget_lineitem_enteredby";
+            this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE `budget_lineitem` SET `budget_lineitem_budgetid` = @p1, `budget_lineitem_workid` = @p2, `budget_lineitem_activityid` = @p3, `budget_lineitem_taskid` = @p4, `budget_lineitem_empid` = @p5, `budget_lineitem_value` = @p6, `budget_lineitem_numhrs` = @p7, `budget_lineitem_note` = @p8, `budget_lineitem_datestamp` = @p9, `budget_lineitem_jobid` = @p10, `budget_lineitem_jobnumber` = @p11 WHERE ((`budget_lineitem_id` = @p12) AND ((@p13 = 1 AND `budget_lineitem_budgetid` IS NULL) OR (`budget_lineitem_budgetid` = @p14)) AND (`budget_lineitem_workid` = @p15) AND (`budget_lineitem_activityid` = @p16) AND (`budget_lineitem_taskid` = @p17) AND (`budget_lineitem_empid` = @p18) AND (`budget_lineitem_value` = @p19) AND (`budget_lineitem_numhrs` = @p20) AND ((@p21 = 1 AND `budget_lineitem_note` IS NULL) OR (`budget_lineitem_note` = @p22)) AND ((@p23 = 1 AND `budget_lineitem_datestamp` IS NULL) OR (`budget_lineitem_datestamp` = @p24)) AND ((@p25 = 1 AND `budget_lineitem_jobid` IS NULL) OR (`budget_lineitem_jobid` = @p26)) AND (`budget_lineitem_jobnumber` = @p27))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE `budget_lineitem` SET `budget_lineitem_budgetid` = @p1, `budget_lineitem_workid` = @p2, `budget_lineitem_activityid` = @p3, `budget_lineitem_taskid` = @p4, `budget_lineitem_empid` = @p5, `budget_lineitem_value` = @p6, `budget_lineitem_numhrs` = @p7, `budget_lineitem_note` = @p8, `budget_lineitem_datestamp` = @p9, `budget_lineitem_jobid` = @p10, `budget_lineitem_jobnumber` = @p11, `budget_lineitem_enteredby` = @p12 WHERE ((`budget_lineitem_id` = @p13) AND ((@p14 = 1 AND `budget_lineitem_budgetid` IS NULL) OR (`budget_lineitem_budgetid` = @p15)) AND (`budget_lineitem_workid` = @p16) AND (`budget_lineitem_activityid` = @p17) AND (`budget_lineitem_taskid` = @p18) AND (`budget_lineitem_empid` = @p19) AND (`budget_lineitem_value` = @p20) AND (`budget_lineitem_numhrs` = @p21) AND ((@p22 = 1 AND `budget_lineitem_note` IS NULL) OR (`budget_lineitem_note` = @p23)) AND ((@p24 = 1 AND `budget_lineitem_datestamp` IS NULL) OR (`budget_lineitem_datestamp` = @p25)) AND ((@p26 = 1 AND `budget_lineitem_jobid` IS NULL) OR (`budget_lineitem_jobid` = @p27)) AND (`budget_lineitem_jobnumber` = @p28) AND ((@p29 = 1 AND `budget_lineitem_enteredby` IS NULL) OR (`budget_lineitem_enteredby` = @p30)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -30267,20 +30740,18 @@ VALUES        (@p2, @p3, @p4, @p5, @p6, @p7, @p8, @p11)";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p12";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "budget_lineitem_id";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumn = "budget_lineitem_enteredby";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p13";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "budget_lineitem_budgetid";
+            param.SourceColumn = "budget_lineitem_id";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p14";
@@ -30289,13 +30760,14 @@ VALUES        (@p2, @p3, @p4, @p5, @p6, @p7, @p8, @p11)";
             param.IsNullable = true;
             param.SourceColumn = "budget_lineitem_budgetid";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p15";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "budget_lineitem_workid";
+            param.SourceColumn = "budget_lineitem_budgetid";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -30303,7 +30775,7 @@ VALUES        (@p2, @p3, @p4, @p5, @p6, @p7, @p8, @p11)";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "budget_lineitem_activityid";
+            param.SourceColumn = "budget_lineitem_workid";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -30311,7 +30783,7 @@ VALUES        (@p2, @p3, @p4, @p5, @p6, @p7, @p8, @p11)";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "budget_lineitem_taskid";
+            param.SourceColumn = "budget_lineitem_activityid";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -30319,15 +30791,15 @@ VALUES        (@p2, @p3, @p4, @p5, @p6, @p7, @p8, @p11)";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "budget_lineitem_empid";
+            param.SourceColumn = "budget_lineitem_taskid";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p19";
-            param.DbType = global::System.Data.DbType.Decimal;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.NewDecimal;
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "budget_lineitem_value";
+            param.SourceColumn = "budget_lineitem_empid";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -30335,11 +30807,19 @@ VALUES        (@p2, @p3, @p4, @p5, @p6, @p7, @p8, @p11)";
             param.DbType = global::System.Data.DbType.Decimal;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.NewDecimal;
             param.IsNullable = true;
-            param.SourceColumn = "budget_lineitem_numhrs";
+            param.SourceColumn = "budget_lineitem_value";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p21";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.NewDecimal;
+            param.IsNullable = true;
+            param.SourceColumn = "budget_lineitem_numhrs";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p22";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
@@ -30348,7 +30828,7 @@ VALUES        (@p2, @p3, @p4, @p5, @p6, @p7, @p8, @p11)";
             param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p22";
+            param.ParameterName = "@p23";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
@@ -30356,7 +30836,7 @@ VALUES        (@p2, @p3, @p4, @p5, @p6, @p7, @p8, @p11)";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p23";
+            param.ParameterName = "@p24";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
@@ -30365,21 +30845,12 @@ VALUES        (@p2, @p3, @p4, @p5, @p6, @p7, @p8, @p11)";
             param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p24";
+            param.ParameterName = "@p25";
             param.DbType = global::System.Data.DbType.DateTime;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Timestamp;
             param.IsNullable = true;
             param.SourceColumn = "budget_lineitem_datestamp";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p25";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "budget_lineitem_jobid";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p26";
@@ -30388,13 +30859,39 @@ VALUES        (@p2, @p3, @p4, @p5, @p6, @p7, @p8, @p11)";
             param.IsNullable = true;
             param.SourceColumn = "budget_lineitem_jobid";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p27";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "budget_lineitem_jobid";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p28";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "budget_lineitem_jobnumber";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p29";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "budget_lineitem_enteredby";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p30";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.IsNullable = true;
+            param.SourceColumn = "budget_lineitem_enteredby";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
         }
@@ -30416,7 +30913,7 @@ VALUES        (@p2, @p3, @p4, @p5, @p6, @p7, @p8, @p11)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT * FROM budget_lineitem WHERE budget_lineitem_jobnumber = @jobnumber";
+            this._commandCollection[1].CommandText = @"SELECT budget_lineitem_activityid, budget_lineitem_budgetid, budget_lineitem_datestamp, budget_lineitem_empid, budget_lineitem_enteredby, budget_lineitem_id, budget_lineitem_jobid, budget_lineitem_jobnumber, budget_lineitem_note, budget_lineitem_numhrs, budget_lineitem_taskid, budget_lineitem_value, budget_lineitem_workid FROM budget_lineitem WHERE (budget_lineitem_jobnumber = @jobnumber)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@jobnumber";
@@ -30521,7 +31018,7 @@ VALUES        (@p2, @p3, @p4, @p5, @p6, @p7, @p8, @p11)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int p1, global::System.Nullable<int> p3, int p4, int p5, int p6, int p7, decimal p8, decimal p9, string p11, global::System.Nullable<global::System.DateTime> p13, global::System.Nullable<int> p15, string p16) {
+        public virtual int Delete(int p1, global::System.Nullable<int> p3, int p4, int p5, int p6, int p7, decimal p8, decimal p9, string p11, global::System.Nullable<global::System.DateTime> p13, global::System.Nullable<int> p15, string p16, string p18) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(p1));
             if ((p3.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
@@ -30567,6 +31064,14 @@ VALUES        (@p2, @p3, @p4, @p5, @p6, @p7, @p8, @p11)";
             else {
                 this.Adapter.DeleteCommand.Parameters[15].Value = ((string)(p16));
             }
+            if ((p18 == null)) {
+                this.Adapter.DeleteCommand.Parameters[16].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[17].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[16].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[17].Value = ((string)(p18));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -30587,24 +31092,48 @@ VALUES        (@p2, @p3, @p4, @p5, @p6, @p7, @p8, @p11)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int p2, int p3, int p4, int p5, decimal p6, decimal p7, string p8, string p11) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(p2));
-            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(p3));
-            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(p4));
-            this.Adapter.InsertCommand.Parameters[3].Value = ((int)(p5));
-            this.Adapter.InsertCommand.Parameters[4].Value = ((decimal)(p6));
-            this.Adapter.InsertCommand.Parameters[5].Value = ((decimal)(p7));
-            if ((p8 == null)) {
-                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+        public virtual int Insert(global::System.Nullable<int> p1, int p2, int p3, int p4, int p5, decimal p6, decimal p7, string p8, global::System.Nullable<global::System.DateTime> p9, global::System.Nullable<int> p10, string p11, string p12) {
+            if ((p1.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((int)(p1.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(p8));
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(p2));
+            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(p3));
+            this.Adapter.InsertCommand.Parameters[3].Value = ((int)(p4));
+            this.Adapter.InsertCommand.Parameters[4].Value = ((int)(p5));
+            this.Adapter.InsertCommand.Parameters[5].Value = ((decimal)(p6));
+            this.Adapter.InsertCommand.Parameters[6].Value = ((decimal)(p7));
+            if ((p8 == null)) {
+                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(p8));
+            }
+            if ((p9.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[8].Value = ((System.DateTime)(p9.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            if ((p10.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[9].Value = ((int)(p10.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             if ((p11 == null)) {
                 throw new global::System.ArgumentNullException("p11");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(p11));
+                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(p11));
+            }
+            if ((p12 == null)) {
+                this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(p12));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -30638,18 +31167,20 @@ VALUES        (@p2, @p3, @p4, @p5, @p6, @p7, @p8, @p11)";
                     global::System.Nullable<global::System.DateTime> p9, 
                     global::System.Nullable<int> p10, 
                     string p11, 
-                    int p12, 
-                    global::System.Nullable<int> p14, 
-                    int p15, 
+                    string p12, 
+                    int p13, 
+                    global::System.Nullable<int> p15, 
                     int p16, 
                     int p17, 
                     int p18, 
-                    decimal p19, 
+                    int p19, 
                     decimal p20, 
-                    string p22, 
-                    global::System.Nullable<global::System.DateTime> p24, 
-                    global::System.Nullable<int> p26, 
-                    string p27) {
+                    decimal p21, 
+                    string p23, 
+                    global::System.Nullable<global::System.DateTime> p25, 
+                    global::System.Nullable<int> p27, 
+                    string p28, 
+                    string p30) {
             if ((p1.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(p1.Value));
             }
@@ -30686,50 +31217,64 @@ VALUES        (@p2, @p3, @p4, @p5, @p6, @p7, @p8, @p11)";
             else {
                 this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(p11));
             }
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(p12));
-            if ((p14.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(p14.Value));
+            if ((p12 == null)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(p12));
             }
-            this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(p15));
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(p13));
+            if ((p15.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(p15.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
             this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(p16));
             this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(p17));
             this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(p18));
-            this.Adapter.UpdateCommand.Parameters[18].Value = ((decimal)(p19));
+            this.Adapter.UpdateCommand.Parameters[18].Value = ((int)(p19));
             this.Adapter.UpdateCommand.Parameters[19].Value = ((decimal)(p20));
-            if ((p22 == null)) {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
+            this.Adapter.UpdateCommand.Parameters[20].Value = ((decimal)(p21));
+            if ((p23 == null)) {
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(p22));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(p23));
             }
-            if ((p24.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((System.DateTime)(p24.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
-            }
-            if ((p26.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((int)(p26.Value));
+            if ((p25.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((System.DateTime)(p25.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
             }
-            if ((p27 == null)) {
-                throw new global::System.ArgumentNullException("p27");
+            if ((p27.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((int)(p27.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(p27));
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
+            }
+            if ((p28 == null)) {
+                throw new global::System.ArgumentNullException("p28");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((string)(p28));
+            }
+            if ((p30 == null)) {
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[29].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((string)(p30));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
