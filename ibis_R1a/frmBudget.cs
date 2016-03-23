@@ -144,6 +144,7 @@ namespace ibis_R1a
         private void dgvBudgetLineItems_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
             MessageBox.Show("(0xea11)Data Error Event: \n" + e.Exception.Message + "\nContact dcasale@umd.edu");
+            e.Cancel = true;
         }
 
         private void dgvBudgetLineItems_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
@@ -154,6 +155,17 @@ namespace ibis_R1a
                 (e.Control as ComboBox).AutoCompleteMode = AutoCompleteMode.SuggestAppend;
                 (e.Control as ComboBox).AutoCompleteSource = AutoCompleteSource.ListItems;
             }
+        }
+
+        // This overridden function allows us to skip all validations
+        // whenever the form's X button is clicked or upon pressing Alt+F4.
+        protected override void WndProc(ref Message m)
+        {
+            if (m.Msg == 0x10) // 0x10 is WM_CLOSE message.
+            {
+                AutoValidate = AutoValidate.Disable;
+            }
+            base.WndProc(ref m);
         }
     }
 }

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBudget));
             this.cbxJobNums = new System.Windows.Forms.ComboBox();
             this.cmdExit = new System.Windows.Forms.Button();
@@ -61,6 +62,10 @@
             this.ibis_taskcodeTableAdapter1 = new ibis_R1a.holdenengrDataSetTableAdapters.ibis_taskcodeTableAdapter();
             this.budget_lineitemTableAdapter = new ibis_R1a.holdenengrDataSetTableAdapters.budget_lineitemTableAdapter();
             this.hesemployee1TableAdapter = new ibis_R1a.holdenengrDataSetTableAdapters.hesemployee1TableAdapter();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.lblBudgetExpenseItems = new System.Windows.Forms.Label();
+            this.lblBudgetLaborLineItems = new System.Windows.Forms.Label();
+            this.panelMainControls = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBudgetLineItems)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ibisworkcodeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.holdenengrDataSet)).BeginInit();
@@ -68,6 +73,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.ibistaskcodeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hesemployee1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.budgetlineitemBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panelMainControls.SuspendLayout();
             this.SuspendLayout();
             // 
             // cbxJobNums
@@ -82,8 +89,10 @@
             // 
             // cmdExit
             // 
+            this.cmdExit.CausesValidation = false;
+            this.cmdExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.cmdExit.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.cmdExit.Location = new System.Drawing.Point(759, 13);
+            this.cmdExit.Location = new System.Drawing.Point(763, 13);
             this.cmdExit.Margin = new System.Windows.Forms.Padding(4);
             this.cmdExit.Name = "cmdExit";
             this.cmdExit.Size = new System.Drawing.Size(67, 54);
@@ -121,6 +130,8 @@
             // 
             // dgvBudgetLineItems
             // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgvBudgetLineItems.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvBudgetLineItems.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -138,9 +149,9 @@
             this.budget_lineitem_datestamp,
             this.budget_lineitem_enteredby});
             this.dgvBudgetLineItems.DataSource = this.budgetlineitemBindingSource;
-            this.dgvBudgetLineItems.Location = new System.Drawing.Point(12, 99);
+            this.dgvBudgetLineItems.Location = new System.Drawing.Point(6, 30);
             this.dgvBudgetLineItems.Name = "dgvBudgetLineItems";
-            this.dgvBudgetLineItems.Size = new System.Drawing.Size(1142, 337);
+            this.dgvBudgetLineItems.Size = new System.Drawing.Size(1139, 349);
             this.dgvBudgetLineItems.TabIndex = 8;
             this.dgvBudgetLineItems.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvBudgetLineItems_DataError);
             this.dgvBudgetLineItems.DefaultValuesNeeded += new System.Windows.Forms.DataGridViewRowEventHandler(this.dgvBudgetLineItems_DefaultValuesNeeded);
@@ -297,9 +308,10 @@
             // 
             // lblTotalBudgetValue
             // 
-            this.lblTotalBudgetValue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblTotalBudgetValue.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTotalBudgetValue.AutoSize = true;
-            this.lblTotalBudgetValue.Location = new System.Drawing.Point(23, 474);
+            this.lblTotalBudgetValue.Location = new System.Drawing.Point(17, 620);
             this.lblTotalBudgetValue.Name = "lblTotalBudgetValue";
             this.lblTotalBudgetValue.Size = new System.Drawing.Size(136, 18);
             this.lblTotalBudgetValue.TabIndex = 10;
@@ -307,10 +319,11 @@
             // 
             // lblBudgetTotalDisp
             // 
-            this.lblBudgetTotalDisp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblBudgetTotalDisp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblBudgetTotalDisp.AutoSize = true;
             this.lblBudgetTotalDisp.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBudgetTotalDisp.Location = new System.Drawing.Point(165, 474);
+            this.lblBudgetTotalDisp.Location = new System.Drawing.Point(159, 620);
             this.lblBudgetTotalDisp.Name = "lblBudgetTotalDisp";
             this.lblBudgetTotalDisp.Size = new System.Drawing.Size(89, 18);
             this.lblBudgetTotalDisp.TabIndex = 11;
@@ -340,15 +353,62 @@
             // 
             this.hesemployee1TableAdapter.ClearBeforeFill = true;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(6, 421);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(1139, 170);
+            this.dataGridView1.TabIndex = 12;
+            // 
+            // lblBudgetExpenseItems
+            // 
+            this.lblBudgetExpenseItems.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblBudgetExpenseItems.AutoSize = true;
+            this.lblBudgetExpenseItems.Location = new System.Drawing.Point(6, 400);
+            this.lblBudgetExpenseItems.Name = "lblBudgetExpenseItems";
+            this.lblBudgetExpenseItems.Size = new System.Drawing.Size(154, 18);
+            this.lblBudgetExpenseItems.TabIndex = 13;
+            this.lblBudgetExpenseItems.Text = "Budget Expense Items:";
+            // 
+            // lblBudgetLaborLineItems
+            // 
+            this.lblBudgetLaborLineItems.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblBudgetLaborLineItems.AutoSize = true;
+            this.lblBudgetLaborLineItems.Location = new System.Drawing.Point(6, 9);
+            this.lblBudgetLaborLineItems.Name = "lblBudgetLaborLineItems";
+            this.lblBudgetLaborLineItems.Size = new System.Drawing.Size(169, 18);
+            this.lblBudgetLaborLineItems.TabIndex = 14;
+            this.lblBudgetLaborLineItems.Text = "Budget Labor Line Items:";
+            // 
+            // panelMainControls
+            // 
+            this.panelMainControls.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelMainControls.Controls.Add(this.lblBudgetLaborLineItems);
+            this.panelMainControls.Controls.Add(this.lblBudgetExpenseItems);
+            this.panelMainControls.Controls.Add(this.dataGridView1);
+            this.panelMainControls.Controls.Add(this.lblBudgetTotalDisp);
+            this.panelMainControls.Controls.Add(this.lblTotalBudgetValue);
+            this.panelMainControls.Controls.Add(this.dgvBudgetLineItems);
+            this.panelMainControls.Location = new System.Drawing.Point(6, 69);
+            this.panelMainControls.Name = "panelMainControls";
+            this.panelMainControls.Size = new System.Drawing.Size(1148, 652);
+            this.panelMainControls.TabIndex = 15;
+            // 
             // frmBudget
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1166, 527);
-            this.Controls.Add(this.lblBudgetTotalDisp);
-            this.Controls.Add(this.lblTotalBudgetValue);
+            this.ClientSize = new System.Drawing.Size(1166, 733);
+            this.Controls.Add(this.panelMainControls);
             this.Controls.Add(this.cmdSave);
-            this.Controls.Add(this.dgvBudgetLineItems);
             this.Controls.Add(this.lblJobName);
             this.Controls.Add(this.lblJobNumber);
             this.Controls.Add(this.txtPName);
@@ -367,6 +427,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.ibistaskcodeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hesemployee1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.budgetlineitemBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panelMainControls.ResumeLayout(false);
+            this.panelMainControls.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -405,5 +468,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn budget_lineitem_note;
         private System.Windows.Forms.DataGridViewTextBoxColumn budget_lineitem_datestamp;
         private System.Windows.Forms.DataGridViewTextBoxColumn budget_lineitem_enteredby;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label lblBudgetExpenseItems;
+        private System.Windows.Forms.Label lblBudgetLaborLineItems;
+        private System.Windows.Forms.Panel panelMainControls;
     }
 }
